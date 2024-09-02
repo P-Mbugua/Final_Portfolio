@@ -14,7 +14,7 @@ export default function ProfileContent({ className }) {
           {/* Profile Picture */}
           <div className="w-20 h-20 relative mb-4">
             <img 
-              src="src/assets/Photos/PETER.png" 
+              src="https://p-mbugua.github.io/Official-_Portfolio/peter.png" 
               alt="Profile" 
               className="w-full h-full rounded-full border-4 border-gradient bg-gradient-to-br from-blue-400 to-teal-400 shadow-xl object-cover"
             />
