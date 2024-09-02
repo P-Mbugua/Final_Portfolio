@@ -136,7 +136,7 @@ export default function ProfileContent({ className }) {
         </div>
       </div>
 
-      {/* Footer Section */}
+      {/* Footer Sectn */}
       <div className="bg-gray-800 p-4 rounded-lg shadow-lg mt-auto">
         <div className="flex justify-center space-x-4 text-sm">
           <a href="https://www.linkedin.com/in/peter-mbugua-a6351a262" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">
