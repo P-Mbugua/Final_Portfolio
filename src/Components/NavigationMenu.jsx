@@ -1,0 +1,72 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+export default function NavigationMenu({ isMenuOpen, onClose, onLinkClick }) {
+  return (
+    <div
+      className={`lg:hidden fixed top-0 right-0 w-48 h-full bg-gray-900 text-white transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} shadow-lg z-50`}
+    >
+      <div className="flex flex-col h-full">
+        <div className="flex justify-end p-4">
+          <button
+            aria-label="Close menu"
+            className="text-2xl text-gray-400 hover:text-gray-200 focus:outline-none"
+            onClick={onClose}
+          >
+            &times;
+          </button>
+        </div>
+        <nav className="flex flex-col flex-grow p-4 space-y-4">
+          <NavLink
+            to="/"
+            className={({ isActive }) => 
+              `text-lg py-2 px-3 rounded-lg transition-colors duration-150 ease-in-out ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} focus:outline-none`
+            }
+            onClick={() => {
+              onLinkClick();
+              onClose();
+            }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => 
+              `text-lg py-2 px-3 rounded-lg transition-colors duration-150 ease-in-out ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} focus:outline-none`
+            }
+            onClick={() => {
+              onLinkClick();
+              onClose();
+            }}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => 
+              `text-lg py-2 px-3 rounded-lg transition-colors duration-150 ease-in-out ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} focus:outline-none`
+            }
+            onClick={() => {
+              onLinkClick();
+              onClose();
+            }}
+          >
+            Contact
+          </NavLink>
+          <NavLink
+            to="/skills"
+            className={({ isActive }) => 
+              `text-lg py-2 px-3 rounded-lg transition-colors duration-150 ease-in-out ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} focus:outline-none`
+            }
+            onClick={() => {
+              onLinkClick();
+              onClose();
+            }}
+          >
+            Skills
+          </NavLink>
+        </nav>
+      </div>
+    </div>
+  );
+}
