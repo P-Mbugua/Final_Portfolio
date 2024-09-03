@@ -125,7 +125,7 @@ export default function ProfileContent({ className }) {
           {/* Resume Download Link with Icon */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-lg mb-6 flex items-center space-x-2">
             <a 
-              href="src/assets/Files/Peter.pdf"  target="_blank" rel="noopener noreferrer" // Replace with your actual CV link
+              href="https://flowcv.com/resume/f62ua50tfk"  target="_blank" rel="noopener noreferrer" // Replace with your actual CV link
               className="text-blue-500 hover:text-blue-600 transition-colors flex items-center space-x-2"
               download
             >
