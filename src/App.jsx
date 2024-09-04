@@ -12,38 +12,38 @@ import Portfolio from './Pages/Portfolio';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import NameSection from './Components/NameSection';
-import ToggleButton from './Components/ToggleButton'; 
+import ToggleButton from './Components/ToggleButton';
 import NavigationMenu from './Components/NavigationMenu';
-import MobileHeader from './Components/MobileHeader'; 
+import MobileHeader from './Components/MobileHeader';
 import Loader from './Components/Loader';
-import Background from './Components/Background'; // Import the Background component
+import Background from './Components/Background';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hideHeader, setHideHeader] = useState(false);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
+  // Toggle menu visibility
   const handleToggle = () => {
     setIsMenuOpen(prev => !prev);
   };
 
+  // Close the menu
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
   };
 
+  // Hide header and close menu when a link is clicked
   const handleLinkClick = () => {
     setHideHeader(true);
     handleCloseMenu();
   };
 
-  const handleSearch = () => {
-    console.log("Search button clicked");
-  };
-
+  // Simulate loading for 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -51,34 +51,42 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        {loading && <Loader message="Loading... Peter" />} 
+        {/* Loader */}
+        {loading && <Loader message="Loading... Peter" />}
 
         {/* Background Component */}
         <Background />
 
-        {/* Mobile Header */}
-        <MobileHeader onSearch={handleSearch} />
+        {/* Mobile Header (On small screens) */}
+        <MobileHeader
+          onSearch={() => console.log("Search button clicked")}
+          className="fixed top-0 left-0 right-0 z-60"
+        />
 
         {/* Toggle Button for Small Devices */}
         <ToggleButton
           isMenuOpen={isMenuOpen}
           onClick={handleToggle}
+          className="fixed top-4 right-4 z-70"
         />
 
-        {/* Navigation Menu */}
+        {/* Navigation Menu (On small screens) */}
         <NavigationMenu
           isMenuOpen={isMenuOpen}
           onClose={handleCloseMenu}
           onLinkClick={handleLinkClick}
+          className={`fixed top-0 right-0 h-full w-72 bg-gray-900 text-white shadow-lg transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} z-50`}
         />
 
-        {/* Fixed Header */}
-        <Header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md" />
+        {/* Fixed Header (On larger screens) */}
+        <Header
+          className={`fixed left-0 right-0 z-40 bg-white shadow-md ${hideHeader ? 'hidden' : ''} mt-16 lg:mt-0`} // Margin top on small screens
+        />
 
         {/* Main Layout Container */}
-        <div className="flex flex-1 pt-16 lg:pt-0.5">
-          {/* Left Section */}
-          <div className="hidden lg:flex lg:w-1/3 ">
+        <div className="flex flex-1 pt-16 lg:pt-0">
+          {/* Left Section (On larger screens) */}
+          <div className="hidden lg:flex lg:w-1/3">
             <NameSection />
           </div>
 
@@ -90,15 +98,16 @@ function App() {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/skills" element={<Skills />} />
-                <Route path='/portfolio' element={<Portfolio />} />
+                <Route path="/portfolio" element={<Portfolio />} />
               </Routes>
             </main>
 
+            {/* Footer */}
             <Footer />
           </div>
 
-          {/* Right Section */}
-          <div className="hidden lg:flex lg:w-1/6 ">
+          {/* Right Section (On larger screens) */}
+          <div className="hidden lg:flex lg:w-1/6">
             {/* Right Section Content */}
           </div>
         </div>

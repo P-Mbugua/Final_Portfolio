@@ -6,16 +6,16 @@ import { faHome, faUser, faEnvelope, faBriefcase, faCode } from '@fortawesome/fr
 export default function NameSection({ className = '' }) {
   const [navOpen, setNavOpen] = useState(false);
   const navRef = useRef(null);
+  const toggleButtonRef = useRef(null);
 
-  // Function to handle clicks outside the navigation panel
+  // Handle click outside to close the navigation panel
   const handleClickOutside = (event) => {
-    if (navOpen && navRef.current && !navRef.current.contains(event.target)) {
+    if (navOpen && navRef.current && !navRef.current.contains(event.target) && !toggleButtonRef.current.contains(event.target)) {
       setNavOpen(false);
     }
   };
 
   useEffect(() => {
-    // Attach the event listener to detect clicks outside the navigation panel
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -27,7 +27,7 @@ export default function NameSection({ className = '' }) {
   };
 
   const handleToggleClick = () => {
-    setNavOpen(prev => !prev);
+    setNavOpen((prev) => !prev);
   };
 
   return (
@@ -35,15 +35,16 @@ export default function NameSection({ className = '' }) {
       {/* Toggle Button */}
       <button
         onClick={handleToggleClick}
+        ref={toggleButtonRef}
         className="fixed top-4 right-4 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-300 z-30"
         aria-label={navOpen ? 'Close Navigation' : 'Open Navigation'}
       >
         {navOpen ? (
-          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         ) : (
-          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         )}
@@ -52,20 +53,9 @@ export default function NameSection({ className = '' }) {
       {/* Sliding Navigation Panel */}
       <div
         ref={navRef}
-        className={`fixed top-0 right-0 h-full w-72 bg-gray-900 text-white shadow-lg transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} z-20`}
+        className={`fixed top-0 right-0 h-full max-h-[calc(100vh)] rounded-lg w-72 bg-gray-900 text-white shadow-lg transform transition-transform duration-300 ${navOpen ? 'translate-x-0' : 'translate-x-full'} z-20 mt-1 mb-8`}
+        // Adjust margins here for the sliding navigation panel
       >
-        <div className="flex justify-between items-center p-4">
-          {/* Close Button inside Navigation Panel */}
-          <button
-            onClick={() => setNavOpen(false)}
-            className="p-2 bg-red-600 text-white rounded-full hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-            aria-label="Close Navigation"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
         <nav className="flex flex-col p-8 space-y-6">
           <Link
             to="/"
@@ -112,7 +102,8 @@ export default function NameSection({ className = '' }) {
 
       {/* Text when Navigation is closed */}
       {!navOpen && (
-        <div className="fixed top-0 right-0 h-full w-24 bg-gray-800 text-white flex items-center justify-center z-10">
+        <div className="fixed top-0 right-0 rounded-lg h-full w-24 bg-gray-800 text-white flex items-center justify-center z-10 mt-1 mb-1">
+          {/* Adjust margins here for the "NAVIGATION BAR" text */}
           <p className="text-white font-bold transform -rotate-90 origin-bottom whitespace-nowrap">
             NAVIGATION BAR
           </p>

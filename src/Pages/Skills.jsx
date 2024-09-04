@@ -1,89 +1,88 @@
 import React from 'react';
+// import './Resume.css'; // Optional for any additional custom styles or Tailwind setup
 
-const skills = [
-  { category: 'HTML/CSS', skills: [
-    { name: 'Semantic HTML', percentage: 90 },
-    { name: 'CSS Flexbox and Grid', percentage: 85 },
-    { name: 'Responsive Design', percentage: 80 },
-    { name: 'Sass', percentage: 60 }
-  ]},
-  { category: 'JavaScript', skills: [
-    { name: 'ES6+ Features', percentage: 80 },
-    { name: 'Asynchronous Programming', percentage: 70 },
-    { name: 'DOM Manipulation', percentage: 75 },
-    { name: 'Event Handling', percentage: 70 }
-  ]},
-  { category: 'React', skills: [
-    { name: 'Functional Components', percentage: 75 },
-    { name: 'State and Props', percentage: 70 },
-    { name: 'React Hooks', percentage: 65 },
-    { name: 'Component Lifecycle', percentage: 60 }
-  ]},
-  { category: 'Version Control', skills: [
-    { name: 'Git & GitHub', percentage: 80 },
-    { name: 'Branching and Merging', percentage: 70 },
-    { name: 'Pull Requests and Code Reviews', percentage: 65 }
-  ]},
-  { category: 'Build Tools & Package Managers', skills: [
-    { name: 'npm or yarn', percentage: 75 },
-    { name: 'Webpack or Vite', percentage: 65 },
-    { name: 'Task Runners', percentage: 60 }
-  ]},
-  { category: 'Testing', skills: [
-    { name: 'Basic Testing Principles', percentage: 60 },
-    { name: 'Jest or React Testing Library', percentage: 55 }
-  ]},
-  { category: 'APIs', skills: [
-    { name: 'API Requests', percentage: 70 },
-    { name: 'RESTful Principles', percentage: 65 },
-    { name: 'JSON', percentage: 70 }
-  ]},
-  { category: 'Problem-Solving & Debugging', skills: [
-    { name: 'Debugging Techniques', percentage: 75 },
-    { name: 'Problem-Solving Skills', percentage: 80 }
-  ]},
-  { category: 'Soft Skills', skills: [
-    { name: 'Communication and Teamwork', percentage: 85 },
-    { name: 'Time Management', percentage: 80 },
-    { name: 'Willingness to Learn', percentage: 90 }
-  ]}
+const education = [
+  { degree: 'Bachelor of Science in Computer Science', institution: 'University A', year: '2018-2022' },
+  { degree: 'Master of Science in Software Engineering', institution: 'University B', year: '2022-2024' }
 ];
 
-const ProgressBar = ({ percentage }) => (
-  <div className="relative pt-1">
-    <div className="flex items-center justify-between mb-1">
-      <span className="text-sm font-medium text-gray-600">{percentage}%</span>
-    </div>
-    <div className="relative flex h-2 overflow-hidden rounded-full bg-gray-200">
-      <div
-        className="absolute inset-0 flex items-center justify-center text-xs font-medium text-white transition-all duration-300"
-        style={{ width: `${percentage}%`, backgroundColor: '#1D4ED8' }}
-      />
-    </div>
-  </div>
-);
+const experience = [
+  { jobTitle: 'Front-End Developer', company: 'Company X', duration: '2022-Present', description: 'Worked on building and maintaining the front-end of web applications using React and other technologies.' },
+  { jobTitle: 'Intern', company: 'Company Y', duration: '2021-2022', description: 'Assisted in developing features and fixing bugs in existing web applications.' }
+];
 
-const Skills = () => (
-  <div className="p-8 bg-gray-50 min-h-screen">
-    <h2 className="text-4xl font-extrabold text-gray-800 text-center mb-12">Technical Skills</h2>
-    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {skills.map((skillCategory) => (
-        <div key={skillCategory.category} className="bg-white shadow-lg rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-gray-700 mb-4">{skillCategory.category}</h3>
-          <ul className="space-y-4">
-            {skillCategory.skills.map((skill) => (
-              <li key={skill.name} className="flex items-center justify-between">
-                <span className="text-md font-medium text-gray-800">{skill.name}</span>
-                <div className="w-2/3">
-                  <ProgressBar percentage={skill.percentage} />
-                </div>
-              </li>
-            ))}
-          </ul>
+const interests = [
+  { interest: 'Technology Trends' },
+  { interest: 'Open Source Projects' },
+  { interest: 'Tech Meetups and Conferences' }
+];
+
+const hobbies = [
+  { hobby: 'Coding Challenges' },
+  { hobby: 'Reading Science Fiction' },
+  { hobby: 'Playing the Guitar' }
+];
+
+const Education = () => (
+  <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-bold mb-4">Education</h2>
+    <div className="space-y-4">
+      {education.map((edu) => (
+        <div key={edu.degree} className="bg-white p-4 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold">{edu.degree}</h3>
+          <p className="text-md text-gray-700">{edu.institution}</p>
+          <p className="text-sm text-gray-500">{edu.year}</p>
         </div>
       ))}
     </div>
   </div>
 );
 
-export default Skills;
+const Experience = () => (
+  <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-bold mb-4">Experience</h2>
+    <div className="space-y-4">
+      {experience.map((exp) => (
+        <div key={exp.jobTitle} className="bg-white p-4 rounded-lg shadow-sm">
+          <h3 className="text-xl font-semibold">{exp.jobTitle}</h3>
+          <p className="text-md text-gray-700">{exp.company}</p>
+          <p className="text-sm text-gray-500">{exp.duration}</p>
+          <p className="text-sm text-gray-600 mt-2">{exp.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const PersonalInterests = () => (
+  <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-bold mb-4">Personal Interests</h2>
+    <ul className="list-disc list-inside space-y-2">
+      {interests.map((item) => (
+        <li key={item.interest} className="text-md text-gray-700">{item.interest}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+const Hobbies = () => (
+  <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+    <h2 className="text-2xl font-bold mb-4">Hobbies</h2>
+    <ul className="list-disc list-inside space-y-2">
+      {hobbies.map((item) => (
+        <li key={item.hobby} className="text-md text-gray-700">{item.hobby}</li>
+      ))}
+    </ul>
+  </div>
+);
+
+const Resume = () => (
+  <div className="container mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <Education />
+    <Experience />
+    <PersonalInterests />
+    <Hobbies />
+  </div>
+);
+
+export default Resume;

@@ -87,3 +87,55 @@ a {
 
 
 
+
+
+
+
+
+
+
+
+
+.roles-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2em; /* Adjust based on text size */
+  overflow: hidden;
+}
+
+.role {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  line-height: 2em; /* Adjust to align text vertically */
+  animation: slide 4s infinite;
+  opacity: 0;
+}
+
+.role:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.role:nth-child(2) {
+  animation-delay: 2s; /* Delay for the second role */
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
