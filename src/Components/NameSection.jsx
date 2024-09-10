@@ -36,7 +36,7 @@ export default function NameSection({ className = '' }) {
       <button
         onClick={handleToggleClick}
         ref={toggleButtonRef}
-        className="fixed top-4 right-4 p-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-300 z-30"
+        className="fixed top-4 right-4 p-2 bg-green-500 text-white rounded-full hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-gray-700 transition-transform duration-300 z-30"
         aria-label={navOpen ? 'Close Navigation' : 'Open Navigation'}
       >
         {navOpen ? (
@@ -59,42 +59,42 @@ export default function NameSection({ className = '' }) {
         <nav className="flex flex-col p-8 space-y-6">
           <Link
             to="/"
-            className="flex items-center space-x-4 text-base font-medium hover:text-blue-400 transition duration-200 border-b border-gray-600 py-4"
+            className="flex items-center space-x-4 text-base font-medium hover:text-blue-500 transition duration-200 border-b border-gray-600 py-4"
             onClick={handleLinkClick}
           >
-            <FontAwesomeIcon icon={faHome} className="w-5 h-5 text-gray-300 hover:text-blue-400 transition-colors duration-300" />
+            <FontAwesomeIcon icon={faHome} className="w-5 h-5 text-gray-300 hover:text-blue-500 transition-colors duration-300" />
             <span>Home</span>
           </Link>
           <Link
             to="/about"
-            className="flex items-center space-x-4 text-base font-medium hover:text-blue-400 transition duration-200 border-b border-gray-600 py-4"
+            className="flex items-center space-x-4 text-base font-medium hover:text-blue-500 transition duration-200 border-b border-gray-600 py-4"
             onClick={handleLinkClick}
           >
-            <FontAwesomeIcon icon={faUser} className="w-5 h-5 text-gray-300 hover:text-blue-400 transition-colors duration-300" />
+            <FontAwesomeIcon icon={faUser} className="w-5 h-5 text-gray-300 hover:text-blue-500 transition-colors duration-300" />
             <span>About</span>
           </Link>
           <Link
             to="/contact"
-            className="flex items-center space-x-4 text-base font-medium hover:text-blue-400 transition duration-200 border-b border-gray-600 py-4"
+            className="flex items-center space-x-4 text-base font-medium hover:text-blue-500 transition duration-200 border-b border-gray-600 py-4"
             onClick={handleLinkClick}
           >
-            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 text-gray-300 hover:text-blue-400 transition-colors duration-300" />
+            <FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 text-gray-300 hover:text-blue-500 transition-colors duration-300" />
             <span>Contact</span>
           </Link>
           <Link
             to="/skills"
-            className="flex items-center space-x-4 text-base font-medium hover:text-blue-400 transition duration-200 border-b border-gray-600 py-4"
+            className="flex items-center space-x-4 text-base font-medium hover:text-blue-500 transition duration-200 border-b border-gray-600 py-4"
             onClick={handleLinkClick}
           >
-            <FontAwesomeIcon icon={faCode} className="w-5 h-5 text-gray-300 hover:text-blue-400 transition-colors duration-300" />
+            <FontAwesomeIcon icon={faCode} className="w-5 h-5 text-gray-300 hover:text-blue-500 transition-colors duration-300" />
             <span>Skills</span>
           </Link>
           <Link
             to="/portfolio"
-            className="flex items-center space-x-4 text-base font-medium hover:text-blue-400 transition duration-200 py-4"
+            className="flex items-center space-x-4 text-base font-medium hover:text-blue-500 transition duration-200 py-4"
             onClick={handleLinkClick}
           >
-            <FontAwesomeIcon icon={faBriefcase} className="w-5 h-5 text-gray-300 hover:text-blue-400 transition-colors duration-300" />
+            <FontAwesomeIcon icon={faBriefcase} className="w-5 h-5 text-gray-300 hover:text-blue-500 transition-colors duration-300" />
             <span>Projects</span>
           </Link>
         </nav>
@@ -104,7 +104,7 @@ export default function NameSection({ className = '' }) {
       {!navOpen && (
         <div className="fixed top-0 right-0 rounded-lg h-full w-24 bg-gray-800 text-white flex items-center justify-center z-10 mt-1 mb-1">
           {/* Adjust margins here for the "NAVIGATION BAR" text */}
-          <p className="text-white font-bold transform -rotate-90 origin-bottom whitespace-nowrap">
+          <p className="text-gray-500 font-bold transform -rotate-90 origin-bottom whitespace-nowrap">
             NAVIGATION BAR
           </p>
         </div>

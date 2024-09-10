@@ -6,9 +6,11 @@ const Loader = () => {
       <div className="loader">
         <div className="spinner"></div>
         <div className="logo">
-          <i className="fas fa-cogs"></i> {/* Gear icon for a tech feel */}
+          <i className="fas fa-cogs"></i> 
+         
         </div>
-        <p>Loading... Please wait, Peter.</p>
+        
+        <p>Loading... Please wait.</p>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Skills from './Pages/Skills';
 import Portfolio from './Pages/Portfolio';
+import Biography from './Pages/Biography'; // Import the new Biography component
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import NameSection from './Components/NameSection';
@@ -48,10 +49,30 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Handle screen resize
+  useEffect(() => {
+    const handleResize = () => {
+      // Define the breakpoint for small and large devices
+      const smallScreenWidth = 1024; // Adjust this value based on your breakpoint
+
+      // Check if the window width crosses the small screen threshold
+      if (window.innerWidth <= smallScreenWidth) {
+        // Reload the page if on small devices
+        window.location.reload();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        {/* Loader */}
         {loading && <Loader message="Loading... Peter" />}
 
         {/* Background Component */}
@@ -99,6 +120,7 @@ function App() {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/skills" element={<Skills />} />
                 <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/biography" element={<Biography />} /> {/* New Route */}
               </Routes>
             </main>
 

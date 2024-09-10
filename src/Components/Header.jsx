@@ -5,15 +5,15 @@ import 'react-circular-progressbar/dist/styles.css'; // Import styles
 
 export default function ProfileContent({ className }) {
   return (
-    <div className={`bg-gray-900 text-white w-full sm:w-80 p-4 fixed rounded-lg h-screen mb-20 ${className} shadow-lg flex flex-col mt-2 ml-2`}>
+    <div className={`bg-gray-900 text-white w-full sm:w-80 p-4 fixed rounded-lg h-screen mb-2 ${className} shadow-lg flex flex-col mt-2 ml-2`}>
 
       {/* Sticky Profile Section */}
       <div className="flex-1 overflow-y-auto scrollbar-hidden">
-        <div className="sticky top-0 z-10 bg-gray-900">
+        <div className="sticky top-0 z-10 bg-gray-900 mt-2 border-b-2 border-white  mb-4">
           {/* Profile Picture and Header */}
-          <div className="flex flex-col items-center mb-4">
+          <div className="flex flex-col items-center mb-1">
             {/* Profile Picture */}
-            <div className="w-24 h-24 relative mb-1">
+            <div className="w-24 h-24 relative ">
               <img 
                 src="https://p-mbugua.github.io/Official-_Portfolio/peter.png" 
                 alt="Profile" 
@@ -24,8 +24,8 @@ export default function ProfileContent({ className }) {
             {/* Profile Info */}
             <div className="text-center">
               <h1 className="text-2xl font-extrabold text-white ">Peter Mbugua</h1>
-              <p className="text-lg text-gray-300 ">Junior FullStack Developer</p>
-              <p className="text-lg text-gray-300">Contributor</p>
+              <p className="text-lg text-gray-300 mt-1">Junior FullStack Developer</p>
+              <p className="text-lg text-gray-300 mt-1 mb-2">Open Contributor | Collaboration </p>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@ export default function ProfileContent({ className }) {
         {/* Content Cards */}
         <div className="flex flex-col gap-6">
           {/* Residence, City, and Age */}
-          <div className="p-4 rounded-lg shadow-md border-t-2 border-b-2 border-white">
+          <div className="p-4 rounded-lg shadow-md  border-b-2 border-white">
             <div className="flex flex-col gap-3">
               <div className="flex justify-between text-sm font-medium">
                 <span className="text-white">Residence:</span>
@@ -156,7 +156,7 @@ export default function ProfileContent({ className }) {
           <div className="p-4 rounded-lg shadow-md border-t-2 border-b-2 border-white mb-6 flex items-center space-x-2">
             <a 
               href="https://flowcv.com/resume/f62ua50tfk" target="_blank" rel="noopener noreferrer"
-              className="text-white hover:text-gray-300 transition-colors flex items-center space-x-2"
+              className="text-white-400 hover:text-gray-300 transition-colors flex items-center space-x-2"
               download
             >
               <span className="text-xl">Download Resume</span>
