@@ -35,7 +35,7 @@ function App() {
   );
 }
 
-// Wrap the App component in Router
+// Wrap the App component in R
 export default function WrappedApp() {
   return (
     <Router>
