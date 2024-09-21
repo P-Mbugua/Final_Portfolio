@@ -1,103 +1,127 @@
 import React from 'react';
-import { FaUser, FaEnvelope, FaCommentDots } from 'react-icons/fa'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faUser, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faGithub, faFacebook, faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 export default function Contact() {
   return (
-    <div className="bg-gray-900 min-h-screen text-white">
-      <div className="max-w-7xl mx-auto p-8 bg-gray-800 shadow-lg rounded-lg border border-gray-700 space-y-12">
+    <div className="bg-gray-900 text-white py-16 px-4 font-inter">
+      <div className="container mx-auto max-w-screen-lg">
+        {/* Header Section */}
+        <h1 className="text-4xl font-bold text-center text-yellow-500 font-poppins">
+          GET <span className="text-green-500">IN TOUCH</span>
+        </h1>
+        <p className="text-center text-lg md:text-xl mt-4 font-inter">
+          I'M ALWAYS OPEN TO DISCUSSING{" "}
+          <span className="font-bold text-green-500">
+            DEVELOPER RELATIONS / TRAINER / SOFTWARE DEV WORK OR PARTNERSHIPS
+          </span>
+        </p>
+
         {/* Contact Information Section */}
-        <div className="p-8 rounded-lg shadow-md border border-gray-700 mb-12 bg-gray-800">
-          <h2 className="text-3xl font-extrabold mb-8 text-center">Contact Information</h2>
-          <div className="flex flex-col lg:flex-row gap-8">
-            {/* Address Information Card */}
-            <div className="flex-1 bg-gray-700 p-6 rounded-lg shadow-md border border-gray-600 overflow-hidden">
-              <div className="flex flex-col space-y-4">
-                <div className="flex">
-                  <h4 className="text-lg font-medium w-1/3 flex-shrink-0">Country</h4>
-                  <p className="w-2/3 truncate">Kenya</p>
-                </div>
-                <div className="flex">
-                  <h4 className="text-lg font-medium w-1/3 flex-shrink-0">City</h4>
-                  <p className="w-2/3 truncate">Nairobi</p>
-                </div>
-                <div className="flex">
-                  <h4 className="text-lg font-medium w-1/3 flex-shrink-0">Company</h4>
-                  <p className="w-2/3 truncate">Your Company Name</p>
-                </div>
+        <div className="grid md:grid-cols-2 gap-8 mt-10">
+          {/* Contact Details */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faPhone} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">Phone</p>
+                <p className="text-yellow-500">+254 701 571 745</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faEnvelope} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">Email</p>
+                <p className="text-yellow-500">petermbugua276@gmail.com</p>
               </div>
             </div>
 
-            {/* Contact Details Card */}
-            <div className="flex-1 bg-gray-700 p-6 rounded-lg shadow-md border border-gray-600 overflow-hidden">
-              <div className="flex flex-col space-y-4">
-                <div className="flex">
-                  <h4 className="text-lg font-medium w-1/3 flex-shrink-0">Email</h4>
-                  <p className="w-2/3 truncate">pmbugua276@gmail.com</p>
-                </div>
-                <div className="flex">
-                  <h4 className="text-lg font-medium w-1/3 flex-shrink-0">LinkedIn</h4>
-                  <a href="https://www.linkedin.com/in/peter-mbugua-a6351a262" className="text-indigo-400 hover:underline w-2/3 truncate">
-                    linkedin.com/in/peter-mbugua-a6351a262
-                  </a>
-                </div>
-                <div className="flex">
-                  <h4 className="text-lg font-medium w-1/3 flex-shrink-0">Phone</h4>
-                  <p className="w-2/3 truncate">(254) 701-511-745</p>
-                </div>
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faTwitter} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">Twitter</p>
+                <p className="text-yellow-500">@mbugua276_</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faGithub} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">Github</p>
+                <p className="text-yellow-500">@P-Mbugua</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faFacebook} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">Facebook</p>
+                <p className="text-yellow-500">facebook.com/mbugua peter</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faWhatsapp} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">WhatsApp</p>
+                <p className="text-yellow-500">+254 701 571 745</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <FontAwesomeIcon icon={faLinkedin} className="text-green-500 text-xl" />
+              <div>
+                <p className="text-xl font-semibold font-poppins">LinkedIn</p>
+                <p className="text-yellow-500">linkedin.com/in/p-mbugua</p>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Contact Form Section */}
-        <div className="bg-gray-800 p-8 rounded-lg shadow-md border border-gray-700">
-          <h2 className="text-2xl font-semibold text-gray-200 mb-6 text-center">Get in Touch</h2>
-          <form className="space-y-6 max-w-lg mx-auto">
-            <div className="flex items-center border border-gray-600 rounded-lg overflow-hidden">
-              <FaUser className="text-gray-400 mx-3" />
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full px-4 py-3 bg-gray-900 text-white border-0 focus:ring-0 sm:text-sm"
-                placeholder="Your Name"
-              />
-            </div>
+          {/* Contact Form */}
+          <div className="space-y-6">
+            <p className="text-sm md:text-base font-inter">
+              If you have any suggestion, project, or even want to say Hello, please fill out the form below, and I will reply shortly.
+            </p>
+            <form className="space-y-4">
+              {/* Name Input with Icon */}
+              <div className="relative">
+                <FontAwesomeIcon icon={faUser} className="absolute left-3 top-4 text-gray-400" />
+                <input
+                  type="text"
+                  className="pl-10 p-4 bg-gray-800 rounded-md placeholder-gray-400 w-full focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-700 transition duration-300 shadow-sm hover:shadow-md"
+                  placeholder="YOUR NAME"
+                />
+              </div>
 
-            <div className="flex items-center border border-gray-600 rounded-lg overflow-hidden">
-              <FaEnvelope className="text-gray-400 mx-3" />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-3 bg-gray-900 text-white border-0 focus:ring-0 sm:text-sm"
-                placeholder="Your Email"
-              />
-            </div>
+              {/* Email Input with Icon */}
+              <div className="relative">
+                <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-4 text-gray-400" />
+                <input
+                  type="email"
+                  className="pl-10 p-4 bg-gray-800 rounded-md placeholder-gray-400 w-full focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 transition duration-300 shadow-sm hover:shadow-md"
+                  placeholder="YOUR EMAIL"
+                />
+              </div>
 
-            <div className="flex items-center border border-gray-600 rounded-lg overflow-hidden">
-              <FaCommentDots className="text-gray-400 mx-3" />
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                required
-                className="w-full px-4 py-3 bg-gray-900 text-white border-0 focus:ring-0 sm:text-sm"
-                placeholder="Your Message"
-              />
-            </div>
+              {/* Message Textarea with Icon */}
+              <div className="relative">
+                <FontAwesomeIcon icon={faComment} className="absolute left-3 top-4 text-gray-400" />
+                <textarea
+                  className="pl-10 p-4 bg-gray-800 rounded-md w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-700 transition duration-300 shadow-sm hover:shadow-md"
+                  rows="5"
+                  placeholder="YOUR MESSAGE"
+                ></textarea>
+              </div>
 
-            <div className="text-center">
-              <button
-                type="submit"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out"
-              >
-                Send Message
+              {/* Send Button with Icon */}
+              <button className="w-full bg-green-500 text-black py-3 font-bold rounded-md hover:bg-green-600 transition flex justify-center items-center space-x-2 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <FontAwesomeIcon icon={faPaperPlane} className="text-xl" />
+                <span>SEND MESSAGE</span>
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>

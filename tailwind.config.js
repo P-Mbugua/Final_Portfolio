@@ -41,8 +41,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        heading: ['Montserrat', 'sans-serif'],
+        sans: ['Roboto', 'Arial', 'sans-serif'],
       },
     },
   },
@@ -59,6 +59,8 @@ module.exports = {
   },
   plugins: [],
 }
+
+
 
 
 

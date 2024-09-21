@@ -1,206 +1,90 @@
-// src/Pages/Home.jsx
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-// import './Home.css'; // Import the CSS file for the custom animation
+import ParticlesBackground from '../Components/ParticlesBackground'; // Ensure the path is correct
 
 export default function Home() {
-  const [name, setName] = useState('');
-  const [message, setMessage] = useState('');
-  const [rating, setRating] = useState(0);
-  const [photo, setPhoto] = useState(null);
-  const [isFormVisible, setFormVisible] = useState(false);
-  const [reviews, setReviews] = useState([]);
+  const roles = [
+    "A DevOps Engineer",
+    "A Full Stack Developer",
+    "A Software Engineer",
+    "A Web Developer",
+    "A Cloud Solutions Architect"
+  ];
 
-  // Navigation hook
-  const navigate = useNavigate();
+  const [currentRole, setCurrentRole] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+  const typingSpeed = 150; // Typing speed in milliseconds
+  const pauseTime = 1500; // Pause time after typing (1.5 seconds)
+  const fadeDuration = 3000; // Duration of fade-out effect
+  const [fade, setFade] = useState(false); // For fading effect
 
-  // Load reviews from localStorage when the component mounts
   useEffect(() => {
-    const storedReviews = JSON.parse(localStorage.getItem('reviews')) || [];
-    setReviews(storedReviews);
-  }, []);
+    let typingInterval;
 
-  // Save reviews to localStorage whenever reviews change
-  useEffect(() => {
-    localStorage.setItem('reviews', JSON.stringify(reviews));
-  }, [reviews]);
+    const typeRole = () => {
+      const current = roles[roleIndex];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newReview = {
-      name,
-      message,
-      rating,
-      photo: photo ? URL.createObjectURL(photo) : 'https://via.placeholder.com/50',
+      if (currentRole.length < current.length) {
+        setCurrentRole((prev) => prev + current.charAt(prev.length));
+      } else {
+        clearInterval(typingInterval);
+        setTimeout(() => {
+          setFade(true); // Start fading out after typing is complete
+          setTimeout(() => {
+            setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+            setCurrentRole(""); // Clear role for next typing
+            setFade(false); // Reset fade for the next role
+            startTyping(); // Start typing the next role immediately
+          }, fadeDuration); // Wait for fade-out duration
+        }, pauseTime); // Wait for 1.5 seconds before moving to next role
+      }
     };
-    setReviews([newReview, ...reviews]);
 
-    // Clear the form
-    setName('');
-    setMessage('');
-    setRating(0);
-    setPhoto(null);
-    setFormVisible(false); // Hide the form after submission
-  };
+    const startTyping = () => {
+      typingInterval = setInterval(typeRole, typingSpeed);
+    };
+
+    startTyping();
+
+    return () => clearInterval(typingInterval); // Cleanup on unmount
+  }, [roleIndex, currentRole]);
 
   return (
-    <div className="bg-gray-100 min-h-screen p-8">
-      <div className="max-w-5xl mx-auto space-y-10">
-        
-        {/* Greetings Section */}
-        <section className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="p-8 text-center bg-gray-900 text-white">
-            <h1 className="text-3xl font-extrabold">Hello, My name is Peter</h1>
-            <p className="mt-4 text-lg">Welcome to my website! I’m excited to share my work and expertise with you. Feel free to explore the sections below to learn more about my skills and see what others have to say about working with me.</p>
-          </div>
-          
-          <div className="py-6 px-8 text-center">
-            <div className="text-lg text-gray-800 flex items-center justify-center space-x-4">
-              <span>I am a</span>
-              <div className="roles-container flex flex-col md:flex-row md:space-x-4">
-                <div className="role text-gray-800 font-semibold text-lg">Software Engineer</div>
-                <div className="role text-gray-800 font-semibold text-lg">Graphics Designer</div>
-              </div>
-            </div>
+    <div className="relative h-screen bg-black text-white overflow-hidden font-inter">
+      {/* Particles Background */}
+      <ParticlesBackground className="absolute top-0 left-0 w-full h-full z-0" />
 
-            <button
-              onClick={() => navigate('/biography')}
-              className="mt-6 px-6 py-3 bg-teal-500 text-white font-bold rounded-lg shadow-lg hover:bg-teal-600 transition duration-300 ease-in-out"
-            >
-              Explore More
+      {/* Content */}
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-10 md:ml-20">
+        {/* Right section: Profile image */}
+        <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
+          <img
+            src="/src/assets/Photos/PETER.png"
+            alt="Peter"
+            className="w-48 md:w-72 lg:w-80 h-auto object-cover rounded-full border-2 border-yellow-500 md:mr-20 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+            onContextMenu={(e) => e.preventDefault()} // Disable right-click menu
+          />
+        </div>
+        {/* Left section: Text content */}
+        <div className="flex flex-col justify-center text-left space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10">
+          <h1 className="text-6rem md:text-6xl font-bold text-yellow-500 mb-0 text-center md:text-left font-poppins -mt-10 md:mt-0">
+            HELLO THERE!!
+          </h1>
+
+          <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight font-poppins">
+            I'm <span className="text-yellow-500">Peter Mbugua,</span>
+          </h1>
+          <h2 className="text-lg md:text-3xl mb-4 font-inter">
+            I'm <span className={`font-bold text-green-500 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{currentRole}.</span>
+          </h2>
+          <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+            <button className="px-8 py-3 text-lg md:text-xl bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-600 hover:text-white hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:scale-105">
+              LET'S DEV
+            </button>
+            <button className="px-8 py-3 text-lg md:text-xl bg-transparent border-2 border-white text-white rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 ease-in-out transform hover:scale-105">
+              MY WORKS
             </button>
           </div>
-        </section>
-        
-        {/* My Expertise Section */}
-        <section className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="p-8">
-            <h2 className="text-2xl font-semibold text-gray-800">My Expertise</h2>
-            <p className="mt-2 text-gray-600">I specialize in creating high-quality web applications with a focus on user experience and performance. My skills include:</p>
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-800">Frontend Development</h3>
-                <p className="mt-2 text-gray-600">Expertise in React, Vue.js, and modern frontend technologies.</p>
-              </div>
-              <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-800">Backend Development</h3>
-                <p className="mt-2 text-gray-600">Experience with Node.js, Express, and building scalable server-side applications.</p>
-              </div>
-              <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-800">UI/UX Design</h3>
-                <p className="mt-2 text-gray-600">Focused on creating intuitive and engaging user experiences.</p>
-              </div>
-              <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
-                <h3 className="text-xl font-semibold text-gray-800">Performance Optimization</h3>
-                <p className="mt-2 text-gray-600">Skilled in improving application speed and efficiency.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Client Reviews Section */}
-        <section className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <div className="p-8">
-            <h2 className="text-2xl font-semibold text-gray-800">Client Reviews</h2>
-            <div className="mt-6 flex flex-wrap gap-6">
-              {reviews.map((review, index) => (
-                <div key={index} className="flex items-start p-6 bg-gray-100 rounded-lg shadow-lg w-full sm:w-1/2 lg:w-1/3">
-                  <img src={review.photo} alt={`Client ${index + 1}`} className="w-16 h-16 rounded-full mr-4"/>
-                  <div>
-                    <div className="flex items-center mb-2">
-                      <span className="text-yellow-500">
-                        {Array.from({ length: 5 }, (_, i) => (
-                          <span key={i} className={i < review.rating ? 'text-yellow-500' : 'text-gray-300'}>&#9733;</span>
-                        ))}
-                      </span>
-                      <span className="ml-2 font-semibold text-gray-800">{review.name}</span>
-                    </div>
-                    <p className="text-gray-600">"{review.message}"</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Show/Hide Review Form Button */}
-            <button
-              onClick={() => setFormVisible(!isFormVisible)}
-              className="mt-6 px-6 py-3 bg-teal-500 text-white font-bold rounded-lg shadow-lg hover:bg-teal-600 transition duration-300 ease-in-out"
-            >
-              {isFormVisible ? 'Hide Review Form' : 'Add Your Review'}
-            </button>
-
-            {/* Review Form */}
-            {isFormVisible && (
-              <form onSubmit={handleSubmit} className="mt-6 bg-gray-100 p-8 rounded-lg shadow-lg">
-                <div className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 font-semibold">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="mt-1 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-gray-700 font-semibold">Message</label>
-                    <textarea
-                      id="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="mt-1 p-3 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      rows="4"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="rating" className="block text-gray-700 font-semibold">Rating</label>
-                    <div className="flex items-center space-x-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <label key={star}>
-                          <input
-                            type="radio"
-                            name="rating"
-                            value={star}
-                            checked={rating === star}
-                            onChange={() => setRating(star)}
-                            className="hidden"
-                          />
-                          <span
-                            className={`text-3xl cursor-pointer ${rating >= star ? 'text-yellow-500' : 'text-gray-300'}`}
-                            role="img"
-                            aria-label={`${star} star`}
-                          >
-                            &#9733;
-                          </span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="photo" className="block text-gray-700 font-semibold">Upload Your Photo</label>
-                    <input
-                      type="file"
-                      id="photo"
-                      onChange={(e) => setPhoto(e.target.files[0])}
-                      className="mt-1 p-3 w-full border border-gray-300 rounded-lg"
-                      accept="image/*"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-teal-500 text-white font-bold rounded-lg shadow-lg hover:bg-teal-600 transition duration-300 ease-in-out"
-                  >
-                    Submit Review
-                  </button>
-                </div>
-              </form>
-            )}
-          </div>
-        </section>
-        
+        </div>
       </div>
     </div>
   );
