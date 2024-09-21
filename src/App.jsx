@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="relative min-h-screen">
       {location.pathname === '/home' && <ParticlesBackground />} {/* Only render on Home */}
-      <ToggleButton /> {/* Add the-Toggle Button here */}
+      <ToggleButton /> {/* Add the-Toggle Button-here */}
 
       <Routes>
         {/* Redirect the root path   b to /home */}
