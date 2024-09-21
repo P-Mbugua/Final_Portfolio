@@ -58,7 +58,7 @@ export default function Home() {
         {/* Right section: Profile image */}
         <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
           <img
-            src="/src/assets/Photos/PETER.png"
+            src="https://p-mbugua.github.io/Official-_Portfolio/peter.png"
             alt="Peter"
             className="w-48 md:w-72 lg:w-80 h-auto object-cover rounded-full border-2 border-yellow-500 md:mr-20 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
             onContextMenu={(e) => e.preventDefault()} // Disable right-click menu

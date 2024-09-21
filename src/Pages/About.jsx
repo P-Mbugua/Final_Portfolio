@@ -63,7 +63,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Experience and Education Section */}
+      {/* Experience & Education Section */}
       <div className="mt-16 max-w-6xl w-full">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Experience Section */}
@@ -94,7 +94,7 @@ export default function About() {
                 <h3 className="text-lg font-semibold">AUG 2020 - APR 2022</h3>
                 <h4 className="text-xl font-bold text-green-400">Freelance Android Engineer – <span className="text-blue-400">Amaris Solutions Group</span></h4>
                 <ul className="list-disc ml-6">
-                  <li>Document and test new software applications.</li>
+                  <li>Document and test new       software applications.</li>
                   <li>Assess new application ideas.</li>
                 </ul>
               </li>

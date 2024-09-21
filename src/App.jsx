@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
@@ -19,6 +19,8 @@ function App() {
       <ToggleButton /> {/* Add the Toggle Button here */}
 
       <Routes>
+        {/* Redirect the root path to /home */}
+        <Route path="/" element={<Navigate to="/home" />} />
         <Route path='/home' element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
