@@ -29,7 +29,7 @@ function App() {
         <Route path="/biography" element={<Biography />} /> {/* New Route */}
       </Routes>
 
-      {/* Render the footer only if the path is not '/home' */}
+      {/* Render the footer only if the path s not '/home' */}
       {location.pathname !== '/home' && <Footer />}
     </div>
   );
