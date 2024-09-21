@@ -19,7 +19,7 @@ function App() {
       <ToggleButton /> {/* Add the Toggle Button here */}
 
       <Routes>
-        {/* Redirect the root path to /home */}
+        {/* Redirect the root path   b to /home */}
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path='/home' element={<Home />} />
         <Route path="/about" element={<About />} />
