@@ -1,0 +1,86 @@
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111; /* Deep black background for contrast */
+    color: white;
+    font-family: 'Poppins', sans-serif; /* Use a modern professional font */
+    overflow: hidden; /* Prevent overflow during animations */
+  }
+  
+  .name {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px; /* Increased spacing for a more balanced look */
+  }
+  
+  .name-part {
+    font-size: 4.5rem; /* Slightly larger font size for impact */
+    letter-spacing: 5px; /* More spaced out letters for a modern touch */
+    font-weight: 700; /* Increased boldness for emphasis */
+    text-transform: uppercase; /* Make the text uppercase */
+    opacity: 0.8; /* Slightly reduced opacity for smoother appearance */
+    transition: opacity 0.5s ease-in-out, transform 0.3s; /* Smooth transition effects */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Added text shadow for depth */
+  }
+  
+  .name-part:hover {
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.1) rotate(3deg); /* Slight scale and rotation for emphasis */
+  }
+  
+  .line {
+    width: 500px; /* Wider for a more prominent look */
+    height: 6px; /* Thicker line for a bold presence */
+    border-radius: 3px; /* Rounded edges for modern appeal */
+    background: linear-gradient(to right, #eab308, #22c55e); /* Gradient colors */
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow for depth */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: moveLine 6s ease-in-out infinite, pulse 2s ease-in-out infinite; /* Set animation duration to 6 seconds */
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+  }
+  
+  .line:hover {
+    transform: scaleY(1.2); /* Scale up the line on hover */
+    background: linear-gradient(to right, #22c55e, #eab308); /* Reverse gradient on hover */
+  }
+  
+  /* Animation for the line moving left to right */
+  @keyframes moveLine {
+    0% {
+      transform: translateY(-50%) translateX(-100%); /* Start off-screen to the left */
+    }
+    20% {
+      transform: translateY(-50%) translateX(-50%); /* Move to the left center */
+    }
+    50% {
+      transform: translateY(-50%) translateX(0); /* Center position */
+    }
+    80% {
+      transform: translateY(-50%) translateX(50%); /* Move to the right center */
+    }
+    100% {
+      transform: translateY(-50%) translateX(100%); /* Move to the right side */
+    }
+  }
+  
+  /* Adding a pulsating effect for the line */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1; /* Fully visible */
+    }
+    25% {
+      opacity: 0.8; /* Slightly less visible */
+    }
+    50% {
+      opacity: 0.6; /* Fade to semi-transparent */
+    }
+    75% {
+      opacity: 0.8; /* Slightly more visible */
+    }
+  }
+  

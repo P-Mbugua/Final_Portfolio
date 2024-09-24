@@ -1,122 +1,104 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faUser, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faGithub, faFacebook, faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faUser, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const formRef = useRef();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs.send('service_13ygtrs', 'template_6n8ui2t', templateParams, 'L2_7PSPdo8vlmJqDm')
+      .then((result) => {
+        console.log('Message sent successfully:', result.text);
+        toast.success("Your message has been successfully sent. Expect feedback soon. Thank you!");
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      }, (error) => {
+        console.log('Error sending message:', error.text);
+        toast.error("There was an error sending your message. Please try again.");
+      });
+  };
+
   return (
-    <div className="bg-gray-900 text-white py-16 px-4 font-inter">
+    <div className="bg-[#1a1a1a] text-white py-12 px-4">
+      <ToastContainer />
       <div className="container mx-auto max-w-screen-lg">
-        {/* Header Section */}
-        <h1 className="text-4xl font-bold text-center text-yellow-500 font-poppins">
+        <h1 className="text-3xl font-bold text-center text-white">
           GET <span className="text-green-500">IN TOUCH</span>
         </h1>
-        <p className="text-center text-lg md:text-xl mt-4 font-inter">
+        <p className="text-center text-lg mt-4">
           I'M ALWAYS OPEN TO DISCUSSING{" "}
-          <span className="font-bold text-green-500">
+          <span className="font-bold text-white">
             DEVELOPER RELATIONS / TRAINER / SOFTWARE DEV WORK OR PARTNERSHIPS
           </span>
         </p>
-
-        {/* Contact Information Section */}
-        <div className="grid md:grid-cols-2 gap-8 mt-10">
-          {/* Contact Details */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faPhone} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">Phone</p>
-                <p className="text-yellow-500">+254 701 571 745</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faEnvelope} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">Email</p>
-                <p className="text-yellow-500">petermbugua276@gmail.com</p>
-              </div>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faTwitter} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">Twitter</p>
-                <p className="text-yellow-500">@mbugua276_</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faGithub} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">Github</p>
-                <p className="text-yellow-500">@P-Mbugua</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faFacebook} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">Facebook</p>
-                <p className="text-yellow-500">facebook.com/mbugua peter</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faWhatsapp} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">WhatsApp</p>
-                <p className="text-yellow-500">+254 701 571 745</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <FontAwesomeIcon icon={faLinkedin} className="text-green-500 text-xl" />
-              <div>
-                <p className="text-xl font-semibold font-poppins">LinkedIn</p>
-                <p className="text-yellow-500">linkedin.com/in/p-mbugua</p>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="space-y-4 text-lg">
+            <ContactInfo icon={faWhatsapp} label="Phone" value="+254 701 571 145" />
+            <ContactInfo icon={faEnvelope} label="Email" value="pmbugua276@gmail.com" />
+            <ContactInfo icon={faTwitter} label="Twitter" value="@mbugua276" />
+            <ContactInfo icon={faGithub} label="Github" value="P-Mbugua" />
           </div>
 
           {/* Contact Form */}
-          <div className="space-y-6">
-            <p className="text-sm md:text-base font-inter">
-              If you have any suggestion, project, or even want to say Hello, please fill out the form below, and I will reply shortly.
+          <div className="space-y-4">
+            <p className="text-lg">
+              If you have any suggestion, project, or even want to say hello, please fill out the form below and I will reply shortly.
             </p>
-            <form className="space-y-4">
-              {/* Name Input with Icon */}
-              <div className="relative">
-                <FontAwesomeIcon icon={faUser} className="absolute left-3 top-4 text-gray-400" />
-                <input
-                  type="text"
-                  className="pl-10 p-4 bg-gray-800 rounded-md placeholder-gray-400 w-full focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-700 transition duration-300 shadow-sm hover:shadow-md"
-                  placeholder="YOUR NAME"
-                />
-              </div>
-
-              {/* Email Input with Icon */}
-              <div className="relative">
-                <FontAwesomeIcon icon={faEnvelope} className="absolute left-3 top-4 text-gray-400" />
-                <input
-                  type="email"
-                  className="pl-10 p-4 bg-gray-800 rounded-md placeholder-gray-400 w-full focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 transition duration-300 shadow-sm hover:shadow-md"
-                  placeholder="YOUR EMAIL"
-                />
-              </div>
-
-              {/* Message Textarea with Icon */}
-              <div className="relative">
-                <FontAwesomeIcon icon={faComment} className="absolute left-3 top-4 text-gray-400" />
-                <textarea
-                  className="pl-10 p-4 bg-gray-800 rounded-md w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-700 transition duration-300 shadow-sm hover:shadow-md"
-                  rows="5"
-                  placeholder="YOUR MESSAGE"
-                ></textarea>
-              </div>
-
-              {/* Send Button with Icon */}
-              <button className="w-full bg-green-500 text-black py-3 font-bold rounded-md hover:bg-green-600 transition flex justify-center items-center space-x-2 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+              <InputField
+                icon={faUser}
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="YOUR NAME"
+                required
+              />
+              <InputField
+                icon={faEnvelope}
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="YOUR EMAIL"
+                required
+              />
+              <TextAreaField
+                icon={faComment}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="YOUR MESSAGE"
+                required
+              />
+              <button className="w-full bg-green-500 text-black py-3 font-bold rounded-md hover:bg-green-600 transition flex justify-center items-center space-x-2 shadow-lg">
                 <FontAwesomeIcon icon={faPaperPlane} className="text-xl" />
                 <span>SEND MESSAGE</span>
               </button>
@@ -127,3 +109,43 @@ export default function Contact() {
     </div>
   );
 }
+
+const ContactInfo = ({ icon, label, value }) => (
+  <div className="flex items-center space-x-3">
+    <FontAwesomeIcon icon={icon} className="text-green-500 text-xl" />
+    <div>
+      <p className="font-semibold">{label}</p>
+      <p className="text-sm text-gray-400">{value}</p>
+    </div>
+  </div>
+);
+
+const InputField = ({ icon, name, value, onChange, placeholder, required }) => (
+  <div className="relative">
+    <FontAwesomeIcon icon={icon} className="absolute left-3 top-4 text-gray-400" />
+    <input
+      type="text"
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="pl-10 p-4 bg-[#2b2b2b] rounded-md placeholder-gray-400 w-full focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-700"
+      placeholder={placeholder}
+      required={required}
+    />
+  </div>
+);
+
+const TextAreaField = ({ icon, name, value, onChange, placeholder, required }) => (
+  <div className="relative">
+    <FontAwesomeIcon icon={icon} className="absolute left-3 top-4 text-gray-400" />
+    <textarea
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="pl-10 p-4 bg-[#2b2b2b] rounded-md w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 border border-gray-700"
+      rows="5"
+      placeholder={placeholder}
+      required={required}
+    ></textarea>
+  </div>
+);

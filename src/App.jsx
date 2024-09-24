@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -7,35 +7,51 @@ import Skills from './Pages/Skills';
 import Portfolio from './Pages/Portfolio';
 import Biography from './Pages/Biography';
 import ToggleButton from './Components/ToggleButton';
+import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
-import Footer from './Components/Footer'; // Import Footer
+import Footer from './Components/Footer';
+import ContactForm from './Components/ContactForm';
+import Loader from './Components/Loader'; // Import the Loader component
 
 function App() {
-  const location = useLocation(); // Get current location
+  const location = useLocation();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000); // Adjust the loading time as needed
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />; // Show the loader while loading
+  }
 
   return (
     <div className="relative min-h-screen">
-      {location.pathname === '/home' && <ParticlesBackground />} {/* Only render on Home */}
-      <ToggleButton /> {/* Add the-Toggle Button-here */}
+      {location.pathname === '/home' && <ParticlesBackground />}
+      <div className="hidden md:block">
+        <ToggleButton />
+      </div>
+      <div className="md:hidden sticky top-0 z-50">
+        <MobileHeader />
+      </div>
 
       <Routes>
-        {/* Redirect the root path   b to /home */}
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path='/home' element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/biography" element={<Biography />} /> {/* New Route */}
+        <Route path="/biography" element={<Biography />} />
+        <Route path="/contactform" element={<ContactForm />} />
       </Routes>
 
-      {/* Render the footer only if the path s not   c '/home' */}
       {location.pathname !== '/home' && <Footer />}
     </div>
   );
 }
 
-// Wrap the App component in R
 export default function WrappedApp() {
   return (
     <Router>

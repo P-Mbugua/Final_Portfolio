@@ -10,4 +10,21 @@ body {
   h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
   }
+
+
+
+
+  .background-image {
+    background-image: url('/path-to-your-background-image.jpg'); /* Specify the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Ensure it is behind the content */
+  }
+  
   
