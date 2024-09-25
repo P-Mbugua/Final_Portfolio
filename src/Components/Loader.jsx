@@ -17,9 +17,9 @@ export default function Loader() {
     loading ? (
       <div className="loader-container">
         <div className="name">
-          <div className="name-part">Peter</div>
+        <div className="name-part text-yellow-500">Peter</div>
           <div className="line"></div>
-          <div className="name-part">Mbugua</div>
+          <div className="name-part text-green-500">Mbugua</div>
         </div>
       </div>
     ) : null // Hide the loader when loading is false

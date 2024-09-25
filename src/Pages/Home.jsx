@@ -63,9 +63,10 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col lg:mb-0 mb-24 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-500 mb-0 text-center md:text-left">
-            HELLO THERE!!
-          </h1>
+        <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
+  HELLO THERE!!
+</h1>
+
 
           <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight">
             I'm <span className="text-yellow-500">Peter Mbugua,</span>

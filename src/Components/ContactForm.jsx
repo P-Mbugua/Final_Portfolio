@@ -4,13 +4,21 @@ export default function ContactForm() {
   const [file, setFile] = useState(null);
   const [projectType, setProjectType] = useState('');
   const [otherProjectType, setOtherProjectType] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage submission status
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true); // Disable button on submit
+
+    // Simulating form submission logic
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate a network request
+
     console.log("Form submitted with file:", file);
     console.log("Selected project type:", projectType);
     console.log("Other project type description:", otherProjectType);
-    // Add your form submission logic here
+    
+    // Reset form state after submission if needed
+    setIsSubmitting(false); // Re-enable button
   };
 
   const handleFileChange = (e) => {
@@ -29,7 +37,6 @@ export default function ContactForm() {
         </p>
       </header>
 
-
       {/* Form */}
       <main className="flex-grow flex justify-center items-center mb-10">
         <div className="bg-gray-900 p-8 rounded-lg shadow-2xl w-full max-w-lg">
@@ -43,7 +50,7 @@ export default function ContactForm() {
                 id="name"
                 name="name"
                 required
-                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
                 placeholder="Your Name"
               />
             </div>
@@ -56,7 +63,7 @@ export default function ContactForm() {
                 id="email"
                 name="email"
                 required
-                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
                 placeholder="Your Email"
               />
             </div>
@@ -69,7 +76,7 @@ export default function ContactForm() {
                 name="projectType"
                 value={projectType}
                 onChange={(e) => setProjectType(e.target.value)}
-                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
                 required
               >
                 <option value="">Select a project type</option>
@@ -91,7 +98,7 @@ export default function ContactForm() {
                   name="otherProjectType"
                   value={otherProjectType}
                   onChange={(e) => setOtherProjectType(e.target.value)}
-                  className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                  className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
                   placeholder="Explain your project type"
                 />
               </div>
@@ -105,7 +112,7 @@ export default function ContactForm() {
                 name="project"
                 rows="4"
                 required
-                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
                 placeholder="Describe your project here..."
               />
             </div>
@@ -118,7 +125,7 @@ export default function ContactForm() {
                 name="message"
                 rows="4"
                 required
-                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 placeholder-gray-500 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
                 placeholder="Your Message"
               />
             </div>
@@ -131,14 +138,17 @@ export default function ContactForm() {
                 id="file"
                 name="file"
                 onChange={handleFileChange}
-                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all font-roboto"
+                className="mt-2 p-3 w-full border border-gray-600 rounded-md bg-gray-800 text-gray-300 focus:border-green-500 focus:outline-none focus:ring focus:ring-green-500/20 transition-all"
               />
             </div>
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-green-500 text-white font-bold rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-500/40 transition-all"
+              disabled={isSubmitting} // Disable button when submitting
+              className={`w-full py-3 px-4 font-bold rounded-md transition-all 
+                ${isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}
+                ${isSubmitting ? 'focus:ring-gray-400' : 'focus:ring-green-500/40 focus:outline-none'}`}
             >
-              Submit
+              {isSubmitting ? 'Sending...' : 'Submit'} {/* Change button text */}
             </button>
           </form>
         </div>
