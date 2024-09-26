@@ -55,7 +55,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-10 md:ml-20">
         <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
           <img
-            src="src/assets/Photos/PETER.png"
+            src="https://p-mbugua.github.io/Official-_Portfolio/peter.png"
             alt="Peter"
             className="w-48 md:w-72 lg:w-80 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
             onContextMenu={(e) => e.preventDefault()}

@@ -26,7 +26,7 @@ export default function About() {
       <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl space-y-6 lg:space-y-0">
         <div className="flex justify-center lg:w-1/2">
           <img
-            src="src/assets/Photos/PETER.png"
+            src="https://p-mbugua.github.io/Official-_Portfolio/peter.png"
             alt="Your Image"
             className="w-40 h-auto object-cover border-4 border-green-500 rounded-md lg:w-60 shadow-lg"
             onContextMenu={(e) => e.preventDefault()} // Prevent right-click download
