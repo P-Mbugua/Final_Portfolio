@@ -33,7 +33,7 @@ const MobileHeader = () => {
       {/* Logo Section */}
       <Link to="/home" className="text-yellow-500 font-bold text-xl">
           <img 
-            src="https://photos.google.com/photo/AF1QipP8FIGp1A0VH0CtLh7ytsdK9nEOyd-JZBNiSoM8" 
+            src="https://p-mbugua.github.io/peshmarkTwo/Photos/Logo.jpg" 
             alt="" 
             style={{ width: '40px', height: 'auto' }} 
           />
