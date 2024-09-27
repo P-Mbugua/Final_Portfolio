@@ -3,28 +3,28 @@ import React from 'react';
 const MyWork = () => {
   const projects = [
     {
-      title: 'GET TIME FOR YOURSELF',
+      title: ' HOTEL MANAGEMENT SYSTEM',
       description: 'A project designed to help you manage your time and well-being.',
-      imgSrc: 'src/assets/Photos/Test.png',
-      link: 'https://example.com/time-for-yourself', // Replace with actual website
+      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png',
+      link: 'https://stay-manager-mg.netlify.app/', // Replace with actual website
     },
     {
-      title: 'INSPIRED STORIES',
+      title: 'DELIVERY MANAGEMENT SYSTEM',
       description: 'Read stories that inspire and motivate you.',
-      imgSrc: 'src/assets/Photos/Test.png',
-      link: 'https://example.com/inspired-stories', // Replace with actual website
+      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png',
+      link: 'https://parcelpoa.netlify.app/', // Replace with actual website
     },
     {
-      title: 'TIME FOR REST',
+      title: 'REACHROY DESIGNS HUB',
       description: 'Guides and tips on taking time off to relax and recharge.',
-      imgSrc: 'src/assets/Photos/Test.png',
-      link: 'https://example.com/time-for-rest', // Replace with actual website
+      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Reach_Roy.png',
+      link: 'https://reachroy.netlify.app/', // Replace with actual website
     },
     {
-      title: 'INSPIRED VIDEOS',
+      title: 'TEACHNEST',
       description: 'Watch curated videos to inspire and educate.',
-      imgSrc: 'src/assets/Photos/Test.png',
-      link: 'https://example.com/inspired-videos', // Replace with actual website
+      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
+      link: 'https://e-commerce-shop-ruddy.vercel.app/', // Replace with actual website
     },
   ];
 
