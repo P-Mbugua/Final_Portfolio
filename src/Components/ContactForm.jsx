@@ -4,21 +4,20 @@ export default function ContactForm() {
   const [file, setFile] = useState(null);
   const [projectType, setProjectType] = useState('');
   const [otherProjectType, setOtherProjectType] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // State to manage submission status
+  const [isSubmitting, setIsSubmitting] = useState(false); 
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true); // Disable button on submit
+    setIsSubmitting(true); 
 
-    // Simulating form submission logic
-    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate a network request
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Form submitted with file:", file);
     console.log("Selected project type:", projectType);
     console.log("Other project type description:", otherProjectType);
     
-    // Reset form state after submission if needed
-    setIsSubmitting(false); // Re-enable button
+   
+    setIsSubmitting(false); 
   };
 
   const handleFileChange = (e) => {
@@ -143,12 +142,12 @@ export default function ContactForm() {
             </div>
             <button
               type="submit"
-              disabled={isSubmitting} // Disable button when submitting
+              disabled={isSubmitting} 
               className={`w-full py-3 px-4 font-bold rounded-md transition-all 
                 ${isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'}
                 ${isSubmitting ? 'focus:ring-gray-400' : 'focus:ring-green-500/40 focus:outline-none'}`}
             >
-              {isSubmitting ? 'Sending...' : 'Submit'} {/* Change button text */}
+              {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
           </form>
         </div>

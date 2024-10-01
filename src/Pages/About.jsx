@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
-
+import 'aos/dist/aos.css'; 
 export default function About() {
   useEffect(() => {
     AOS.init({
@@ -29,7 +28,7 @@ export default function About() {
             src="https://p-mbugua.github.io/Official-_Portfolio/peter.png"
             alt="Your Image"
             className="w-40 h-auto object-cover border-4 border-green-500 rounded-md lg:w-60 shadow-lg"
-            onContextMenu={(e) => e.preventDefault()} // Prevent right-click download
+            onContextMenu={(e) => e.preventDefault()} 
           />
         </div>
         <div className="lg:w-1/2 text-left">

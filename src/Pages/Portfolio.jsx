@@ -6,25 +6,25 @@ const MyWork = () => {
       title: ' HOTEL MANAGEMENT SYSTEM',
       description: 'A project designed to help you manage your time and well-being.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png',
-      link: 'https://stay-manager-mg.netlify.app/', // Replace with actual website
+      link: 'https://stay-manager-mg.netlify.app/', 
     },
     {
       title: 'DELIVERY MANAGEMENT SYSTEM',
       description: 'Read stories that inspire and motivate you.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png',
-      link: 'https://parcelpoa.netlify.app/', // Replace with actual website
+      link: 'https://parcelpoa.netlify.app/', 
     },
     {
       title: 'REACHROY DESIGNS HUB',
       description: 'Guides and tips on taking time off to relax and recharge.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Reach_Roy.png',
-      link: 'https://reachroy.netlify.app/', // Replace with actual website
+      link: 'https://reachroy.netlify.app/',
     },
     {
       title: 'TEACHNEST',
       description: 'Watch curated videos to inspire and educate.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-      link: 'https://e-commerce-shop-ruddy.vercel.app/', // Replace with actual website
+      link: 'https://e-commerce-shop-ruddy.vercel.app/', 
     },
   ];
 
