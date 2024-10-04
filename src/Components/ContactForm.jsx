@@ -32,8 +32,11 @@ export default function ContactForm() {
           Let's <span className="text-green-500">Collaborate</span>
         </h1>
         <p className="text-center text-lg mt-4 text-gray-300 max-w-xl mx-auto">
-          Fill in the details below, and we can start working together on something amazing.
+        – Fill in the details below and I strongly believe we can work together –
+        <h3 className="text-center text-lg mt-4 text-gray-300 max-w-xl mx-auto"> we can start working together on something amazing. </h3>
         </p>
+
+       
       </header>
 
       {/* Form */}

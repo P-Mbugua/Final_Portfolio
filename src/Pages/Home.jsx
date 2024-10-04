@@ -4,10 +4,9 @@ import ThreeScene from '../Components/ThreeScene';
 
 export default function Home() {
   const roles = [
-    "A Full Stack Developer",
-    "A Graphics Designer",
-    "An Executive Assistant",
-    "A Cloud Solutions Architect"
+    "Full Stack Developer",
+    "Graphics Designer",
+    "Cloud Solutions Architect"
   ];
 
   const [currentRole, setCurrentRole] = useState("");
@@ -64,15 +63,15 @@ export default function Home() {
 
         <div className="flex flex-col lg:mb-0 mb-24 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10">
         <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
-  HELLO THERE!!
-</h1>
+              HELLO THERE!!
+        </h1>
 
 
           <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight">
             I'm <span className="text-yellow-500">Peter Mbugua,</span>
           </h1>
           <h2 className="text-lg md:text-3xl mb-4">
-            I'm <span className={`font-bold text-green-500 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{currentRole}.</span>
+            A <span className={`font-bold text-green-500 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{currentRole}.</span>
           </h2>
 
           <div className="flex flex-col lg:flex-row lg:space-x-4 mt-6 space-y-2 lg:space-y-0">
