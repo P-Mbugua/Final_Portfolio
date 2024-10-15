@@ -30,11 +30,11 @@ const ToggleButton = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div>
       {/* Sidebar */}
       <div
         ref={sidebarRef}
-        className={`absolute top-10 left-0 h-auto w-40 bg-gray-900 bg-opacity-75 rounded-lg p-7 transition-transform ${
+        className={`fixed top-16 left-0 h-auto w-40 bg-gray-900 bg-opacity-75 rounded-lg p-7 transition-transform ${
           showLinks ? 'translate-x-0' : '-translate-x-full'
         } duration-300 z-40 shadow-lg`}
         style={{ visibility: showLinks ? 'visible' : 'hidden' }}
@@ -88,7 +88,7 @@ const ToggleButton = () => {
       {!showLinks && (
         <button 
           onClick={handleToggle} 
-          className="fixed top-14 left-4 flex items-center bg-white text-black p-3 rounded-full shadow-lg transition-transform transform hover:scale-110 active:scale-95 z-50"
+          className="fixed top-16 left-4 flex items-center bg-white text-black p-3 rounded-full shadow-lg transition-transform transform hover:scale-110 active:scale-95 z-50"
           style={{ animation: 'pulse 1.5s infinite' }} // Add animation
         >
           <FaBars size={20} />
