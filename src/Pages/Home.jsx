@@ -81,7 +81,7 @@ export default function Home() {
               </button>
             </Link>
 
-            <a href="/portfolio" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto">
+            <a href="/portfolio"   className="w-full lg:w-auto">
               <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-transparent border-2 border-white text-white rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 ease-in-out transform hover:scale-105">
                 MY WORKS
               </button>
