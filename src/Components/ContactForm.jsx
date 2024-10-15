@@ -26,7 +26,7 @@ export default function ContactForm() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center bg-black px-4">
-      {/* Title and Subtitle */}
+      {/* Title and Subtitle*/}
       <header className="py-10">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-yellow-500 leading-tight">
           Let's <span className="text-green-500">Collaborate</span>
