@@ -82,7 +82,7 @@ export default function AboutAndServices() {
                 Download CV
               </button>
             </a>
-            <a href="src/assets/Files/BIOGRAPHY OF PETER MBUGUA.pdf" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto">
+            <a href="https://drive.google.com/file/d/11nOkBfsZlk2Rx4j_WXIcgUZbNhkG9zQZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto">
               <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-transparent border-2 border-white text-white rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 ease-in-out transform hover:scale-105">
                 Download my Biography
               </button>
