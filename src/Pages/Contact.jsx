@@ -1,21 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUser, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'; // Brand icons
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'; // Location icon
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-// Set the default icon for Leaflet markers
-delete L.Icon.Default.prototype._getIconUrl; // Delete default icon
-L.Icon.Default.mergeOptions({ // Set new icon options
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'), // retina icon
-  iconUrl: require('leaflet/dist/images/marker-icon.png'), // normal icon
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'), // shadow
-});
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -71,20 +61,19 @@ export default function Contact() {
             DEVELOPER RELATIONS / TRAINER / SOFTWARE DEV WORK OR PARTNERSHIPS
           </span>
         </p>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="space-y-4 text-base md:text-lg">
             <ContactInfo icon={faWhatsapp} label="Phone" value="+254 701 571 145" />
             <ContactInfo icon={faEnvelope} label="Email" value="pmbugua276@gmail.com" />
             <ContactInfo icon={faTwitter} label="Twitter" value="@mbugua276" />
             <ContactInfo icon={faGithub} label="Github" value="P-Mbugua" />
-            <ContactInfo label="Location" value="Limuru, Kenya" />
+            <ContactInfo icon={faMapMarkerAlt} label="Location" value="Limuru, Kiambu, Kenya" />
           </div>
 
           {/* Contact Form */}
           <div className="space-y-4">
             <p className="text-base md:text-lg">
-              If you have any suggestions, projects, or even want to say hello, please fill out the form below and I will reply shortly.
+              If you have any suggestion, project, or even want to say hello, please fill out the form below and I will reply shortly.
             </p>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <InputField
@@ -118,21 +107,6 @@ export default function Contact() {
             </form>
           </div>
         </div>
-
-        {/* Leaflet Map */}
-        <div className="mt-8">
-          <MapContainer center={[-1.1326, 36.6221]} zoom={13} style={{ height: "400px", width: "100%" }}>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={[-1.1326, 36.6221]}>
-              <Popup>
-                My Location: Limuru, Kenya
-              </Popup>
-            </Marker>
-          </MapContainer>
-        </div>
       </div>
     </div>
   );
@@ -140,7 +114,7 @@ export default function Contact() {
 
 const ContactInfo = ({ icon, label, value }) => (
   <div className="flex items-center space-x-3">
-    {icon && <FontAwesomeIcon icon={icon} className="text-green-500 text-lg md:text-xl" />}
+    <FontAwesomeIcon icon={icon} className="text-green-500 text-lg md:text-xl" />
     <div>
       <p className="font-semibold">{label}</p>
       <p className="text-sm md:text-base text-gray-400">{value}</p>
