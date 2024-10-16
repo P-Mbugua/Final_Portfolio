@@ -178,7 +178,7 @@ export default function About() {
       {/* Hobbies and Interests Section */}
       <div className="mt-16 max-w-6xl w-full">
         <h2 className="text-2xl font-bold text-green-400 mb-4" data-aos="fade-up">HOBBIES AND INTERESTS</h2>
-        <p className="text-gray-300" data-aos="fade-up">
+        <p className="text-yellow-500" data-aos="fade-up">
           I enjoy a variety of activities outside of work. Here are some of my hobbies and interests:
         </p>
         <ul className="list-disc ml-6 text-gray-300" data-aos="fade-up">
