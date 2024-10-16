@@ -67,13 +67,7 @@ const ToggleButton = () => {
             <FaSuitcase size={24} className="mr-2 text-white hover:text-green-500" />
             Portfolio
           </button>
-          <button 
-            onClick={() => handleLinkClick('/contact')} 
-            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
-          >
-            <FaEnvelope size={24} className="mr-2 text-white hover:text-green-500" />
-            Contact
-          </button>
+
           <button 
             onClick={() => handleLinkClick('/skills')} 
             className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
@@ -81,6 +75,15 @@ const ToggleButton = () => {
             <FaCog size={24} className="mr-2 text-white hover:text-green-500" />
             Skills
           </button>
+
+          <button 
+            onClick={() => handleLinkClick('/contact')} 
+            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
+          >
+            <FaEnvelope size={24} className="mr-2 text-white hover:text-green-500" />
+            Contact
+          </button>
+       
         </nav>
       </div>
 
