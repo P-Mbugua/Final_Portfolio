@@ -26,6 +26,18 @@ const MyWork = () => {
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
       link: 'https://e-commerce-shop-ruddy.vercel.app/', 
     },
+    {
+      title: 'TEACHNEST',
+      description: 'Watch curated videos to inspire and educate.',
+      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
+      link: 'https://e-commerce-shop-ruddy.vercel.app/', 
+    },
+    {
+      title: 'TEACHNEST',
+      description: 'Watch curated videos to inspire and educate.',
+      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
+      link: 'https://e-commerce-shop-ruddy.vercel.app/', 
+    },
   ];
 
   return (
