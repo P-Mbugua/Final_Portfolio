@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function About() {
+export default function AboutAndServices() {
   useEffect(() => {
     AOS.init({
       duration: 3000,
@@ -14,7 +14,7 @@ export default function About() {
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 lg:px-16 py-8 lg:py-16">
-      {/* Header Section */}
+      {/* ABOUT ME Section */}
       <div className="text-center mb-8">
         <h1 className="lg:text-5xl text-3xl font-bold text-green-400 mt-10 lg:mt-20">
           ABOUT <span className="text-white">ME</span>
@@ -75,7 +75,7 @@ export default function About() {
             ))}
           </ul>
 
-          {/* Button-Section */}
+          {/* Button Section */}
           <div className="flex flex-col lg:flex-row lg:space-x-4 mt-6 space-y-2 lg:space-y-0">
             <a href="src/assets/Files/Peter-Mbugua.pdf" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto">
               <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-600 hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
@@ -129,7 +129,7 @@ export default function About() {
                     ))}
                   </ul>
                 </li>
-              ))}
+              ))} 
             </ul>
           </div>
 
@@ -188,6 +188,45 @@ export default function About() {
           <li>Participating in hackathons and coding competitions</li>
           <li>Volunteering in community service projects</li>
         </ul>
+      </div>
+
+      {/* Services Section */}
+      <div className="mt-16 max-w-6xl w-full">
+        <h2 className="text-2xl font-bold text-green-400 mb-4 text-center" data-aos="fade-up">
+          MY SERVICES
+        </h2>
+        <p className="text-yellow-500 text-center mb-8" data-aos="fade-up">
+          I offer a variety of services to help you achieve your business goals.
+        </p>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'Web Development',
+              description: 'Full stack web development using modern technologies like React, Node.js, and MongoDB.',
+              icon: '🌐',
+            },
+            {
+              title: 'Mobile App Development',
+              description: 'Building responsive and efficient mobile applications using Flutter and React Native.',
+              icon: '📱',
+            },
+            {
+              title: 'UI/UX Design',
+              description: 'Designing user-friendly interfaces with a focus on accessibility and great user experiences.',
+              icon: '🎨',
+            },
+          ].map((service, index) => (
+            <div
+              key={index}
+              className="p-6 bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
+              data-aos="fade-up"
+            >
+              <div className="text-4xl mb-4 text-yellow-500">{service.icon}</div>
+              <h3 className="text-xl font-bold text-green-400 mb-2">{service.title}</h3>
+              <p className="text-gray-300">{service.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
