@@ -177,7 +177,9 @@ export default function AboutAndServices() {
 
       {/* Hobbies and Interests Section */}
       <div className="mt-16 max-w-6xl w-full">
-        <h2 className="text-2xl font-bold text-green-400 mb-4" data-aos="fade-up">HOBBIES AND INTERESTS</h2>
+        <h2 className="text-2xl font-bold text-green-400 mb-4" data-aos="fade-up">
+          HOBBIES AND INTERESTS
+        </h2>
         <p className="text-yellow-500" data-aos="fade-up">
           I enjoy a variety of activities outside of work. Here are some of my hobbies and interests:
         </p>
@@ -214,6 +216,36 @@ export default function AboutAndServices() {
               title: 'UI/UX Design',
               description: 'Designing user-friendly interfaces with a focus on accessibility and great user experiences.',
               icon: '🎨',
+            },
+            {
+              title: 'Graphics Design',
+              description: 'Creating stunning visuals, logos, and marketing materials for brands and businesses.',
+              icon: '🖼️',
+            },
+            {
+              title: 'Office Assistant',
+              description: 'Offering administrative support, data entry, scheduling, and office management services.',
+              icon: '💼',
+            },
+            {
+              title: 'Data Analysis',
+              description: 'Analyzing data trends to help businesses make informed decisions using tools like Excel and Python.',
+              icon: '📊',
+            },
+            {
+              title: 'Tech Support',
+              description: 'Providing tech support for hardware and software issues, troubleshooting, and system optimization.',
+              icon: '🛠️',
+            },
+            {
+              title: 'API Integration and Development',
+              description: 'Develop and integrate APIs to ensure seamless communication between different software systems and platforms.',
+              icon: '🔗',
+            },
+            {
+              title: 'Cloud Solutions',
+              description: 'Providing cloud computing services, including setting up and managing cloud infrastructures using platforms like AWS, Google Cloud, and Azure.',
+              icon: '☁️',
             },
           ].map((service, index) => (
             <div
