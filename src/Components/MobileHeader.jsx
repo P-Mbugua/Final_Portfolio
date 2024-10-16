@@ -83,6 +83,16 @@ const MobileHeader = () => {
               Portfolio
             </Link>
 
+             {/* Skills Link */}
+             <Link
+              to="/skills"
+              className="flex items-center p-3 hover:bg-yellow-500 rounded-lg transition duration-200 transform hover:scale-105"
+              onClick={handleLinkClick}
+            >
+              <FontAwesomeIcon icon={faCog} className="mr-2" />
+              Skills
+            </Link>
+
             {/* Contact Link */}
             <Link
               to="/contact"
@@ -93,15 +103,7 @@ const MobileHeader = () => {
               Contact
             </Link>
 
-            {/* Skills Link */}
-            <Link
-              to="/skills"
-              className="flex items-center p-3 hover:bg-yellow-500 rounded-lg transition duration-200 transform hover:scale-105"
-              onClick={handleLinkClick}
-            >
-              <FontAwesomeIcon icon={faCog} className="mr-2" />
-              Skills
-            </Link>
+           
           </nav>
         </div>
       )}
