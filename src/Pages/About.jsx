@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+
 export default function About() {
   useEffect(() => {
     AOS.init({
@@ -33,7 +34,7 @@ export default function About() {
         </div>
         <div className="lg:w-1/2 text-left">
           <ul className="grid grid-cols-2 gap-4 text-gray-300">
-            {[
+            {[ 
               { label: 'First Name:', value: 'Peter' },
               { label: 'Last Name:', value: 'Mbugua' },
               { label: 'Birthdate:', value: '8 March 2003' },
@@ -172,6 +173,21 @@ export default function About() {
             </ul>
           </div>
         </div>
+      </div>
+
+      {/* Hobbies and Interests Section */}
+      <div className="mt-16 max-w-6xl w-full">
+        <h2 className="text-2xl font-bold text-green-400 mb-4" data-aos="fade-up">HOBBIES AND INTERESTS</h2>
+        <p className="text-gray-300" data-aos="fade-up">
+          I enjoy a variety of activities outside of work. Here are some of my hobbies and interests:
+        </p>
+        <ul className="list-disc ml-6 text-gray-300" data-aos="fade-up">
+          <li>Reading books on technology and personal development</li>
+          <li>Playing video games</li>
+          <li>Hiking and exploring nature</li>
+          <li>Participating in hackathons and coding competitions</li>
+          <li>Volunteering in community service projects</li>
+        </ul>
       </div>
     </div>
   );
