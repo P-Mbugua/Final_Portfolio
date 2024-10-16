@@ -48,40 +48,40 @@ const ToggleButton = () => {
         <nav className="flex flex-col items-start">
           <button 
             onClick={() => handleLinkClick('/home')} 
-            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
+            className="text-white flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
-            <FaHome size={24} className="mr-2 text-white hover:text-green-500" />
-            Home
+            <FaHome size={24} className="mr-2" />
+            <span>Home</span>
           </button>
           <button 
             onClick={() => handleLinkClick('/about')} 
-            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
+            className="text-white flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
-            <FaUser size={24} className="mr-2 text-white hover:text-green-500" />
-            About
+            <FaUser size={24} className="mr-2" />
+            <span>About</span>
           </button>
           <button 
             onClick={() => handleLinkClick('/portfolio')} 
-            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
+            className="text-white flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
-            <FaSuitcase size={24} className="mr-2 text-white hover:text-green-500" />
-            Portfolio
+            <FaSuitcase size={24} className="mr-2" />
+            <span>Portfolio</span>
           </button>
 
           <button 
             onClick={() => handleLinkClick('/skills')} 
-            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
+            className="text-white flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
-            <FaCog size={24} className="mr-2 text-white hover:text-green-500" />
-            Skills
+            <FaCog size={24} className="mr-2" />
+            <span>Skills</span>
           </button>
 
           <button 
             onClick={() => handleLinkClick('/contact')} 
-            className="text-white hover:text-green-400 flex items-center mb-2 w-full py-2 border-b border-green-500"
+            className="text-white flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
-            <FaEnvelope size={24} className="mr-2 text-white hover:text-green-500" />
-            Contact
+            <FaEnvelope size={24} className="mr-2" />
+            <span>Contact</span>
           </button>
        
         </nav>
@@ -110,6 +110,9 @@ const ToggleButton = () => {
           100% {
             transform: scale(1);
           }
+        }
+        .hover\:text-green-400:hover {
+          color: #38a169; /* Tailwind green-500 color */
         }
       `}</style>
     </div>
