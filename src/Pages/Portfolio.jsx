@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase'; // Import Firebase
 import { collection, getDocs, addDoc } from 'firebase/firestore'; // Firestore methods
+import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
 const MyWork = () => {
   const [projects, setProjects] = useState([]);
@@ -62,11 +64,13 @@ const MyWork = () => {
         photo: newReview.photo ? URL.createObjectURL(newReview.photo) : null,
       };
       await addDoc(collection(db, 'reviews'), reviewData);
+      toast.success('Review submitted successfully!'); // Success message
       setNewReview({ name: '', date: new Date().toLocaleDateString(), stars: 0, message: '', photo: null });
       fetchReviews(); // Refresh reviews
       setIsFormVisible(false); // Hide the form after submission
     } catch (error) {
       console.error('Error adding review: ', error);
+      toast.error('Error submitting review. Please try again.'); // Error message
     }
   };
 
@@ -121,13 +125,15 @@ const MyWork = () => {
       <div className="mt-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews</h2>
 
-        {/* Toggle Button */}
-        <button 
-          onClick={() => setIsFormVisible(true)} // Open the modal
-          className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full mb-4"
-        >
-          Leave a Review
-        </button>
+        {/* Button Container for Leave a Review */}
+        <div className="flex justify-end mb-4">
+          <button 
+            onClick={() => setIsFormVisible(true)} // Open the modal
+            className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full"
+          >
+            Leave a Review
+          </button>
+        </div>
 
         {/* Modal Overlay */}
         {isFormVisible && (
@@ -193,33 +199,37 @@ const MyWork = () => {
           {reviews.map((review, index) => (
             <div key={index} className="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between">
               <div className="flex items-center mb-4">
-                {review.photo && (
+                {review.photo ? (
                   <img
                     src={review.photo}
-                    alt={`${review.name}'s profile`}
-                    className="w-12 h-12 rounded-full border-2 border-green-500"
+                    alt="User profile"
+                    className="w-12 h-12 rounded-full mr-4"
                   />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                    <span className="text-xl font-bold text-gray-600">{review.name.charAt(0).toUpperCase()}</span>
+                  </div>
                 )}
-                <div className="ml-4 flex-1">
-                  <h3 className="font-bold text-green-500 text-lg">{review.name}</h3>
-                  <p className="text-gray-700 text-sm">{review.message}</p>
+                <div>
+                  <h4 className="font-bold text-green-500">{review.name}</h4>
+                  <p className="text-gray-500 text-sm">{review.date}</p>
                 </div>
               </div>
+              <p className="text-gray-700 mb-4">{review.message}</p>
               <div className="flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span
-                    key={star}
-                    className={`text-xl ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
-                  >
-                    ★
-                  </span>
+                {[...Array(review.stars)].map((_, i) => (
+                  <span key={i} className="text-yellow-500">★</span>
+                ))}
+                {[...Array(5 - review.stars)].map((_, i) => (
+                  <span key={i} className="text-gray-400">★</span>
                 ))}
               </div>
-              <p className="text-gray-500 text-sm mt-2">{review.date}</p>
             </div>
           ))}
         </div>
       </div>
+
+      <ToastContainer /> {/* Toastify container for notifications */}
     </div>
   );
 };
