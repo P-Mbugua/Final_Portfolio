@@ -99,10 +99,14 @@ const MyWork = () => {
       {/* Reviews Section */}
       <div className="mt-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews</h2>
-        <div className="space-y-6">
+        <div className="flex flex-col space-y-6">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 shadow-lg flex items-start">
-              <img src={review.imgSrc} alt={`${review.name}'s profile`} className="w-12 h-12 rounded-full mr-4" />
+            <div key={index} className="bg-white rounded-lg p-4 shadow-lg flex items-start space-x-4">
+              <img
+                src={review.imgSrc}
+                alt={`${review.name}'s profile`}
+                className="w-12 h-12 rounded-full"
+              />
               <div className="flex-1">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-green-500">{review.name}</h3>
