@@ -93,10 +93,10 @@ const MyWork = () => {
 
   return (
     <div className="bg-gray-900 py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 font-montserrat">
         MY <span className='text-yellow-500'>WORKS</span>
       </h2>
-      <p className="text-green-500 mb-12 text-base sm:text-lg">
+      <p className="text-green-500 mb-12 text-base sm:text-lg font-roboto">
         – Here are a few of the projects I have been working on –
       </p>
 
@@ -115,10 +115,10 @@ const MyWork = () => {
               />
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-white rounded-b-xl p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-              <h3 className="font-bold text-green-500 text-lg sm:text-xl mb-1">
+              <h3 className="font-bold text-green-500 text-lg sm:text-xl mb-1 font-montserrat">
                 {project.title}
               </h3>
-              <p className="text-gray-700 mb-4 text-sm sm:text-base">
+              <p className="text-gray-700 mb-4 text-sm sm:text-base font-roboto">
                 {project.description}
               </p>
               <a
@@ -136,7 +136,7 @@ const MyWork = () => {
 
       {/* Reviews Section */}
       <div className="mt-16">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews ({reviews.length})</h2>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-montserrat">Reviews ({reviews.length})</h2>
 
         {/* Button Container for Leave a Review */}
         <div className="flex justify-end mb-4">
@@ -175,12 +175,12 @@ const MyWork = () => {
                   className="border rounded-lg p-2 mb-2 w-full bg-gray-200" // Greyed out background for visual cue
                 />
                 <div className="flex items-center mb-2">
-                  <p className="mr-2">Stars:</p>
+                  <p className="mr-2 font-roboto">Stars:</p>
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span
                       key={star}
-                      onClick={() => setNewReview({ ...newReview, stars: star })}
-                      className={`cursor-pointer text-xl ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'} hover:text-yellow-400 transition`}
+                      onClick={() => setNewReview({ ...newReview, stars: star })} // Set star rating on click
+                      className={`cursor-pointer text-2xl ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
                     >
                       ★
                     </span>
@@ -191,7 +191,7 @@ const MyWork = () => {
                   value={newReview.message}
                   onChange={(e) => setNewReview({ ...newReview, message: e.target.value })}
                   required
-                  className="border rounded-lg p-2 mb-2 w-full h-24 resize-none"
+                  className="border rounded-lg p-2 w-full h-24 resize-none"
                 />
                 <input
                   type="file"
