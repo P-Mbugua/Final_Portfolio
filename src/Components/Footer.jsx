@@ -10,18 +10,19 @@ export default function Footer() {
         <p>Building innovative software solutions.</p>
       </div>
       <div className="mt-2">
-        <a href="https://twitter.com/yourusername" className="text-green-500 mx-1">
+        <a href="https://twitter.com/yourusername" className="text-green-500 mx-1" target="_blank" rel="noopener noreferrer">
           Twitter
         </a>
         |
-        <a href="https://github.com/P-Mbugua" className="text-green-500 mx-1">
+        <a href="https://github.com/P-Mbugua" className="text-green-500 mx-1" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
         |
-        <a href="https://www.linkedin.com/in/peter-mbugua-a6351a262" className="text-green-500 mx-1">
+        <a href="https://www.linkedin.com/in/peter-mbugua-a6351a262" className="text-green-500 mx-1" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
       </div>
+
     </div>
   );
 }
