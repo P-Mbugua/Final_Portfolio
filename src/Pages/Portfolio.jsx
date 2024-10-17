@@ -3,16 +3,16 @@ import React from 'react';
 const MyWork = () => {
   const projects = [
     {
-      title: ' HOTEL MANAGEMENT SYSTEM',
+      title: 'HOTEL MANAGEMENT SYSTEM',
       description: 'A project designed to help you manage your time and well-being.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png',
-      link: 'https://stay-manager-mg.netlify.app/', 
+      link: 'https://stay-manager-mg.netlify.app/',
     },
     {
       title: 'DELIVERY MANAGEMENT SYSTEM',
       description: 'Read stories that inspire and motivate you.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png',
-      link: 'https://parcelpoa.netlify.app/', 
+      link: 'https://parcelpoa.netlify.app/',
     },
     {
       title: 'REACHROY DESIGNS HUB',
@@ -24,25 +24,38 @@ const MyWork = () => {
       title: 'TEACHNEST',
       description: 'Watch curated videos to inspire and educate.',
       imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-      link: 'https://e-commerce-shop-ruddy.vercel.app/', 
+      link: 'https://e-commerce-shop-ruddy.vercel.app/',
+    },
+  ];
+
+  // Sample reviews data
+  const reviews = [
+    {
+      name: 'Alice Smith',
+      date: 'October 10, 2024',
+      stars: 5,
+      message: 'This platform has significantly improved my productivity!',
+      imgSrc: 'https://via.placeholder.com/50',
     },
     {
-      title: 'TEACHNEST',
-      description: 'Watch curated videos to inspire and educate.',
-      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-      link: 'https://e-commerce-shop-ruddy.vercel.app/', 
+      name: 'Bob Johnson',
+      date: 'October 12, 2024',
+      stars: 4,
+      message: 'Great user experience, but could use some more features.',
+      imgSrc: 'https://via.placeholder.com/50',
     },
     {
-      title: 'TEACHNEST',
-      description: 'Watch curated videos to inspire and educate.',
-      imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-      link: 'https://e-commerce-shop-ruddy.vercel.app/', 
+      name: 'Charlie Brown',
+      date: 'October 15, 2024',
+      stars: 5,
+      message: 'Absolutely love it! Highly recommend to others.',
+      imgSrc: 'https://via.placeholder.com/50',
     },
   ];
 
   return (
     <div className="bg-gray-900 py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6"> MY  <span className='text-yellow-500'> WORKS </span></h2>
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6"> MY <span className='text-yellow-500'> WORKS </span></h2>
       <p className="text-green-500 mb-12 text-base sm:text-lg">
         – Here are a few of the projects I have been working on –
       </p>
@@ -81,6 +94,26 @@ const MyWork = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Reviews Section */}
+      <div className="mt-16">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews</h2>
+        <div className="space-y-6">
+          {reviews.map((review, index) => (
+            <div key={index} className="bg-white rounded-lg p-4 shadow-lg flex items-start">
+              <img src={review.imgSrc} alt={`${review.name}'s profile`} className="w-12 h-12 rounded-full mr-4" />
+              <div className="flex-1">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-bold text-green-500">{review.name}</h3>
+                  <span className="text-yellow-500">{'★'.repeat(review.stars)}</span>
+                </div>
+                <p className="text-gray-700 text-sm">{review.date}</p>
+                <p className="mt-2 text-gray-800">{review.message}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
