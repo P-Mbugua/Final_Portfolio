@@ -1,3 +1,4 @@
+// ... other imports
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase'; // Import Firebase
 import { collection, getDocs, addDoc } from 'firebase/firestore'; // Firestore methods
@@ -15,6 +16,7 @@ const MyWork = () => {
     photo: null,
   });
   const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle form visibility
+  const [isLoading, setIsLoading] = useState(false); // State for loading
 
   // Sample projects data
   useEffect(() => {
@@ -58,6 +60,15 @@ const MyWork = () => {
   // Add a new review to Firestore
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if stars are selected
+    if (newReview.stars === 0) {
+      toast.error('Please select a number of stars before submitting your review.'); // Error message
+      return; // Prevent submission
+    }
+
+    setIsLoading(true); // Show loading spinner
+
     try {
       const reviewData = {
         ...newReview,
@@ -71,6 +82,8 @@ const MyWork = () => {
     } catch (error) {
       console.error('Error adding review: ', error);
       toast.error('Error submitting review. Please try again.'); // Error message
+    } finally {
+      setIsLoading(false); // Hide loading spinner
     }
   };
 
@@ -123,7 +136,7 @@ const MyWork = () => {
 
       {/* Reviews Section */}
       <div className="mt-16">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews</h2>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews ({reviews.length})</h2>
 
         {/* Button Container for Leave a Review */}
         <div className="flex justify-end mb-4">
@@ -167,7 +180,7 @@ const MyWork = () => {
                     <span
                       key={star}
                       onClick={() => setNewReview({ ...newReview, stars: star })}
-                      className={`cursor-pointer text-xl ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
+                      className={`cursor-pointer text-xl ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'} hover:text-yellow-400 transition`}
                     >
                       ★
                     </span>
@@ -178,58 +191,46 @@ const MyWork = () => {
                   value={newReview.message}
                   onChange={(e) => setNewReview({ ...newReview, message: e.target.value })}
                   required
-                  className="border rounded-lg p-2 mb-2 w-full"
+                  className="border rounded-lg p-2 mb-2 w-full h-24 resize-none"
                 />
                 <input
                   type="file"
                   accept="image/*"
                   onChange={(e) => setNewReview({ ...newReview, photo: e.target.files[0] })}
-                  className="border rounded-lg mb-2 w-full"
+                  className="mb-2 w-full"
                 />
-                <button type="submit" className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full">
-                  Submit Review
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className={`bg-green-500 text-white px-4 py-2 font-semibold rounded-full transition ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                  {isLoading ? 'Submitting...' : 'Submit Review'}
                 </button>
               </form>
             </div>
           </div>
         )}
 
-        {/* Render Reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-          {reviews.map((review, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between">
-              <div className="flex items-center mb-4">
-                {review.photo ? (
-                  <img
-                    src={review.photo}
-                    alt="User profile"
-                    className="w-12 h-12 rounded-full mr-4"
-                  />
-                ) : (
-                  <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
-                    <span className="text-xl font-bold text-gray-600">{review.name.charAt(0).toUpperCase()}</span>
-                  </div>
-                )}
-                <div>
-                  <h4 className="font-bold text-green-500">{review.name}</h4>
-                  <p className="text-gray-500 text-sm">{review.date}</p>
-                </div>
-              </div>
-              <p className="text-gray-700 mb-4">{review.message}</p>
-              <div className="flex">
-                {[...Array(review.stars)].map((_, i) => (
-                  <span key={i} className="text-yellow-500">★</span>
-                ))}
-                {[...Array(5 - review.stars)].map((_, i) => (
-                  <span key={i} className="text-gray-400">★</span>
+        {/* Display Reviews */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {reviews.map((review) => (
+            <div key={review.id} className="bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105">
+              <p className="font-bold text-green-500">{review.name}</p>
+              <p className="text-gray-600 mb-1">{review.date}</p>
+              <div className="flex items-center my-2">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span key={star} className={`text-xl ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}>
+                    ★
+                  </span>
                 ))}
               </div>
+              <p className="mb-2">{review.message}</p>
+              {review.photo && <img src={review.photo} alt="Review" className="mt-2 h-20 w-20 object-cover rounded-full" />}
             </div>
           ))}
         </div>
       </div>
-
-      <ToastContainer /> {/* Toastify container for notifications */}
+      <ToastContainer />
     </div>
   );
 };
