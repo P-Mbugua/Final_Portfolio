@@ -55,7 +55,9 @@ const MyWork = () => {
 
   return (
     <div className="bg-gray-900 py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6"> MY <span className='text-yellow-500'> WORKS </span></h2>
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6">
+        MY <span className='text-yellow-500'>WORKS</span>
+      </h2>
       <p className="text-green-500 mb-12 text-base sm:text-lg">
         – Here are a few of the projects I have been working on –
       </p>
@@ -96,25 +98,32 @@ const MyWork = () => {
         ))}
       </div>
 
-      {/* Reviews Section */}
+      {/* Upgraded Reviews Section */}
       <div className="mt-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews</h2>
-        <div className="flex flex-col space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> {/* Responsive grid for reviews */}
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white rounded-lg p-4 shadow-lg flex items-start space-x-4">
-              <img
-                src={review.imgSrc}
-                alt={`${review.name}'s profile`}
-                className="w-12 h-12 rounded-full"
-              />
-              <div className="flex-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-bold text-green-500">{review.name}</h3>
-                  <span className="text-yellow-500">{'★'.repeat(review.stars)}</span>
+            <div
+              key={index}
+              className="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between transition-transform duration-300 hover:scale-105"
+            >
+              <div className="flex items-center mb-4">
+                <img
+                  src={review.imgSrc}
+                  alt={`${review.name}'s profile`}
+                  className="w-12 h-12 rounded-full border-2 border-green-500"
+                />
+                <div className="ml-4 flex-1">
+                  <h3 className="font-bold text-green-500 text-lg">{review.name}</h3>
+                  <p className="text-gray-700 text-sm">{review.date}</p>
                 </div>
-                <p className="text-gray-700 text-sm">{review.date}</p>
-                <p className="mt-2 text-gray-800">{review.message}</p>
+                <div className="flex items-center text-yellow-500">
+                  {[...Array(review.stars)].map((_, i) => (
+                    <span key={i} className="text-yellow-500">★</span>
+                  ))}
+                </div>
               </div>
+              <p className="text-gray-800">{review.message}</p>
             </div>
           ))}
         </div>
