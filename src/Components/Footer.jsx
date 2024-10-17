@@ -18,7 +18,7 @@ export default function Footer() {
           GitHub
         </a>
         |
-        <a href="https://www.linkedin.com/in/yourusername" className="text-green-500 mx-1">
+        <a href="https://www.linkedin.com/in/peter-mbugua-a6351a262" className="text-green-500 mx-1">
           LinkedIn
         </a>
       </div>
