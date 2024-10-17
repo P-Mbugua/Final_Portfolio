@@ -7,11 +7,12 @@ const MyWork = () => {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({
     name: '',
-    date: '',
+    date: new Date().toLocaleDateString(),
     stars: 0,
     message: '',
     photo: null,
   });
+  const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle form visibility
 
   // Sample projects data
   useEffect(() => {
@@ -56,14 +57,14 @@ const MyWork = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Prepare data to be saved
       const reviewData = {
         ...newReview,
-        photo: newReview.photo ? URL.createObjectURL(newReview.photo) : null, // Convert file to URL for display
+        photo: newReview.photo ? URL.createObjectURL(newReview.photo) : null,
       };
       await addDoc(collection(db, 'reviews'), reviewData);
-      setNewReview({ name: '', date: '', stars: 0, message: '', photo: null }); // Reset form
+      setNewReview({ name: '', date: new Date().toLocaleDateString(), stars: 0, message: '', photo: null });
       fetchReviews(); // Refresh reviews
+      setIsFormVisible(false); // Hide the form after submission
     } catch (error) {
       console.error('Error adding review: ', error);
     }
@@ -120,56 +121,75 @@ const MyWork = () => {
       <div className="mt-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">Reviews</h2>
 
-        {/* New Review Form */}
-        <form onSubmit={handleSubmit} className="mb-8">
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={newReview.name}
-            onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
-            required
-            className="border rounded-lg p-2 mb-2"
-          />
-          <input
-            type="text"
-            placeholder="Date (e.g., October 10, 2024)"
-            value={newReview.date}
-            onChange={(e) => setNewReview({ ...newReview, date: e.target.value })}
-            required
-            className="border rounded-lg p-2 mb-2"
-          />
-          <div className="flex mb-2">
-            <p className="mr-2">Stars:</p>
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span
-                key={star}
-                onClick={() => setNewReview({ ...newReview, stars: star })}
-                className={`cursor-pointer text-yellow-500 ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
+        {/* Toggle Button */}
+        <button 
+          onClick={() => setIsFormVisible(true)} // Open the modal
+          className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full mb-4"
+        >
+          Leave a Review
+        </button>
+
+        {/* Modal Overlay */}
+        {isFormVisible && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+            <div className="bg-white rounded-lg p-6 shadow-lg max-w-xs w-full relative">
+              <button 
+                onClick={() => setIsFormVisible(false)} 
+                className="absolute top-2 right-2 text-gray-600"
               >
-                ★
-              </span>
-            ))}
+                &times; {/* Close button */}
+              </button>
+              <h3 className="text-lg font-bold text-green-500 mb-4">Leave a Review</h3>
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={newReview.name}
+                  onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
+                  required
+                  className="border rounded-lg p-2 mb-2 w-full"
+                />
+                <input
+                  type="text"
+                  value={newReview.date} // Automatically filled date
+                  readOnly // Make date input read-only
+                  className="border rounded-lg p-2 mb-2 w-full bg-gray-200" // Greyed out background for visual cue
+                />
+                <div className="flex items-center mb-2">
+                  <p className="mr-2">Stars:</p>
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span
+                      key={star}
+                      onClick={() => setNewReview({ ...newReview, stars: star })}
+                      className={`cursor-pointer text-xl ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <textarea
+                  placeholder="Your Review"
+                  value={newReview.message}
+                  onChange={(e) => setNewReview({ ...newReview, message: e.target.value })}
+                  required
+                  className="border rounded-lg p-2 mb-2 w-full"
+                />
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => setNewReview({ ...newReview, photo: e.target.files[0] })}
+                  className="border rounded-lg mb-2 w-full"
+                />
+                <button type="submit" className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full">
+                  Submit Review
+                </button>
+              </form>
+            </div>
           </div>
-          <textarea
-            placeholder="Your Review"
-            value={newReview.message}
-            onChange={(e) => setNewReview({ ...newReview, message: e.target.value })}
-            required
-            className="border rounded-lg p-2 mb-2"
-          />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => setNewReview({ ...newReview, photo: e.target.files[0] })}
-            className="border rounded-lg mb-2"
-          />
-          <button type="submit" className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full">
-            Submit Review
-          </button>
-        </form>
+        )}
 
         {/* Render Reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {reviews.map((review, index) => (
             <div key={index} className="bg-white rounded-lg p-6 shadow-lg flex flex-col justify-between">
               <div className="flex items-center mb-4">
@@ -182,15 +202,20 @@ const MyWork = () => {
                 )}
                 <div className="ml-4 flex-1">
                   <h3 className="font-bold text-green-500 text-lg">{review.name}</h3>
-                  <p className="text-gray-700 text-sm">{review.date}</p>
-                </div>
-                <div className="flex items-center text-yellow-500">
-                  {[...Array(review.stars)].map((_, i) => (
-                    <span key={i} className="text-yellow-500">★</span>
-                  ))}
+                  <p className="text-gray-700 text-sm">{review.message}</p>
                 </div>
               </div>
-              <p className="text-gray-800">{review.message}</p>
+              <div className="flex">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span
+                    key={star}
+                    className={`text-xl ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
+                  >
+                    ★
+                  </span>
+                ))}
+              </div>
+              <p className="text-gray-500 text-sm mt-2">{review.date}</p>
             </div>
           ))}
         </div>
