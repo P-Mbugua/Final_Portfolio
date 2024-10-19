@@ -35,41 +35,39 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  animation: moveLine 6s ease-in-out infinite, pulse 2s ease-in-out infinite; /* Set animation duration to 6 seconds */
-  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+  animation: moveLine 6s ease-in-out infinite, pulse 2s ease-in-out infinite; 
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out; 
 }
 
-/* Animation for the line moving left to right */
 @keyframes moveLine {
   0% {
-    transform: translateY(-50%) translateX(-100%); /* Start off-screen to the left */
+    transform: translateY(-50%) translateX(-100%);
   }
   20% {
-    transform: translateY(-50%) translateX(-50%); /* Move to the left center */
+    transform: translateY(-50%) translateX(-50%); 
   }
   50% {
-    transform: translateY(-50%) translateX(0); /* Center position */
+    transform: translateY(-50%) translateX(0); 
   }
   80% {
-    transform: translateY(-50%) translateX(50%); /* Move to the right center */
+    transform: translateY(-50%) translateX(50%); 
   }
   100% {
-    transform: translateY(-50%) translateX(100%); /* Move to the right side */
+    transform: translateY(-50%) translateX(100%); 
   }
 }
 
-/* Adding a pulsating effect for the line */
 @keyframes pulse {
   0%, 100% {
-    opacity: 1; /* Fully visible */
+    opacity: 1; 
   }
   25% {
-    opacity: 0.8; /* Slightly less visible */
+    opacity: 0.8; 
   }
   50% {
-    opacity: 0.6; /* Fade to semi-transparent */
+    opacity: 0.6; 
   }
   75% {
-    opacity: 0.8; /* Slightly more visible */
+    opacity: 0.8; 
   }
 }
