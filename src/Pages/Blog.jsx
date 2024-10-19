@@ -60,38 +60,44 @@ const Blog = () => {
         <h2 className="text-2xl font-semibold mb-6 text-green-500 font-inter">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Blog Post 1 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <img
-              src="https://via.placeholder.com/400x200" // Replace with actual image
-              alt="Post Thumbnail"
-              className="w-full h-40 object-cover rounded-t-lg"
-            />
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+            <div className="relative">
+              <img
+                src="https://via.placeholder.com/400x200" // Replace with actual image
+                alt="Post Thumbnail"
+                className="w-full h-40 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+            </div>
             <div className="p-4">
               <p className="text-sm text-gray-400 mb-2 font-inter">October 17, 2024 • Developer Policy</p>
               <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">Understanding React Hooks</h3>
               <p className="text-sm mb-4 font-inter">
                 A deep dive into React hooks and how they simplify state management...
               </p>
-              <Link to="/post/react-hooks" className="text-green-500 hover:underline">
+              <Link to="/post/react-hooks" className="inline-block bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400 font-inter">
                 Read More
               </Link>
             </div>
           </div>
 
           {/* Blog Post 2 */}
-          <div className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-            <img
-              src="https://via.placeholder.com/400x200" // Replace with actual image
-              alt="Post Thumbnail"
-              className="w-full h-40 object-cover rounded-t-lg"
-            />
+          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+            <div className="relative">
+              <img
+                src="https://via.placeholder.com/400x200" // Replace with actual image
+                alt="Post Thumbnail"
+                className="w-full h-40 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+            </div>
             <div className="p-4">
               <p className="text-sm text-gray-400 mb-2 font-inter">October 15, 2024 • Developer Policy</p>
               <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">Building Responsive UIs with Tailwind CSS</h3>
               <p className="text-sm mb-4 font-inter">
                 Learn how to build beautiful, responsive designs with Tailwind CSS...
               </p>
-              <Link to="/post/tailwind-css" className="text-green-500 hover:underline">
+              <Link to="/post/tailwind-css" className="inline-block bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400 font-inter">
                 Read More
               </Link>
             </div>
