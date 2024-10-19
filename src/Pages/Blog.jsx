@@ -1,8 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs, onSnapshot } from "firebase/firestore"; 
+import { getAnalytics } from "firebase/analytics";
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
-// Sample data for social media accounts with activity status and percentage
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAFey9M3UNzqKEk5190WydMz-ttMoiW6jU",
+  authDomain: "portfolio1-eddb9.firebaseapp.com",
+  projectId: "portfolio1-eddb9",
+  storageBucket: "portfolio1-eddb9.appspot.com",
+  messagingSenderId: "579034394595",
+  appId: "1:579034394595:web:90009f223432be6fb7fad6",
+  measurementId: "G-YK4YDN5E1Z"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const analytics = getAnalytics(app);
+
 const socialMediaAccounts = [
   { name: 'Twitter', url: 'https://twitter.com/yourprofile', activity: 90 },
   { name: 'GitHub', url: 'https://github.com/P-Mbugua', activity: 80 },
@@ -11,26 +29,100 @@ const socialMediaAccounts = [
 ];
 
 const Blog = () => {
-  const [interactivityPercentage, setInteractivityPercentage] = useState(null);
+  const [email, setEmail] = useState('');
+  const [subscriptionStatus, setSubscriptionStatus] = useState(null);
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [image, setImage] = useState('');
+  const [subscribers, setSubscribers] = useState([]);
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [notificationStatus, setNotificationStatus] = useState('');
 
-  // Function to fetch interactivity percentage
-  const fetchInteractivity = async () => {
+  // Load subscribers from Firestore
+  useEffect(() => {
+    const loadSubscribers = async () => {
+      const querySnapshot = await getDocs(collection(db, "subscriptions"));
+      const emails = querySnapshot.docs.map(doc => doc.data().email);
+      setSubscribers(emails);
+    };
+
+    loadSubscribers();
+  }, []);
+
+  // Fetch blog posts from Firestore
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "blogPosts"), (snapshot) => {
+      const posts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setBlogPosts(posts);
+    });
+
+    return () => unsubscribe(); // Cleanup subscription on unmount
+  }, []);
+
+  // Function to handle subscription
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    
+    // Simple email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      setSubscriptionStatus('Please enter a valid email address.');
+      return;
+    }
+
     try {
-      const response = await fetch('https://api.yourservice.com/getInteractivity?url=https://yourwebsite.com'); // Replace with your actual API endpoint
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setInteractivityPercentage(data.interactivityPercentage); // Assuming the API returns { interactivityPercentage: number }
+      // Add the email to the Firestore collection
+      await addDoc(collection(db, "subscriptions"), {
+        email: email,
+        timestamp: new Date(),
+      });
+      setSubscriptionStatus('Subscription successful! Thank you for subscribing.');
+      setEmail(''); // Reset email input after success
     } catch (error) {
-      console.error("Error fetching interactivity data:", error);
+      console.error("Error subscribing:", error);
+      setSubscriptionStatus('Subscription failed. Please try again.');
     }
   };
 
-  // Fetch the interactivity percentage when the component mounts
-  useEffect(() => {
-    fetchInteractivity();
-  }, []);
+  // Function to handle adding a new blog post
+  const handleAddPost = async (e) => {
+    e.preventDefault();
+
+    if (!title || !content || !image) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    try {
+      // Add the blog post to the Firestore collection
+      await addDoc(collection(db, "blogPosts"), {
+        title: title,
+        content: content,
+        image: image,
+        date: new Date(),
+      });
+      setTitle('');
+      setContent('');
+      setImage('');
+      setNotificationStatus('Blog post added successfully! Sending notifications to subscribers...');
+
+      // Notify all subscribers
+      await notifySubscribers(title);
+    } catch (error) {
+      console.error("Error adding post:", error);
+      alert('Failed to add blog post. Please try again.');
+    }
+  };
+
+  // Function to send notifications to all subscribers
+  const notifySubscribers = async (postTitle) => {
+    // Replace this with your actual email-sending logic
+    for (const subscriber of subscribers) {
+      console.log(`Sending email to ${subscriber} about the new post: ${postTitle}`);
+      // Implement your email sending logic here
+    }
+    setNotificationStatus('Notifications sent to subscribers successfully!');
+  };
 
   const getRecommendation = (activity) => {
     if (activity >= 75) {
@@ -59,78 +151,88 @@ const Blog = () => {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6 text-green-500 font-inter">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Blog Post 1 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-            <div className="relative">
-              <img
-                src="https://files.oaiusercontent.com/file-5yCafMpjy0WTlG16IXRaUyrJ?se=2024-10-19T13%3A37%3A24Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D71e77bdd-e15a-4cf5-bfab-9957c9d4e79c.webp&sig=uCW7y3Z4GdFqPaEHJbGNCe8mG/fUy%2BDI71odnzelJIc%3D" // Replace with actual image
-                alt="Post Thumbnail"
-                className="w-full h-40 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-            </div>
-            <div className="p-4">
-              <p className="text-sm text-gray-400 mb-2 font-inter">October 17, 2024 • Developer Policy</p>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">Understanding React Hooks</h3>
-              <p className="text-sm mb-4 font-inter">
-                A deep dive into React hooks and how they simplify state management...
-              </p>
-              <Link to="/post/react-hooks" className="inline-block bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400 font-inter">
-                Read More
-              </Link>
-            </div>
-          </div>
-
-          {/* Blog Post 2 */}
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-            <div className="relative">
-              <img
-                src="https://files.oaiusercontent.com/file-qgJYpYRPLeu5XsODRUPIotmQ?se=2024-10-19T13%3A35%3A58Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0b675833-7659-4d67-8d1a-ed4985289da9.webp&sig=wS%2BdPCk11RCr2PLJydavpOQZyOVIO/o1unY/GchDsFI%3D" // Replace with actual image
-                alt="Post Thumbnail"
-                className="w-full h-40 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-            </div>
-            <div className="p-4">
-              <p className="text-sm text-gray-400 mb-2 font-inter">October 15, 2024 • Developer Policy</p>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">Building Responsive UIs with Tailwind CSS</h3>
-              <p className="text-sm mb-4 font-inter">
-                Learn how to build beautiful, responsive designs with Tailwind CSS...
-              </p>
-              <Link to="/post/tailwind-css" className="inline-block bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400 font-inter">
-                Read More
-              </Link>
-            </div>
-          </div>
-
-          {/* Add more blog posts as necessary */}
-        </div>
-      </section>
-
-      {/* Enhanced Social Media Links */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center font-inter">Connect with Me</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {socialMediaAccounts.map((account) => (
-            <div key={account.name} className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-105">
-              <a
-                href={account.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-1"
-              >
-                {account.name === 'Twitter' && <FaTwitter size={36} className="text-yellow-500" />}
-                {account.name === 'GitHub' && <FaGithub size={36} className="text-yellow-500" />}
-                {account.name === 'LinkedIn' && <FaLinkedin size={36} className="text-yellow-500" />}
-                {account.name === 'Facebook' && <FaFacebook size={36} className="text-yellow-500" />}
-                <span className="text-lg font-bold">{account.activity}%</span>
-              </a>
-              <p className={`text-center ${account.activity >= 50 ? 'text-yellow-400' : 'text-gray-500'} text-sm font-inter`}>
-                {getRecommendation(account.activity)}
-              </p>
+          {blogPosts.map((post) => (
+            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+              <div className="relative">
+                <img
+                  src={post.image} // Use the dynamic image from Firestore
+                  alt="Post Thumbnail"
+                  className="w-full h-40 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+              </div>
+              <div className="p-4">
+                <p className="text-sm text-gray-400 mb-2 font-inter">{new Date(post.date).toLocaleDateString()} • Developer Policy</p>
+                <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">{post.title}</h3>
+                <p className="text-sm mb-4 font-inter">
+                  {post.content.length > 100 ? `${post.content.substring(0, 100)}...` : post.content}
+                </p>
+                <Link to={`/post/${post.id}`} className="inline-block bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400 font-inter">
+                  Read More
+                </Link>
+              </div>
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Subscription Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center font-inter">Subscribe to My Blog</h2>
+        <form onSubmit={handleSubscribe} className="flex flex-col items-center space-y-4">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            className="w-full max-w-md p-2 bg-gray-800 text-white border border-gray-500 rounded-lg"
+            required
+          />
+          <button
+            type="submit"
+            className="bg-yellow-500 text-black py-2 px-6 rounded-lg transition-colors duration-300 hover:bg-yellow-400"
+          >
+            Subscribe
+          </button>
+          {subscriptionStatus && <p className="text-sm mt-2 font-inter">{subscriptionStatus}</p>}
+        </form>
+      </section>
+
+      {/* Add Blog Post Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center font-inter">Add a New Blog Post</h2>
+        <form onSubmit={handleAddPost} className="flex flex-col items-center space-y-4">
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Post Title"
+            className="w-full max-w-md p-2 bg-gray-800 text-white border border-gray-500 rounded-lg"
+            required
+          />
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="Post Content"
+            className="w-full max-w-md p-2 bg-gray-800 text-white border border-gray-500 rounded-lg h-40"
+            required
+          />
+          <input
+            type="text"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            placeholder="Image URL"
+            className="w-full max-w-md p-2 bg-gray-800 text-white border border-gray-500 rounded-lg"
+            required
+          />
+          <button
+            type="submit"
+            className="bg-yellow-500 text-black py-2 px-6 rounded-lg transition-colors duration-300 hover:bg-yellow-400"
+          >
+            Add Post
+          </button>
+          {notificationStatus && <p className="text-sm mt-2 font-inter">{notificationStatus}</p>}
+        </form>
       </section>
     </div>
   );
