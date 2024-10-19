@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaTwitter, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 const Blog = () => {
   return (
@@ -76,8 +77,25 @@ const Blog = () => {
       <section className="mb-12 text-center">
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Want to Collaborate?</h2>
         <p className="mb-4 max-w-3xl mx-auto">
-          I’m always open to working on new projects and collaborations. Leave a comment or <Link to="/contact" className="text-yellow-500 hover:underline">get in touch</Link> for any inquiries.
+          I’m always open to working on new projects and collaborations. Leave a comment or 
+          <Link to="/contact" className="text-yellow-500 hover:underline"> get in touch</Link> for any inquiries.
         </p>
+        
+        {/* Social Media Links */}
+        <div className="flex justify-center space-x-4">
+          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
+            <FaTwitter size={24} />
+          </a>
+          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
+            <FaGithub size={24} />
+          </a>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
+            <FaLinkedin size={24} />
+          </a>
+          <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
+            <FaFacebook size={24} />
+          </a>
+        </div>
       </section>
     </div>
   );
