@@ -107,17 +107,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Categories/Tags */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-green-500 font-inter">Categories</h2>
-        <ul className="flex flex-wrap gap-4">
-          <li><Link to="/category/tutorials" className="text-yellow-500 hover:underline">Tutorials</Link></li>
-          <li><Link to="/category/projects" className="text-yellow-500 hover:underline">Projects</Link></li>
-          <li><Link to="/category/career" className="text-yellow-500 hover:underline">Career</Link></li>
-          <li><Link to="/category/design" className="text-yellow-500 hover:underline">Design</Link></li>
-        </ul>
-      </section>
-
       {/* Enhanced Social Media Links */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center font-inter">Connect with Me</h2>
