@@ -1,8 +1,8 @@
 // ... other imports
 import React, { useEffect, useState } from 'react';
 import { db } from '../firebase'; // Import Firebase
-import { collection, getDocs, addDoc } from 'firebase/firestore'; // Firestore methods
-import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
+import { collection, getDocs, addDoc } from 'firebase/firestore'; 
+import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
 
 const MyWork = () => {
