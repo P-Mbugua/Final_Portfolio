@@ -6,6 +6,7 @@ import Contact from './Pages/Contact';
 import Skills from './Pages/Skills';
 import Portfolio from './Pages/Portfolio';
 import Biography from './Pages/Biography';
+import Blog from './Pages/Blog';
 import ToggleButton from './Components/ToggleButton';
 import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
@@ -45,6 +46,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/biography" element={<Biography />} />
         <Route path="/contactform" element={<ContactForm />} />
+        <Route path="/blog" element={<Blog />} /> {/* New Blog Route */}
       </Routes>
 
       {location.pathname !== '/home' && <Footer />}
