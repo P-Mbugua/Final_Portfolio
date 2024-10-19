@@ -12,7 +12,7 @@ const socialMediaAccounts = [
 
 const Blog = () => {
   const [interactivityPercentage, setInteractivityPercentage] = useState(null);
-  
+
   // Function to fetch interactivity percentage
   const fetchInteractivity = async () => {
     try {
@@ -46,8 +46,8 @@ const Blog = () => {
     <div className="min-h-screen bg-black text-white p-6 md:px-20 lg:px-40">
       {/* Introduction/Author Bio */}
       <section className="mb-12 text-center">
-        <h1 className="text-3xl font-bold mb-4 text-yellow-500">Peter Mbugua</h1>
-        <p className="text-lg max-w-3xl mx-auto">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-yellow-500 font-roboto">Peter Mbugua</h1>
+        <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-inter">
           I am a passionate Fullstack Developer specializing in web and mobile app development. 
           I love working with modern tools like React, Tailwind CSS, and exploring new technologies 
           like Kotlin. I blog to share my journey, challenges, and insights about coding and tech 
@@ -57,7 +57,7 @@ const Blog = () => {
 
       {/* Blog Posts */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-green-500">Latest Blog Posts</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 font-inter">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Blog Post 1 */}
           <div className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
@@ -67,9 +67,9 @@ const Blog = () => {
               className="w-full h-40 object-cover rounded-t-lg"
             />
             <div className="p-4">
-              <p className="text-sm text-gray-400 mb-2">October 17, 2024 • Developer Policy</p>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-500">Understanding React Hooks</h3>
-              <p className="text-sm mb-4">
+              <p className="text-sm text-gray-400 mb-2 font-inter">October 17, 2024 • Developer Policy</p>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">Understanding React Hooks</h3>
+              <p className="text-sm mb-4 font-inter">
                 A deep dive into React hooks and how they simplify state management...
               </p>
               <Link to="/post/react-hooks" className="text-green-500 hover:underline">
@@ -86,9 +86,9 @@ const Blog = () => {
               className="w-full h-40 object-cover rounded-t-lg"
             />
             <div className="p-4">
-              <p className="text-sm text-gray-400 mb-2">October 15, 2024 • Developer Policy</p>
-              <h3 className="text-xl font-semibold mb-2 text-yellow-500">Building Responsive UIs with Tailwind CSS</h3>
-              <p className="text-sm mb-4">
+              <p className="text-sm text-gray-400 mb-2 font-inter">October 15, 2024 • Developer Policy</p>
+              <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">Building Responsive UIs with Tailwind CSS</h3>
+              <p className="text-sm mb-4 font-inter">
                 Learn how to build beautiful, responsive designs with Tailwind CSS...
               </p>
               <Link to="/post/tailwind-css" className="text-green-500 hover:underline">
@@ -103,7 +103,7 @@ const Blog = () => {
 
       {/* Categories/Tags */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-green-500">Categories</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 font-inter">Categories</h2>
         <ul className="flex flex-wrap gap-4">
           <li><Link to="/category/tutorials" className="text-yellow-500 hover:underline">Tutorials</Link></li>
           <li><Link to="/category/projects" className="text-yellow-500 hover:underline">Projects</Link></li>
@@ -114,7 +114,7 @@ const Blog = () => {
 
       {/* Enhanced Social Media Links */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center">Connect with Me</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center font-inter">Connect with Me</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {socialMediaAccounts.map((account) => (
             <div key={account.name} className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-105">
@@ -130,7 +130,7 @@ const Blog = () => {
                 {account.name === 'Facebook' && <FaFacebook size={36} className="text-yellow-500" />}
                 <span className="text-lg font-bold">{account.activity}%</span>
               </a>
-              <p className={`text-center ${account.activity >= 50 ? 'text-yellow-400' : 'text-gray-500'} text-sm`}>
+              <p className={`text-center ${account.activity >= 50 ? 'text-yellow-400' : 'text-gray-500'} text-sm font-inter`}>
                 {getRecommendation(account.activity)}
               </p>
             </div>
