@@ -170,9 +170,9 @@ const MyWork = () => {
                 />
                 <input
                   type="text"
-                  value={newReview.date} // Automatically filled date
-                  readOnly // Make date input read-only
-                  className="border rounded-lg p-2 mb-2 w-full bg-gray-200" // Greyed out background for visual cue
+                  value={newReview.date} 
+                  readOnly 
+                  className="border rounded-lg p-2 mb-2 w-full bg-gray-200" 
                 />
                 <div className="flex items-center mb-2">
                   <p className="mr-2 font-roboto">Stars:</p>
@@ -235,11 +235,11 @@ const MyWork = () => {
             </span>
           ))}
         </div>
-        <p className="text-sm text-gray-600">{review.date}</p>
+        <p className="text-sm text-black">{review.date}</p>
       </div>
 
       {/* Review Message */}
-      <p className="text-gray-700">{review.message}</p>
+      <p className="text-green-500">{review.message}</p>
     </div>
   ))}
 </div>
