@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen bg-black text-white p-6 px-4 md:px-10">
       {/* Introduction/Author Bio */}
       <section className="mb-12">
         <h1 className="text-3xl font-bold mb-4 text-yellow-500">Peter Mbugua</h1>
