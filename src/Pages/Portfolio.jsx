@@ -74,20 +74,20 @@ const MyWork = () => {
         photo: newReview.photo ? URL.createObjectURL(newReview.photo) : null,
       };
       await addDoc(collection(db, 'reviews'), reviewData);
-      toast.success('Review submitted successfully!'); // Success message
+      toast.success('Review submitted successfully!'); 
       setNewReview({ name: '', date: new Date().toLocaleDateString(), stars: 0, message: '', photo: null });
-      fetchReviews(); // Refresh reviews
-      setIsFormVisible(false); // Hide the form after submission
+      fetchReviews(); 
+      setIsFormVisible(false); 
     } catch (error) {
       console.error('Error adding review: ', error);
-      toast.error('Error submitting review. Please try again.'); // Error message
+      toast.error('Error submitting review. Please try again.'); 
     } finally {
-      setIsLoading(false); // Hide loading spinner
+      setIsLoading(false); 
     }
   };
 
   useEffect(() => {
-    fetchReviews(); // Fetch reviews on component mount
+    fetchReviews(); 
   }, []);
 
   return (
