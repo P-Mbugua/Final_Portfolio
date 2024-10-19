@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaBars, FaTimes, FaHome, FaUser, FaSuitcase, FaEnvelope, FaCog } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaSuitcase, FaBlog, FaEnvelope, FaCog } from 'react-icons/fa';
 
 const ToggleButton = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -80,7 +80,7 @@ const ToggleButton = () => {
             onClick={() => handleLinkClick('/blog')} 
             className="text-white font-bold flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
-            <FaEnvelope size={24} className="mr-2" />
+            <FaBlog size={24} className="mr-2" />
             <span>Blog</span>
           </button>
 

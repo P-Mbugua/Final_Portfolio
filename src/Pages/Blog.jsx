@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Blog = () => {
   return (
-    <div className="min-h-screen bg-black text-white p-6 px-4 md:px-10 lg:px-20 xl:px-32">
+    <div className="min-h-screen bg-black text-white p-6 md:px-20 lg:px-40">
       {/* Introduction/Author Bio */}
-      <section className="mb-12">
+      <section className="mb-12 text-center">
         <h1 className="text-3xl font-bold mb-4 text-yellow-500">Peter Mbugua</h1>
-        <p className="text-lg">
-          I am a passionate Fullstack Developer specializing in web and mobile app development. I love working with modern tools like React, Tailwind CSS, and exploring new technologies like Kotlin. I blog to share my journey, challenges, and insights about coding and tech in general.
+        <p className="text-lg max-w-3xl mx-auto">
+          I am a passionate Fullstack Developer specializing in web and mobile app development. 
+          I love working with modern tools like React, Tailwind CSS, and exploring new technologies 
+          like Kotlin. I blog to share my journey, challenges, and insights about coding and tech 
+          in general.
         </p>
       </section>
 
@@ -70,9 +73,9 @@ const Blog = () => {
       </section>
 
       {/* Call-to-Action (CTA) */}
-      <section className="mb-12">
+      <section className="mb-12 text-center">
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Want to Collaborate?</h2>
-        <p className="mb-4">
+        <p className="mb-4 max-w-3xl mx-auto">
           I’m always open to working on new projects and collaborations. Leave a comment or <Link to="/contact" className="text-yellow-500 hover:underline">get in touch</Link> for any inquiries.
         </p>
       </section>
