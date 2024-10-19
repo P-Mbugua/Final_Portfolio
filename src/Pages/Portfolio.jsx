@@ -56,17 +56,17 @@ const MyWork = () => {
     setReviews(reviewsList);
   };
 
-  // Add a new review to Firestore
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if stars are selected
+    
     if (newReview.stars === 0) {
-      toast.error('Please select a number of stars before submitting your review.'); // Error message
-      return; // Prevent submission
+      toast.error('Please select a number of stars before submitting your review.'); 
+      return; 
     }
 
-    setIsLoading(true); // Show loading spinner
+    setIsLoading(true); 
 
     try {
       const reviewData = {
