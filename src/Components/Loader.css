@@ -4,34 +4,34 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #111; /* Deep black background for contrast */
+  background-color: #111; 
   color: white;
-  font-family: 'Poppins', sans-serif; /* Use a modern professional font */
-  overflow: hidden; /* Prevent overflow during animations */
+  font-family: 'Poppins', sans-serif; 
+  overflow: hidden; 
 }
 
 .name {
   position: relative;
   text-align: center;
-  margin-bottom: 30px; /* Increased spacing for a more balanced look */
+  margin-bottom: 30px; 
 }
 
 .name-part {
-  font-size: 4.5rem; /* Slightly larger font size for impact */
-  letter-spacing: 5px; /* More spaced out letters for a modern touch */
-  font-weight: 700; /* Increased boldness for emphasis */
-  text-transform: uppercase; /* Make the text uppercase */
-  opacity: 0.8; /* Slightly reduced opacity for smoother appearance */
-  transition: opacity 0.5s ease-in-out, transform 0.3s; /* Smooth transition effects */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Added text shadow for depth */
+  font-size: 4.5rem; 
+  letter-spacing: 5px; 
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.8; 
+  transition: opacity 0.5s ease-in-out, transform 0.3s; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
 }
 
 .line {
-  width: 500px; /* Wider for a more prominent look */
-  height: 6px; /* Thicker line for a bold presence */
-  border-radius: 3px; /* Rounded edges for modern appeal */
-  background: linear-gradient(to right, #eab308, #22c55e); /* Gradient colors */
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.5); /* More pronounced shadow for depth */
+  width: 500px; 
+  height: 6px;
+  border-radius: 3px; 
+  background: linear-gradient(to right, #eab308, #22c55e); 
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
