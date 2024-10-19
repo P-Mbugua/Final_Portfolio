@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faHome, faUser, faEnvelope, faSuitcase, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faBlog } from '@fortawesome/free-solid-svg-icons'; // Import the blog icon
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,6 +91,16 @@ const MobileHeader = () => {
             >
               <FontAwesomeIcon icon={faCog} className="mr-2" />
               Skills
+            </Link>
+
+            {/* Blog Link */}
+            <Link
+              to="/blog"
+              className="flex items-center p-3 hover:bg-yellow-500 hover:text-black rounded-lg transition duration-200 transform hover:scale-105"
+              onClick={handleLinkClick}
+            >
+              <FontAwesomeIcon icon={faBlog} className="mr-2" /> {/* Add the Blog icon */}
+              Blog
             </Link>
 
             {/* Contact Link */}
