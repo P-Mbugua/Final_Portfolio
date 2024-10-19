@@ -2,7 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
+// Sample data for social media accounts with activity status and percentage
+const socialMediaAccounts = [
+  { name: 'Twitter', url: 'https://twitter.com/yourprofile', activity: 90 },
+  { name: 'GitHub', url: 'https://github.com/yourprofile', activity: 80 },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', activity: 40 },
+  { name: 'Facebook', url: 'https://facebook.com/yourprofile', activity: 70 },
+];
+
 const Blog = () => {
+  const getRecommendation = (activity) => {
+    if (activity >= 75) {
+      return "Great job! Keep up the excellent engagement.";
+    } else if (activity >= 50) {
+      return "You're doing well! Consider posting more frequently.";
+    } else {
+      return "It looks like there's room for improvement. Try to be more active.";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white p-6 md:px-20 lg:px-40">
       {/* Introduction/Author Bio */}
@@ -73,28 +91,29 @@ const Blog = () => {
         </ul>
       </section>
 
-      {/* Call-to-Action (CTA) */}
-      <section className="mb-12 text-center">
-        <h2 className="text-2xl font-semibold mb-4 text-green-500">Want to Collaborate?</h2>
-        <p className="mb-4 max-w-3xl mx-auto">
-          I’m always open to working on new projects and collaborations. Leave a comment or 
-          <Link to="/contact" className="text-yellow-500 hover:underline"> get in touch</Link> for any inquiries.
-        </p>
-        
-        {/* Social Media Links */}
-        <div className="flex justify-center space-x-4">
-          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
-            <FaTwitter size={24} />
-          </a>
-          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
-            <FaGithub size={24} />
-          </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
-            <FaLinkedin size={24} />
-          </a>
-          <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:text-green-400">
-            <FaFacebook size={24} />
-          </a>
+      {/* Enhanced Social Media Links */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-6 text-green-500 text-center">Connect with Me</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {socialMediaAccounts.map((account) => (
+            <div key={account.name} className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col items-center space-y-2 transition-transform duration-300 hover:scale-105">
+              <a
+                href={account.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1"
+              >
+                {account.name === 'Twitter' && <FaTwitter size={36} className="text-yellow-500" />}
+                {account.name === 'GitHub' && <FaGithub size={36} className="text-yellow-500" />}
+                {account.name === 'LinkedIn' && <FaLinkedin size={36} className="text-yellow-500" />}
+                {account.name === 'Facebook' && <FaFacebook size={36} className="text-yellow-500" />}
+                <span className="text-lg font-bold">{account.activity}%</span>
+              </a>
+              <p className={`text-center ${account.activity >= 50 ? 'text-yellow-400' : 'text-gray-500'} text-sm`}>
+                {getRecommendation(account.activity)}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
