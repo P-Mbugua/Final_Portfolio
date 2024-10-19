@@ -12,13 +12,13 @@ const MobileHeader = () => {
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false); // Close menu after clicking a link
+    setIsOpen(false);
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false); // Close menu when clicked outside
+        setIsOpen(false); 
       }
     };
 

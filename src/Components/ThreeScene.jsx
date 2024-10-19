@@ -26,12 +26,12 @@ const ThreeScene = () => {
     
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
-    // Use a larger size for particles and set opacity for better visibility
+
     const material = new THREE.PointsMaterial({ color: 0xffffff, size: 3, sizeAttenuation: true, transparent: true, opacity: 0.7 }); 
     const particlesMesh = new THREE.Points(geometry, material);
     scene.add(particlesMesh);
     
-    camera.position.z = 100; // Adjust camera position as needed
+    camera.position.z = 100; 
 
     const animate = () => {
       requestAnimationFrame(animate);
@@ -42,11 +42,10 @@ const ThreeScene = () => {
     
     animate();
 
-    // Clean up
     return () => {
       renderer.dispose();
     };
-  }, []); // Run only once on mount
+  }, []); 
 
   return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />;
 };
