@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <Loader />; // Show the loader while loading
+    return <Loader />; 
   }
 
   return (
