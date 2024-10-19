@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Loader.css'; // Import the CSS for styling the loader
+import './Loader.css'; 
 
 export default function Loader() {
   const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ export default function Loader() {
       setLoading(false);
     }, 3000); // Adjust the duration as needed
 
-    return () => clearTimeout(timer); // Cleanup the timer on component unmount
+    return () => clearTimeout(timer); 
   }, []);
 
   return (
@@ -22,6 +22,6 @@ export default function Loader() {
           <div className="name-part text-green-500">Mbugua</div>
         </div>
       </div>
-    ) : null // Hide the loader when loading is false
+    ) : null 
   );
 }
