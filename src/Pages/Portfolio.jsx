@@ -1,6 +1,6 @@
 // ... other imports
 import React, { useEffect, useState } from 'react';
-import { db } from '../firebase'; // Import Firebase
+import { db } from '../firebase';
 import { collection, getDocs, addDoc } from 'firebase/firestore'; 
 import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -15,8 +15,8 @@ const MyWork = () => {
     message: '',
     photo: null,
   });
-  const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle form visibility
-  const [isLoading, setIsLoading] = useState(false); // State for loading
+  const [isFormVisible, setIsFormVisible] = useState(false); 
+  const [isLoading, setIsLoading] = useState(false); 
 
   // Sample projects data
   useEffect(() => {
