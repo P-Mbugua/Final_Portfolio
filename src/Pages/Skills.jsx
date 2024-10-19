@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css';
 
 export default function Skills() {
   const technicalSkills = [
@@ -79,7 +79,7 @@ export default function Skills() {
               <p className="text-gray-300 mb-2 flex-grow">{skill.description}</p>
               <div className="bg-gray-600 rounded-full h-4 overflow-hidden">
                 <div
-                  className={`bg-yellow-500 h-full transition-all duration-50`} // Changed to yellow-500
+                  className={`bg-yellow-500 h-full transition-all duration-50`}
                   style={{ width: `${animatedTechnicalSkills[index]}%` }}
                 ></div>
               </div>
@@ -99,7 +99,7 @@ export default function Skills() {
               <p className="text-gray-300 mb-2 flex-grow">{skill.description}</p>
               <div className="bg-gray-600 rounded-full h-4 overflow-hidden">
                 <div
-                  className={`bg-yellow-500 h-full transition-all duration-50`} // Changed to yellow-500
+                  className={`bg-yellow-500 h-full transition-all duration-50`}
                   style={{ width: `${animatedSoftSkills[index]}%` }}
                 ></div>
               </div>

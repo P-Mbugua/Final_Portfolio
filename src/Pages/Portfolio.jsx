@@ -178,7 +178,7 @@ const MyWork = () => {
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span
                       key={star}
-                      onClick={() => setNewReview({ ...newReview, stars: star })} // Set star rating on click
+                      onClick={() => setNewReview({ ...newReview, stars: star })}
                       className={`cursor-pointer text-2xl ${newReview.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}
                     >
                       ★
