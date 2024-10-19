@@ -11,14 +11,14 @@ import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
 import Footer from './Components/Footer';
 import ContactForm from './Components/ContactForm';
-import Loader from './Components/Loader'; // Import the Loader component
+import Loader from './Components/Loader'; 
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000); // Adjust the loading time as needed
+    const timer = setTimeout(() => setLoading(false), 3000); 
     return () => clearTimeout(timer);
   }, []);
 
