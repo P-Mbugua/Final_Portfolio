@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUser, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { faWhatsapp, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'; // Brand icons
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'; // Location icon
+import { faWhatsapp, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'; 
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'; 
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
