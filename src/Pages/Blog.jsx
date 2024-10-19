@@ -63,7 +63,7 @@ const Blog = () => {
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
             <div className="relative">
               <img
-                src="https://via.placeholder.com/400x200" // Replace with actual image
+                src="https://files.oaiusercontent.com/file-5yCafMpjy0WTlG16IXRaUyrJ?se=2024-10-19T13%3A37%3A24Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D71e77bdd-e15a-4cf5-bfab-9957c9d4e79c.webp&sig=uCW7y3Z4GdFqPaEHJbGNCe8mG/fUy%2BDI71odnzelJIc%3D" // Replace with actual image
                 alt="Post Thumbnail"
                 className="w-full h-40 object-cover"
               />
@@ -85,7 +85,7 @@ const Blog = () => {
           <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
             <div className="relative">
               <img
-                src="https://via.placeholder.com/400x200" // Replace with actual image
+                src="https://files.oaiusercontent.com/file-qgJYpYRPLeu5XsODRUPIotmQ?se=2024-10-19T13%3A35%3A58Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0b675833-7659-4d67-8d1a-ed4985289da9.webp&sig=wS%2BdPCk11RCr2PLJydavpOQZyOVIO/o1unY/GchDsFI%3D" // Replace with actual image
                 alt="Post Thumbnail"
                 className="w-full h-40 object-cover"
               />
