@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../firebase'; // Import Firebase
 import { collection, getDocs, addDoc } from 'firebase/firestore'; // Firestore methods
 import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
-import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const MyWork = () => {
   const [projects, setProjects] = useState([]);
@@ -141,7 +141,7 @@ const MyWork = () => {
         {/* Button Container for Leave a Review */}
         <div className="flex justify-end mb-4">
           <button 
-            onClick={() => setIsFormVisible(true)} // Open the modal
+            onClick={() => setIsFormVisible(true)} 
             className="bg-green-500 text-white px-4 py-2 font-semibold rounded-full"
           >
             Leave a Review
