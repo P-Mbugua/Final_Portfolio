@@ -10,7 +10,7 @@ export default function Footer() {
         <p>Building innovative software solutions.</p>
       </div>
       <div className="mt-2">
-        <a href="https://twitter.com/yourusername" className="text-green-500 mx-1" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/pmbugua276" className="text-green-500 mx-1" target="_blank" rel="noopener noreferrer">
           Twitter
         </a>
         |
