@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
 
 // Sample data for social media accounts with activity status and percentage
 const socialMediaAccounts = [
   { name: 'Twitter', url: 'https://twitter.com/yourprofile', activity: 90 },
-  { name: 'GitHub', url: 'https://github.com/yourprofile', activity: 80 },
+  { name: 'GitHub', url: 'https://github.com/P-Mbugua', activity: 80 },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/yourprofile', activity: 40 },
   { name: 'Facebook', url: 'https://facebook.com/yourprofile', activity: 70 },
 ];
 
 const Blog = () => {
+  const [interactivityPercentage, setInteractivityPercentage] = useState(null);
+  
+  // Function to fetch interactivity percentage
+  const fetchInteractivity = async () => {
+    try {
+      const response = await fetch('https://api.yourservice.com/getInteractivity?url=https://yourwebsite.com'); // Replace with your actual API endpoint
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setInteractivityPercentage(data.interactivityPercentage); // Assuming the API returns { interactivityPercentage: number }
+    } catch (error) {
+      console.error("Error fetching interactivity data:", error);
+    }
+  };
+
+  // Fetch the interactivity percentage when the component mounts
+  useEffect(() => {
+    fetchInteractivity();
+  }, []);
+
   const getRecommendation = (activity) => {
     if (activity >= 75) {
       return "Great job! Keep up the excellent engagement.";
