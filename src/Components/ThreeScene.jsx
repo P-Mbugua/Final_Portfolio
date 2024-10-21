@@ -6,22 +6,22 @@ const ThreeScene = () => {
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000); // Increased far plane to 2000
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000); 
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current, alpha: false });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 1); // Set clear color to black
+    renderer.setClearColor(0x000000, 1); 
 
     const particles = [];
-    const particleCount = 250; // Adjusted to a more moderate particle count
+    const particleCount = 250; 
     const geometry = new THREE.BufferGeometry();
     
-    // Create particles
+
     const positions = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 800; // Adjust range for X
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 800; // Adjust range for Y
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 800; // Adjust range for Z
+      positions[i * 3] = (Math.random() - 0.5) * 800; 
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 800;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 800; 
     }
     
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));

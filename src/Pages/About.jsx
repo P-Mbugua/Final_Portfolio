@@ -106,7 +106,7 @@ export default function AboutAndServices() {
                   tasks: ['Data Analyst', 'Day-to-day office duties', 'Lead product implementation', 'Provide feedback to students'],
                 },
                 {
-                  date: 'SEPT 2021 - Present',
+                  date: 'SEPT 2024 - Present',
                   role: 'Fullstack Developer Attachment – Marps Africa Solutions',
                   tasks: ['UX/UI Designer', 'Participate in software projects', 'Frontend Developer', 'Perform code reviews'],
                 },
@@ -145,13 +145,13 @@ export default function AboutAndServices() {
                   studies: ['Frontend Development', 'Backend Development', 'UI/UX Design'],
                 },
                 {
-                  date: 'MARCH 2020 - MAY 2023',
-                  institution: 'Diploma in ICT – Kenya College of Accountancy',
+                  date: 'MAY 2023 - SEPT 2023',
+                  institution: 'Certification in Website Development – Moringa School',
                   studies: ['Computer Repair & Maintenance', 'Programming', 'Software Development'],
                 },
                 {
-                  date: 'JAN 2020 - APR 2021',
-                  institution: 'Certificate in Graphic Design – Institute of Advanced Technology',
+                  date: 'SEPT 2022 - DEC 2022',
+                  institution: 'Certificate in Graphic Design – Pettans Institute',
                   studies: ['Graphic Solutions', 'Visual arts & media'],
                 },
               ].map((edu, index) => (

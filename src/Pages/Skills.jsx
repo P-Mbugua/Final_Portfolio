@@ -65,7 +65,7 @@ export default function Skills() {
          MY SKILLS
         </h1>
         <h2 className="text-lg text-gray-300 mt-2 font-medium">
-          Showcasing my journey and growth in the world of technology
+        – Showcasing my journey and growth in the world of technology –
         </h2>
       </div>
 

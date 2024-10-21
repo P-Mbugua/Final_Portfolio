@@ -100,7 +100,7 @@ const ToggleButton = () => {
         <button 
           onClick={handleToggle} 
           className="fixed top-16 left-4 flex items-center bg-white text-black p-3 rounded-full shadow-lg transition-transform transform hover:scale-110 active:scale-95 z-50"
-          style={{ animation: 'pulse 1.5s infinite' }} // Add animation
+          style={{ animation: 'pulse 1.5s infinite' }} 
         >
           <FaBars size={20} />
         </button>

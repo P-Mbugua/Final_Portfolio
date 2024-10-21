@@ -10,49 +10,49 @@ const ParticlesBackground: React.FC = () => {
         fpsLimit: 60,
         particles: {
           number: {
-            value: 100, // Number of particles
+            value: 100, 
           },
           shape: {
-            type: "circle", // Particle shape
+            type: "circle", 
           },
           size: {
-            value: 8, // Larger particle size for visibility
-            random: true, // Randomize size
+            value: 8, 
+            random: true, 
           },
           move: {
             enable: true,
-            speed: 2, // Speed of particle movement
+            speed: 2, 
             direction: "none",
             random: false,
             straight: false,
-            outMode: "out", // Ensure particles move outside the canvas
+            outMode: "out", 
             bounce: false,
           },
           links: {
-            enable: true, // Enable lines between particles
+            enable: true, 
             distance: 150,
-            color: "#ffffff", // Line color (white for visibility)
+            color: "#ffffff", 
             opacity: 0.5,
             width: 1,
           },
           color: {
-            value: "#ff0000", // Bright red particles for high visibility
+            value: "#ff0000", 
           },
         },
         interactivity: {
           events: {
             onHover: {
               enable: true,
-              mode: "repulse", // Repulse effect on hover
+              mode: "repulse", 
             },
             onClick: {
               enable: true,
-              mode: "push", // Add particles on click
+              mode: "push", 
             },
-            resize: true, // Ensure particles adapt to screen resize
+            resize: true, 
           },
         },
-        retina_detect: true, // High DPI support
+        retina_detect: true, 
       }}
     />
   );

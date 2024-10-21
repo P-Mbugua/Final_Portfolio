@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <div className="bg-gray-800 text-white py-2 text-center">
       <p className="text-xs">
-        &copy; {new Date().getFullYear()} Peter Mbugua. All rights reserved.
+        &copy; {new Date().getFullYear()} Mbugua Peter. All rights reserved.
       </p>
       <div className="mt-1 text-xs">
-        <p>Building innovative software solutions.</p>
+        <p>Building innovative software | Website solutions.</p>
       </div>
       <div className="mt-2">
         <a href="https://twitter.com/pmbugua276" className="text-green-500 mx-1" target="_blank" rel="noopener noreferrer">

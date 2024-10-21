@@ -74,10 +74,10 @@ I have experience with the following technologies and tools:
 
 Feel free to reach out to me through any of the following methods:
 
-- **Email**: pmbugua276@gmail.com
+- **Email**: petermbuguangumi@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/peter-mbugua-a6351a262
 - **GitHub**: https://github.com/P-Mbugua
-- **Portfolio Website**: https://developerp.netlify.app/
+- **Portfolio Website**: https://mbuguapeter.netlify.app/
 
 Thank you for visiting my portfolio. I look forward to connecting with you!
 

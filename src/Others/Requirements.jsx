@@ -1,5 +1,5 @@
-//Official Photo.
-// Unique working name.
+//Official Photo.                                                                                   (Done)
+// Unique working name.                                                                                (To be done later)
 // Passport photo.
 // Curriculum vitae not longer than 1 page. (should be hosted in flow website).
 // Other photos of myself.
@@ -12,15 +12,15 @@
 // Colourfull loader that will have an effect to all pages (Should be my name.)
 
 
-// Hosting my photos to a remote branch.
-// Usage of the codes in the right way.
-// Incoporation of python at some parts for improvements of coding.
+// Hosting my photos to a remote branch.                                                          (Done)
+// Usage of the codes in the right way.                                                            (Almost Done!!!)
+// Incoporation of python at some parts for improvements of coding.                                 (Not applicable instead I have used Firebase!)
 
 
 // Installation of tailwind. (framework)                                                          (Done)
-// Creating a respository.
+// Creating a respository.                                                                        (Done)
 // Sending the codes for review to other developers.
 
 
 // Buying a domain for emails.
-// Connecting the contact form to my email box to be receiving emails and also messages.
+// Connecting the contact form to my email box to be receiving emails and also messages.           (Done, using emailjs)

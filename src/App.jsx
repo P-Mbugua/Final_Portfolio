@@ -46,7 +46,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/biography" element={<Biography />} />
         <Route path="/contactform" element={<ContactForm />} />
-        <Route path="/blog" element={<Blog />} /> {/* New Blog Route */}
+        <Route path="/blog" element={<Blog />} />
       </Routes>
 
       {location.pathname !== '/home' && <Footer />}

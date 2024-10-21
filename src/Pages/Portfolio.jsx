@@ -155,7 +155,7 @@ const MyWork = () => {
                 onClick={() => setIsFormVisible(false)} 
                 className="absolute top-2 right-2 text-gray-600"
               >
-                &times; {/* Close button */}
+                &times; 
               </button>
               <h3 className="text-lg font-bold text-green-500 mb-4">Leave a Review</h3>
               <form onSubmit={handleSubmit}>
@@ -214,7 +214,6 @@ const MyWork = () => {
 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {reviews.map((review) => (
     <div key={review.id} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
-      {/* Display the photo at the top */}
       <div className="flex justify-center mb-4">
         {review.photo ? (
           <img src={review.photo} alt="Review" className="h-24 w-24 object-cover rounded-full" />
@@ -237,7 +236,6 @@ const MyWork = () => {
         <p className="text-sm text-black">{review.date}</p>
       </div>
 
-      {/* Review Message */}
       <p className="text-green-500">{review.message}</p>
     </div>
   ))}

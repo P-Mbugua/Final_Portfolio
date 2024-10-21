@@ -56,15 +56,15 @@ export default function Contact() {
           GET <span className="text-green-500">IN TOUCH</span>
         </h1>
         <p className="text-center text-base md:text-lg mt-4">
-          I'M ALWAYS OPEN TO DISCUSSING{" "}
+         I'M ALWAYS OPEN TO DISCUSSING{" "}
           <span className="font-bold text-white">
-            DEVELOPER RELATIONS / TRAINER / SOFTWARE DEV WORK OR PARTNERSHIPS
+            DEVELOPER RELATIONS / TRAINER / SOFTWARE DEV WORK OR PARTNERSHIPS 
           </span>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <div className="space-y-4 text-base md:text-lg">
-            <ContactInfo icon={faWhatsapp} label="Phone" value="+254 701 571 145" />
-            <ContactInfo icon={faEnvelope} label="Email" value="pmbugua276@gmail.com" />
+            <ContactInfo icon={faWhatsapp} label="Phone" value="+254 701 571 745" />
+            <ContactInfo icon={faEnvelope} label="Email" value="petermbuguangumi@gmail.com" />
             <ContactInfo icon={faTwitter} label="Twitter" value="@mbugua276" />
             <ContactInfo icon={faGithub} label="Github" value="P-Mbugua" />
             <ContactInfo icon={faMapMarkerAlt} label="Location" value="Limuru, Kiambu, Kenya" />

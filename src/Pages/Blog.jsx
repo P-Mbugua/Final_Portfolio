@@ -56,7 +56,7 @@ const Blog = () => {
       setBlogPosts(posts);
     });
 
-    return () => unsubscribe(); // Cleanup subscription on unmount
+    return () => unsubscribe(); 
   }, []);
 
   // Function to handle subscription
@@ -77,7 +77,7 @@ const Blog = () => {
         timestamp: new Date(),
       });
       setSubscriptionStatus('Subscription successful! Thank you for subscribing.');
-      setEmail(''); // Reset email input after success
+      setEmail(''); 
     } catch (error) {
       console.error("Error subscribing:", error);
       setSubscriptionStatus('Subscription failed. Please try again.');
@@ -138,11 +138,10 @@ const Blog = () => {
     <div className="min-h-screen bg-black text-white p-6 md:px-20 lg:px-40">
       {/* Introduction/Author Bio */}
       <section className="mb-12 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-yellow-500 font-roboto">Peter Mbugua</h1>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-green-500 font-roboto">PETER MBUGUA</h1>
         <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-inter">
           I am a passionate Fullstack Developer specializing in web and mobile app development. 
-          I love working with modern tools like React, Tailwind CSS, and exploring new technologies 
-          like Kotlin. I blog to share my journey, challenges, and insights about coding and tech 
+          I blog to share my journey, challenges, and insights about coding and tech 
           in general.
         </p>
       </section>
@@ -155,7 +154,7 @@ const Blog = () => {
             <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
               <div className="relative">
                 <img
-                  src={post.image} // Use the dynamic image from Firestore
+                  src={post.image} 
                   alt="Post Thumbnail"
                   className="w-full h-40 object-cover"
                 />
