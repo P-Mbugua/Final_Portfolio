@@ -56,11 +56,9 @@ const MyWork = () => {
     setReviews(reviewsList);
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
     if (newReview.stars === 0) {
       toast.error('Please select a number of stars before submitting your review.'); 
       return; 
@@ -211,36 +209,38 @@ const MyWork = () => {
         )}
 
         {/* Display Reviews */}
-<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {reviews.map((review) => (
-    <div key={review.id} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
-      <div className="flex justify-center mb-4">
-        {review.photo ? (
-          <img src={review.photo} alt="Review" className="h-24 w-24 object-cover rounded-full" />
-        ) : (
-          <div className="h-24 w-24 flex items-center justify-center bg-gray-200 rounded-full">
-            <span className="text-4xl font-bold text-gray-600">{review.name.charAt(0).toUpperCase()}</span>
-          </div>
-        )}
-      </div>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {reviews.map((review) => (
+            <div key={review.id} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+              <div className="flex justify-center mb-4">
+                {review.photo ? (
+                  <img src={review.photo} alt="Review" className="h-24 w-24 object-cover rounded-full" />
+                ) : (
+                  <div className="h-24 w-24 flex items-center justify-center bg-gray-200 rounded-full">
+                    <span className="text-4xl font-bold text-gray-600">{review.name.charAt(0).toUpperCase()}</span>
+                  </div>
+                )}
+              </div>
 
-      {/* Stars and Date Layout */}
-      <div className="flex justify-between items-center mb-3">
-        <div className="flex items-center space-x-1">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span key={star} className={`text-lg ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}>
-              ★
-            </span>
+              {/* Reviewer Name */}
+              <h4 className="text-lg font-semibold text-gray-800 mb-1">{review.name}</h4> {/* Added this line for the name */}
+
+              {/* Stars and Date Layout */}
+              <div className="flex justify-between items-center mb-3">
+                <div className="flex items-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span key={star} className={`text-lg ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}>
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-black">{review.date}</p>
+              </div>
+
+              <p className="text-green-500">{review.message}</p>
+            </div>
           ))}
         </div>
-        <p className="text-sm text-black">{review.date}</p>
-      </div>
-
-      <p className="text-green-500">{review.message}</p>
-    </div>
-  ))}
-</div>
-
       </div>
       <ToastContainer />
     </div>
