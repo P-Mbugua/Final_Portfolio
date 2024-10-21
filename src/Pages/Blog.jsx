@@ -74,7 +74,7 @@ const Blog = () => {
       <section className="text-center my-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500">Welcome to My Blog</h2>
         <p className="text-lg md:text-xl text-gray-400 mt-4 max-w-3xl mx-auto">
-          Sharing my journey as a Fullstack Developer. Join me as I explore the latest in web development, mobile apps, AI, and tech innovations.
+        Join me on my journey as a Fullstack Developer, where I dive deep into the ever-evolving landscape of technology. Together, we’ll explore the latest trends in web development, mobile applications, artificial intelligence, and groundbreaking innovations that are shaping the future of our digital world.
         </p>
       </section>
 
