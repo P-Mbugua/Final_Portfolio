@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaTwitter, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { FaTwitter, FaGithub, FaLinkedin, FaFacebook, FaEnvelope } from 'react-icons/fa';
 
 const Blog = () => {
   const [expandedPosts, setExpandedPosts] = useState({});
@@ -70,8 +70,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-inter">
-      
-
       {/* Introduction */}
       <section className="text-center my-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500">Welcome to My Blog</h2>
@@ -125,8 +123,10 @@ const Blog = () => {
           <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaFacebook />
           </a>
+          <a href="mailto:petermbuguangumi@gmail.com" className="text-white hover:text-yellow-500 text-2xl">
+            <FaEnvelope />
+          </a>
         </div>
-        <a href="mailto:petermbuguangumi@gmail.com" className="text-yellow-500 underline hover:text-yellow-400">petermbuguangumi@gmail.com</a>
       </section>
 
     </div>
