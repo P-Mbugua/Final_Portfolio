@@ -1,23 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
-
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAFey9M3UNzqKEk5190WydMz-ttMoiW6jU",
-  authDomain: "portfolio1-eddb9.firebaseapp.com",
-  projectId: "portfolio1-eddb9",
-  storageBucket: "portfolio1-eddb9.appspot.com",
-  messagingSenderId: "579034394595",
-  appId: "1:579034394595:web:90009f223432be6fb7fad6",
-  measurementId: "G-YK4YDN5E1Z"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 const socialMediaAccounts = [
   { name: 'Twitter', url: 'https://twitter.com/yourprofile', activity: 90 },
