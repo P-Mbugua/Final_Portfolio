@@ -39,7 +39,6 @@ const Blog = () => {
       fullContent: 'Artificial intelligence is rapidly changing the software development process, from AI-driven code suggestions to automated testing and deployment pipelines...',
       image: 'https://example.com/image3.jpg',
     },
-    // Additional posts...
     {
       id: 4,
       date: 'Oct 15, 2024',
@@ -70,39 +69,36 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 md:px-20 lg:px-40">
-      {/* Introduction/Author Bio */}
-      <section className="mb-12 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-green-500 font-roboto">PETER MBUGUA</h1>
-        <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto font-inter">
-          I am a passionate Fullstack Developer specializing in web and mobile app development. 
-          I blog to share my journey, challenges, and insights about coding and tech in general.
+    <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-inter">
+      
+
+      {/* Introduction */}
+      <section className="text-center my-12">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500">Welcome to My Blog</h2>
+        <p className="text-lg md:text-xl text-gray-400 mt-4 max-w-3xl mx-auto">
+          Sharing my journey as a Fullstack Developer. Join me as I explore the latest in web development, mobile apps, AI, and tech innovations.
         </p>
       </section>
 
-      {/* Blog Posts */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-6 text-green-500 font-inter">Latest Blog Posts</h2>
+      {/* Blog Section */}
+      <section id="blog" className="mb-16">
+        <h2 className="text-2xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
               <div className="relative">
-                <img
-                  src={post.image}
-                  alt="Post Thumbnail"
-                  className="w-full h-40 object-cover"
-                />
+                <img src={post.image} alt="Post Thumbnail" className="w-full h-40 object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
               </div>
-              <div className="p-4">
-                <p className="text-sm text-gray-400 mb-2 font-inter">{post.date} • {post.category}</p>
-                <h3 className="text-xl font-semibold mb-2 text-yellow-500 font-roboto">{post.title}</h3>
-                <p className="text-sm mb-4 font-inter">
+              <div className="p-6">
+                <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
+                <h3 className="text-xl font-semibold text-yellow-500">{post.title}</h3>
+                <p className="text-gray-300 mb-4">
                   {expandedPosts[post.id] ? post.fullContent : post.summary}
                 </p>
                 <button
                   onClick={() => togglePost(post.id)}
-                  className="inline-block bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400 font-inter"
+                  className="bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400"
                 >
                   {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
                 </button>
@@ -112,10 +108,11 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Social Media Handles */}
-      <section className="text-center mt-12">
-        <h2 className="text-2xl font-semibold mb-4 text-green-500 font-inter">Connect with Me</h2>
-        <div className="flex justify-center space-x-4">
+      {/* Contact & Social Media */}
+      <section id="contact" className="text-center mb-16">
+        <h2 className="text-2xl font-semibold mb-4 text-green-500">Connect with Me</h2>
+        <p className="text-gray-400 mb-8">Feel free to reach out or follow me on social media.</p>
+        <div className="flex justify-center space-x-6 mb-6">
           <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaTwitter />
           </a>
@@ -129,7 +126,13 @@ const Blog = () => {
             <FaFacebook />
           </a>
         </div>
+        <a href="mailto:your-email@example.com" className="text-yellow-500 underline hover:text-yellow-400">your-email@example.com</a>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-700 py-4 text-center">
+        <p className="text-sm text-gray-400">© 2024 Peter Mbugua. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
