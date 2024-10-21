@@ -69,7 +69,7 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-inter">
+    <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-sans">
       {/* Introduction */}
       <section className="text-center my-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500">Welcome to My Blog</h2>
@@ -128,7 +128,6 @@ const Blog = () => {
           </a>
         </div>
       </section>
-
     </div>
   );
 };
