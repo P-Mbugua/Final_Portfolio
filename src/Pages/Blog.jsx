@@ -129,10 +129,6 @@ const Blog = () => {
         <a href="mailto:your-email@example.com" className="text-yellow-500 underline hover:text-yellow-400">your-email@example.com</a>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-700 py-4 text-center">
-        <p className="text-sm text-gray-400">© 2024 Peter Mbugua. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
