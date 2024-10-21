@@ -126,7 +126,7 @@ const Blog = () => {
             <FaFacebook />
           </a>
         </div>
-        <a href="mailto:petermbuguangumi@example.com" className="text-yellow-500 underline hover:text-yellow-400">your-email@example.com</a>
+        <a href="mailto:petermbuguangumi@gmail.com" className="text-yellow-500 underline hover:text-yellow-400">petermbuguangumi@example.com</a>
       </section>
 
     </div>
