@@ -42,6 +42,37 @@ const Blog = () => {
       image: 'https://imgs.search.brave.com/wfgijv9bcTwpFjf7SyjRVnsLF_rL9waHAr5NlaClINY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/OC8xMi8wOS8xNy9p/bmR1c3RyeS0yNjMz/ODc4XzY0MC5qcGc',
       tags: ['AI', 'Development', 'Automation'],
     },
+    {
+      id: 4,
+      date: 'Jun 18, 2024',
+      category: 'M-Pesa Payment Integration',
+      title: 'Integrating M-Pesa STK Push for Seamless Payments',
+      summary: 'A comprehensive guide on implementing M-Pesa STK Push in your applications for efficient mobile payments.',
+      fullContent: `
+        In this post, we will explore how to integrate M-Pesa STK Push into your application to enable seamless mobile payments. 
+        This integration is essential for businesses operating in Kenya, as M-Pesa is one of the most widely used payment platforms.
+    
+        **Step 1: Set Up M-Pesa API Credentials**
+        First, you need to register as a developer on the Safaricom Developer Portal. Create a new app and obtain your API credentials, including your Consumer Key and Consumer Secret.
+    
+        **Step 2: Configure Your Environment**
+        Ensure you have a backend setup (Node.js, PHP, etc.) to handle API requests securely. You will also need to set up a server that can handle HTTPS requests.
+    
+        **Step 3: Create the STK Push Request**
+        Construct the STK Push request using the required parameters such as business shortcode, lipa na M-Pesa online shortcode, transaction amount, and phone number of the customer.
+    
+        **Step 4: Handle the Response**
+        After sending the STK Push request, handle the response from M-Pesa to confirm if the transaction was successful. You will need to check the response code and update your application accordingly.
+    
+        **Step 5: Testing**
+        Make sure to test your integration in the sandbox environment provided by Safaricom before going live. This will help you identify any issues without affecting real transactions.
+    
+        By following these steps, you can successfully integrate M-Pesa STK Push into your application, providing a user-friendly payment option for your customers.
+      `,
+      image: 'https://imgs.search.brave.com/wfgijv9bcTwpFjf7SyjRVnsLF_rL9waHAr5NlaClINY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/OC8xMi8wOS8xNy9p/bmR1c3RyeS0yNjMz/ODc4XzY0MC5qcGc', // Consider using a relevant image related to M-Pesa
+      tags: ['M-Pesa', 'Payment Integration', 'Mobile Payments'],
+    },
+    
     // Additional posts...
   ];
 
