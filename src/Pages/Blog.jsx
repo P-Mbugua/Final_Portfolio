@@ -73,7 +73,6 @@ const Blog = () => {
       tags: ['M-Pesa', 'Payment Integration', 'Mobile Payments'],
     },
     
-    // Additional posts...
   ];
 
   const popularPosts = posts.slice(0, 3);
