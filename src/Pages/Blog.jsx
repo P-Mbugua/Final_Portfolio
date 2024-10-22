@@ -29,7 +29,7 @@ const Blog = () => {
       title: 'The Future of Web 3.0',
       summary: 'A deep dive into how Web 3.0 and blockchain are reshaping the internet, and what it means for developers.',
       fullContent: 'Web 3.0 introduces decentralized technologies like blockchain. This post discusses how smart contracts, cryptocurrencies, and decentralized apps will reshape the future...',
-      image: 'https://example.com/image2.jpg',
+      image: 'https://imgs.search.brave.com/3L5SNfMsPMSucEcntea1KK6ZkyXgcSQhIfnoRUdmU0c/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE0/OTUzMDk5My9waG90/by9kaWdpdGFsLWh1/bWFuLWhlYWQtY29u/Y2VwdC1mb3ItYWkt/bWV0YXZlcnNlLWFu/ZC1mYWNpYWwtcmVj/b2duaXRpb24tdGVj/aG5vbG9neS53ZWJw/P2E9MSZiPTEmcz02/MTJ4NjEyJnc9MCZr/PTIwJmM9bnlQNGMt/czVjU1p5MW52MUsw/eG4xeW5DLVh1YzFz/WTRZMjlaUXFjcnp0/QT0',
       tags: ['Blockchain', 'Web3', 'Decentralization'],
     },
     {
