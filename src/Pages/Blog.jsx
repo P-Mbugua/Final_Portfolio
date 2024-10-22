@@ -186,7 +186,7 @@ const Blog = () => {
           <a href="https://github.com/P-Mbugua" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
+          <a href="https://linkedin.com/in/mbuguapeter" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaLinkedin />
           </a>
           <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
