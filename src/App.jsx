@@ -16,7 +16,7 @@ import ContactForm from './Components/ContactForm';
 import Loader from './Components/Loader';
 
 import { analytics, db } from './firebase'; 
-import { logEvent } from 'firebase/analytics'; // Firebase Analytics
+import { logEvent } from 'firebase/analytics'; 
 import { collection, addDoc } from 'firebase/firestore'; // Firestore functions
 
 function App() {
