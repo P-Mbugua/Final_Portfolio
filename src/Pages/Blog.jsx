@@ -180,7 +180,7 @@ const Blog = () => {
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Connect with Me</h2>
         <p className="text-gray-400 mb-8">Feel free to reach out or follow me on social media.</p>
         <div className="flex justify-center space-x-6 mb-6">
-          <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
+          <a href="https://twitter.com/@pmbugua276" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaTwitter />
           </a>
           <a href="https://github.com/P-Mbugua" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
