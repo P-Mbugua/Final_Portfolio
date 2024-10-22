@@ -15,7 +15,7 @@ import Footer from './Components/Footer';
 import ContactForm from './Components/ContactForm';
 import Loader from './Components/Loader';
 
-import { analytics, db } from './firebase'; // Import Firebase services
+import { analytics, db } from './firebase'; 
 import { logEvent } from 'firebase/analytics'; // Firebase Analytics
 import { collection, addDoc } from 'firebase/firestore'; // Firestore functions
 
