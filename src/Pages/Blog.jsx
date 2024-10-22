@@ -154,7 +154,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Popular Posts Section */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Popular Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -172,7 +171,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Contact & Social Media */}
       <section id="contact" className="text-center mb-16">
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Connect with Me</h2>
         <p className="text-gray-400 mb-8">Feel free to reach out or follow me on social media.</p>
