@@ -102,7 +102,7 @@ const Blog = () => {
       {/* Featured Post Section */}
       <section className="mb-16">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Featured Post</h2>
-        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 ">
           <img src={posts[0].image} alt="Featured Post Thumbnail" className="w-full h-56 object-cover" />
           <div className="p-8">
             <p className="text-sm text-gray-400 mb-2">{posts[0].date} • {posts[0].category}</p>
@@ -110,7 +110,7 @@ const Blog = () => {
             <p className="text-gray-300 mb-4 leading-relaxed">{posts[0].summary}</p>
             <button
               onClick={() => togglePost(posts[0].id)}
-              className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+              className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 "
             >
               {expandedPosts[posts[0].id] ? 'Read Less' : 'Read More'}
             </button>
@@ -131,7 +131,7 @@ const Blog = () => {
         <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 ">
               <img src={post.image} alt="Post Thumbnail" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
@@ -139,7 +139,7 @@ const Blog = () => {
                 <p className="text-gray-300 mb-4">{post.summary}</p>
                 <button
                   onClick={() => togglePost(post.id)}
-                  className="bg-yellow-500 text-black py-2 px-4 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+                  className="bg-yellow-500 text-black py-2 px-4 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 "
                 >
                   {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
                 </button>
@@ -162,7 +162,7 @@ const Blog = () => {
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Popular Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {popularPosts.map((post) => (
-            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 ">
               <img src={post.image} alt="Popular Post Thumbnail" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
@@ -170,7 +170,7 @@ const Blog = () => {
                 <p className="text-gray-300 mb-4">{post.summary}</p>
                 <button
                   onClick={() => togglePost(post.id)}
-                  className="bg-yellow-500 text-black py-2 px-4 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+                  className="bg-yellow-500 text-black py-2 px-4 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 "
                 >
                   {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
                 </button>
