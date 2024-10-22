@@ -98,7 +98,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Featured Post Section */}
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Featured Post</h2>
         <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg mb-6 transition-transform duration-300 hover:scale-105">
@@ -125,7 +124,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Blog Section */}
       <section id="blog" className="mb-16">
         <h2 className="text-2xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
