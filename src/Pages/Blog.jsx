@@ -189,7 +189,7 @@ const Blog = () => {
           <a href="https://linkedin.com/in/mbuguapeter" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaLinkedin />
           </a>
-          <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
+          <a href="https://facebook.com/profile.php?id=100079701713758" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
             <FaFacebook />
           </a>
           <a href="mailto:petermbuguangumi@gmail.com" className="text-white hover:text-yellow-500 text-2xl">
