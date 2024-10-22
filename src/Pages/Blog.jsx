@@ -49,7 +49,7 @@ const Blog = () => {
       title: 'Building Scalable Mobile Apps',
       summary: 'Best practices and design patterns for creating scalable, high-performance mobile applications for Android and iOS.',
       fullContent: 'Scaling mobile applications requires attention to performance, security, and user experience. This article delves into best practices for ensuring app scalability...',
-      image: 'https://example.com/image4.jpg',
+      image: 'https://imgs.search.brave.com/E-7GAYImdbl2txieG_5SicSg_4kmYNKNzUjAawMhps8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMC8w/MS8yNi8yMC8xNC9j/b21wdXRlci00Nzk1/NzYyXzY0MC5qcGc',
       tags: ['Mobile', 'iOS', 'Android'],
     },
     {
