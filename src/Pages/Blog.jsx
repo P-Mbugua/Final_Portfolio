@@ -51,15 +51,15 @@ const Blog = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white p-6 md:px-20 lg:px-40 font-sans">
       {/* Introduction */}
       <section className="text-center my-12">
-        <h2 className="text-5xl font-bold text-green-500">Welcome to My Blog</h2>
-        <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500">Welcome to My Blog</h2>
+        <p className="text-base md:text-lg lg:text-xl text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
           Join me on my journey as a Fullstack Developer, diving deep into the ever-evolving landscape of technology. Together, we’ll explore the latest trends in web development, mobile applications, artificial intelligence, and groundbreaking innovations shaping our digital future.
         </p>
       </section>
 
       {/* Categories Section */}
       <section className="mb-16">
-        <h2 className="text-3xl font-semibold mb-6 text-green-500">Explore Categories</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Explore Categories</h2>
         <div className="flex flex-wrap gap-4 justify-center">
           {['Web Development', 'AI', 'Mobile Development', 'Cloud Computing', 'Cybersecurity'].map((category) => (
             <span key={category} className="bg-gray-700 text-gray-300 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 hover:bg-gray-600 hover:scale-105">
@@ -71,12 +71,12 @@ const Blog = () => {
 
       {/* Featured Post Section */}
       <section className="mb-16">
-        <h2 className="text-3xl font-semibold mb-6 text-green-500">Featured Post</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Featured Post</h2>
         <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
           <img src={posts[0].image} alt="Featured Post Thumbnail" className="w-full h-56 object-cover" />
           <div className="p-8">
             <p className="text-sm text-gray-400 mb-2">{posts[0].date} • {posts[0].category}</p>
-            <h3 className="text-2xl font-semibold text-yellow-500">{posts[0].title}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-yellow-500">{posts[0].title}</h3>
             <p className="text-gray-300 mb-4 leading-relaxed">{posts[0].summary}</p>
             <button
               onClick={() => togglePost(posts[0].id)}
@@ -98,25 +98,25 @@ const Blog = () => {
 
       {/* Blog Section */}
       <section id="blog" className="mb-16">
-        <h2 className="text-3xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
             <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
               <img src={post.image} alt="Post Thumbnail" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
-                <h3 className="text-xl font-semibold text-yellow-500">{post.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">{post.summary}</p>
+                <h3 className="text-lg md:text-xl font-semibold text-yellow-500">{post.title}</h3>
+                <p className="text-gray-300 mb-4">{post.summary}</p>
                 <button
                   onClick={() => togglePost(post.id)}
-                  className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+                  className="bg-yellow-500 text-black py-2 px-4 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
                 >
                   {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
                 </button>
                 {expandedPosts[post.id] && (
-                  <div className="mt-4 text-gray-300 leading-relaxed">{post.fullContent}</div>
+                  <div className="mt-4 text-gray-300">{post.fullContent}</div>
                 )}
-                <div className="mt-6">
+                <div className="mt-4">
                   {post.tags.map((tag) => (
                     <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full mr-2">{tag}</span>
                   ))}
@@ -129,25 +129,25 @@ const Blog = () => {
 
       {/* Popular Posts Section */}
       <section className="mb-16">
-        <h2 className="text-3xl font-semibold mb-6 text-green-500">Popular Posts</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Popular Posts</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {popularPosts.map((post) => (
-            <div key={post.id} className="bg-gray-800 rounded-lg shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
-              <img src={post.image} alt="Post Thumbnail" className="w-full h-48 object-cover" />
+            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+              <img src={post.image} alt="Popular Post Thumbnail" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
-                <h3 className="text-xl font-semibold text-yellow-500">{post.title}</h3>
-                <p className="text-gray-300 mb-4 leading-relaxed">{post.summary}</p>
+                <h3 className="text-lg md:text-xl font-semibold text-yellow-500">{post.title}</h3>
+                <p className="text-gray-300 mb-4">{post.summary}</p>
                 <button
                   onClick={() => togglePost(post.id)}
-                  className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+                  className="bg-yellow-500 text-black py-2 px-4 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
                 >
                   {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
                 </button>
                 {expandedPosts[post.id] && (
-                  <div className="mt-4 text-gray-300 leading-relaxed">{post.fullContent}</div>
+                  <div className="mt-4 text-gray-300">{post.fullContent}</div>
                 )}
-                <div className="mt-6">
+                <div className="mt-4">
                   {post.tags.map((tag) => (
                     <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full mr-2">{tag}</span>
                   ))}
@@ -158,28 +158,27 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
-      <footer className="text-center py-8 border-t border-gray-600">
-        <p className="text-gray-400">Follow me on social media:</p>
-        <div className="flex justify-center gap-4 my-4">
-          <a href="https://twitter.com" className="text-white hover:text-green-500 transition-all duration-300">
-            <FaTwitter size={24} />
+      {/* Social Links Section */}
+      <section className="text-center mb-16">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Connect with Me</h2>
+        <div className="flex justify-center space-x-6">
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <FaTwitter className="text-2xl text-blue-500 hover:text-blue-400 transition-all duration-300" />
           </a>
-          <a href="https://github.com" className="text-white hover:text-green-500 transition-all duration-300">
-            <FaGithub size={24} />
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="text-2xl text-gray-400 hover:text-gray-300 transition-all duration-300" />
           </a>
-          <a href="https://linkedin.com" className="text-white hover:text-green-500 transition-all duration-300">
-            <FaLinkedin size={24} />
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="text-2xl text-blue-700 hover:text-blue-600 transition-all duration-300" />
           </a>
-          <a href="https://facebook.com" className="text-white hover:text-green-500 transition-all duration-300">
-            <FaFacebook size={24} />
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebook className="text-2xl text-blue-600 hover:text-blue-500 transition-all duration-300" />
           </a>
-          <a href="mailto:youremail@example.com" className="text-white hover:text-green-500 transition-all duration-300">
-            <FaEnvelope size={24} />
+          <a href="mailto:your-email@example.com">
+            <FaEnvelope className="text-2xl text-gray-400 hover:text-gray-300 transition-all duration-300" />
           </a>
         </div>
-        <p className="text-gray-400 text-sm mt-4">&copy; 2024 Your Name. All rights reserved.</p>
-      </footer>
+      </section>
     </div>
   );
 };
