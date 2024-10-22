@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Home from './Pages/Home';
@@ -12,16 +13,40 @@ import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
 import Footer from './Components/Footer';
 import ContactForm from './Components/ContactForm';
-import Loader from './Components/Loader'; 
+import Loader from './Components/Loader';
+
+import { analytics, db } from './firebase'; // Import Firebase services
+import { logEvent } from 'firebase/analytics'; // Firebase Analytics
+import { collection, addDoc } from 'firebase/firestore'; // Firestore functions
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Simulate a loading screen for 3 seconds
     const timer = setTimeout(() => setLoading(false), 3000); 
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    // Log page views to Firebase Analytics
+    logEvent(analytics, 'page_view', { page_path: location.pathname });
+
+    // Log page visit to Firestore
+    const logPageVisit = async () => {
+      try {
+        await addDoc(collection(db, 'pageVisits'), {
+          page: location.pathname,
+          timestamp: new Date(),
+        });
+      } catch (error) {
+        console.error('Error logging page visit: ', error);
+      }
+    };
+
+    logPageVisit();
+  }, [location]);
 
   if (loading) {
     return <Loader />; 
