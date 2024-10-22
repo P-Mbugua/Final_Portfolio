@@ -42,110 +42,83 @@ const Blog = () => {
       image: 'https://imgs.search.brave.com/wfgijv9bcTwpFjf7SyjRVnsLF_rL9waHAr5NlaClINY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/OC8xMi8wOS8xNy9p/bmR1c3RyeS0yNjMz/ODc4XzY0MC5qcGc',
       tags: ['AI', 'Development', 'Automation'],
     },
-    {
-      id: 4,
-      date: 'Oct 15, 2024',
-      category: 'Mobile Development',
-      title: 'Building Scalable Mobile Apps',
-      summary: 'Best practices and design patterns for creating scalable, high-performance mobile applications for Android and iOS.',
-      fullContent: 'Scaling mobile applications requires attention to performance, security, and user experience. This article delves into best practices for ensuring app scalability...',
-      image: 'https://imgs.search.brave.com/E-7GAYImdbl2txieG_5SicSg_4kmYNKNzUjAawMhps8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMC8w/MS8yNi8yMC8xNC9j/b21wdXRlci00Nzk1/NzYyXzY0MC5qcGc',
-      tags: ['Mobile', 'iOS', 'Android'],
-    },
-    {
-      id: 5,
-      date: 'Oct 12, 2024',
-      category: 'Cloud Computing',
-      title: 'Mastering AWS for Beginners',
-      summary: 'A comprehensive guide to getting started with Amazon Web Services, including EC2, S3, and serverless computing.',
-      fullContent: 'Amazon Web Services provides a robust platform for cloud computing. This post covers the fundamentals of EC2, S3, and Lambda for new users...',
-      image: 'https://imgs.search.brave.com/Mf5IXU48fGTdlOksKZfRAHcwzbst8ZuKqP7ZzsO4MJc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTk3/OTI4OTE0Ny9waG90/by9kYXRhLWFuYWx5/c2lzLXNjaWVuY2Ut/YW5kLWJpZy1kYXRh/LXdpdGgtYWktdGVj/aG5vbG9neS1hbmFs/eXN0LW9yLXNjaWVu/dGlzdC11c2VzLWEt/Y29tcHV0ZXIud2Vi/cD9hPTEmYj0xJnM9/NjEyeDYxMiZ3PTAm/az0yMCZjPUlJWmFW/c1FsNm1NY09QZ3lQ/clZtOFpsQ1NCd0tk/d1dqdTRUVG5NN0JN/NFE9',
-      tags: ['AWS', 'Cloud', 'Serverless'],
-    },
-    {
-      id: 6,
-      date: 'Oct 10, 2024',
-      category: 'Cybersecurity',
-      title: 'Cybersecurity Best Practices in 2024',
-      summary: 'Discover the top strategies and tools for ensuring the security of your applications and data in today’s digital landscape.',
-      fullContent: 'With the rise of cyberattacks, it’s essential to employ top-tier security practices. This article covers firewalls, encryption, multi-factor authentication, and more...',
-      image: 'https://imgs.search.brave.com/Mf5IXU48fGTdlOksKZfRAHcwzbst8ZuKqP7ZzsO4MJc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTk3/OTI4OTE0Ny9waG90/by9kYXRhLWFuYWx5/c2lzLXNjaWVuY2Ut/YW5kLWJpZy1kYXRh/LXdpdGgtYWktdGVj/aG5vbG9neS1hbmFs/eXN0LW9yLXNjaWVu/dGlzdC11c2VzLWEt/Y29tcHV0ZXIud2Vi/cD9hPTEmYj0xJnM9/NjEyeDYxMiZ3PTAm/az0yMCZjPUlJWmFW/c1FsNm1NY09QZ3lQ/clZtOFpsQ1NCd0tk/d1dqdTRUVG5NN0JN/NFE9',
-      tags: ['Cybersecurity', 'Data Protection', 'Security'],
-    },
+    // Additional posts...
   ];
 
-
-  const popularPosts = posts.slice(0, 3); 
+  const popularPosts = posts.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white p-6 md:px-20 lg:px-40 font-sans">
+      {/* Introduction */}
       <section className="text-center my-12">
-        <h2 className="text-4xl font-bold text-green-500">Welcome to My Blog</h2>
-        <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">
+        <h2 className="text-5xl font-bold text-green-500">Welcome to My Blog</h2>
+        <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
           Join me on my journey as a Fullstack Developer, diving deep into the ever-evolving landscape of technology. Together, we’ll explore the latest trends in web development, mobile applications, artificial intelligence, and groundbreaking innovations shaping our digital future.
         </p>
       </section>
 
-
+      {/* Categories Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4 text-green-500">Explore Categories</h2>
-        <div className="flex flex-wrap space-x-4">
+        <h2 className="text-3xl font-semibold mb-6 text-green-500">Explore Categories</h2>
+        <div className="flex flex-wrap gap-4 justify-center">
           {['Web Development', 'AI', 'Mobile Development', 'Cloud Computing', 'Cybersecurity'].map((category) => (
-            <span key={category} className="bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition-transform duration-300 hover:bg-gray-600">
+            <span key={category} className="bg-gray-700 text-gray-300 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 hover:bg-gray-600 hover:scale-105">
               {category}
             </span>
           ))}
         </div>
       </section>
 
+      {/* Featured Post Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4 text-green-500">Featured Post</h2>
-        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg mb-6 transition-transform duration-300 hover:scale-105">
-          <img src={posts[0].image} alt="Featured Post Thumbnail" className="w-full h-40 object-cover" />
-          <div className="p-6">
+        <h2 className="text-3xl font-semibold mb-6 text-green-500">Featured Post</h2>
+        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+          <img src={posts[0].image} alt="Featured Post Thumbnail" className="w-full h-56 object-cover" />
+          <div className="p-8">
             <p className="text-sm text-gray-400 mb-2">{posts[0].date} • {posts[0].category}</p>
-            <h3 className="text-xl font-semibold text-yellow-500">{posts[0].title}</h3>
-            <p className="text-gray-300 mb-4">{posts[0].summary}</p>
+            <h3 className="text-2xl font-semibold text-yellow-500">{posts[0].title}</h3>
+            <p className="text-gray-300 mb-4 leading-relaxed">{posts[0].summary}</p>
             <button
               onClick={() => togglePost(posts[0].id)}
-              className="bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400"
+              className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
             >
               {expandedPosts[posts[0].id] ? 'Read Less' : 'Read More'}
             </button>
             {expandedPosts[posts[0].id] && (
-              <div className="mt-4 text-gray-300">{posts[0].fullContent}</div>
+              <div className="mt-4 text-gray-300 leading-relaxed">{posts[0].fullContent}</div>
             )}
-            <div className="mt-4">
+            <div className="mt-6">
               {posts[0].tags.map((tag) => (
-                <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded mr-1">{tag}</span>
+                <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full mr-2">{tag}</span>
               ))}
             </div>
           </div>
         </div>
       </section>
 
+      {/* Blog Section */}
       <section id="blog" className="mb-16">
-        <h2 className="text-2xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl font-semibold mb-8 text-green-500">Latest Blog Posts</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-              <div className="relative">
-                <img src={post.image} alt="Post Thumbnail" className="w-full h-40 object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-              </div>
+            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+              <img src={post.image} alt="Post Thumbnail" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
                 <h3 className="text-xl font-semibold text-yellow-500">{post.title}</h3>
-                <p className="text-gray-300 mb-4">{expandedPosts[post.id] ? post.fullContent : post.summary}</p>
+                <p className="text-gray-300 mb-4 leading-relaxed">{post.summary}</p>
                 <button
                   onClick={() => togglePost(post.id)}
-                  className="bg-yellow-500 text-black py-2 px-4 rounded-lg transition-colors duration-300 hover:bg-yellow-400"
+                  className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
                 >
                   {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
                 </button>
-                <div className="mt-4">
+                {expandedPosts[post.id] && (
+                  <div className="mt-4 text-gray-300 leading-relaxed">{post.fullContent}</div>
+                )}
+                <div className="mt-6">
                   {post.tags.map((tag) => (
-                    <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-2 py-1 rounded mr-1">{tag}</span>
+                    <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full mr-2">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -154,44 +127,59 @@ const Blog = () => {
         </div>
       </section>
 
+      {/* Popular Posts Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-semibold mb-4 text-green-500">Popular Posts</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl font-semibold mb-6 text-green-500">Popular Posts</h2>
+        <div className="grid md:grid-cols-3 gap-8">
           {popularPosts.map((post) => (
-            <div key={post.id} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-              <img src={post.image} alt="Popular Post Thumbnail" className="w-full h-40 object-cover" />
+            <div key={post.id} className="bg-gray-800 rounded-lg shadow-2xl hover:shadow-xl transition-transform duration-300 hover:scale-105">
+              <img src={post.image} alt="Post Thumbnail" className="w-full h-48 object-cover" />
               <div className="p-6">
                 <p className="text-sm text-gray-400 mb-2">{post.date} • {post.category}</p>
                 <h3 className="text-xl font-semibold text-yellow-500">{post.title}</h3>
-                <p className="text-gray-300 mb-4">{post.summary}</p>
-                <a href={`#post${post.id}`} className="text-yellow-500 underline">Read More</a>
+                <p className="text-gray-300 mb-4 leading-relaxed">{post.summary}</p>
+                <button
+                  onClick={() => togglePost(post.id)}
+                  className="bg-yellow-500 text-black py-2 px-6 rounded-full shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:scale-105"
+                >
+                  {expandedPosts[post.id] ? 'Read Less' : 'Read More'}
+                </button>
+                {expandedPosts[post.id] && (
+                  <div className="mt-4 text-gray-300 leading-relaxed">{post.fullContent}</div>
+                )}
+                <div className="mt-6">
+                  {post.tags.map((tag) => (
+                    <span key={tag} className="bg-gray-700 text-gray-300 text-xs px-3 py-1 rounded-full mr-2">{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="contact" className="text-center mb-16">
-        <h2 className="text-2xl font-semibold mb-4 text-green-500">Connect with Me</h2>
-        <p className="text-gray-400 mb-8">Feel free to reach out or follow me on social media.</p>
-        <div className="flex justify-center space-x-6 mb-6">
-          <a href="https://twitter.com/@pmbugua276" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
-            <FaTwitter />
+      {/* Footer Section */}
+      <footer className="text-center py-8 border-t border-gray-600">
+        <p className="text-gray-400">Follow me on social media:</p>
+        <div className="flex justify-center gap-4 my-4">
+          <a href="https://twitter.com" className="text-white hover:text-green-500 transition-all duration-300">
+            <FaTwitter size={24} />
           </a>
-          <a href="https://github.com/P-Mbugua" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
-            <FaGithub />
+          <a href="https://github.com" className="text-white hover:text-green-500 transition-all duration-300">
+            <FaGithub size={24} />
           </a>
-          <a href="https://linkedin.com/in/mbuguapeter" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
-            <FaLinkedin />
+          <a href="https://linkedin.com" className="text-white hover:text-green-500 transition-all duration-300">
+            <FaLinkedin size={24} />
           </a>
-          <a href="https://facebook.com/profile.php?id=100079701713758" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-500 text-2xl">
-            <FaFacebook />
+          <a href="https://facebook.com" className="text-white hover:text-green-500 transition-all duration-300">
+            <FaFacebook size={24} />
           </a>
-          <a href="mailto:petermbuguangumi@gmail.com" className="text-white hover:text-yellow-500 text-2xl">
-            <FaEnvelope />
+          <a href="mailto:youremail@example.com" className="text-white hover:text-green-500 transition-all duration-300">
+            <FaEnvelope size={24} />
           </a>
         </div>
-      </section>
+        <p className="text-gray-400 text-sm mt-4">&copy; 2024 Your Name. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
