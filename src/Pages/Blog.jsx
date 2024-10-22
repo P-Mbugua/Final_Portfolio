@@ -79,7 +79,6 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-sans">
-      {/* Introduction */}
       <section className="text-center my-12">
         <h2 className="text-4xl font-bold text-green-500">Welcome to My Blog</h2>
         <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">
@@ -87,7 +86,7 @@ const Blog = () => {
         </p>
       </section>
 
-      {/* Categories Section */}
+
       <section className="mb-16">
         <h2 className="text-2xl font-semibold mb-4 text-green-500">Explore Categories</h2>
         <div className="flex flex-wrap space-x-4">
