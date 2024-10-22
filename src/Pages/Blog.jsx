@@ -74,7 +74,7 @@ const Blog = () => {
     },
   ];
 
-  // Simulated popular posts (could be based on views or likes)
+
   const popularPosts = posts.slice(0, 3); 
 
   return (
