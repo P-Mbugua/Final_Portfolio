@@ -39,7 +39,7 @@ const Blog = () => {
       title: 'AI in Software Development',
       summary: 'How AI tools are transforming the way software is built and maintained, from coding assistants to full automation.',
       fullContent: 'Artificial intelligence is rapidly changing the software development process, from AI-driven code suggestions to automated testing and deployment pipelines...',
-      image: 'https://example.com/image3.jpg',
+      image: 'https://imgs.search.brave.com/wfgijv9bcTwpFjf7SyjRVnsLF_rL9waHAr5NlaClINY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/OC8xMi8wOS8xNy9p/bmR1c3RyeS0yNjMz/ODc4XzY0MC5qcGc',
       tags: ['AI', 'Development', 'Automation'],
     },
     {
