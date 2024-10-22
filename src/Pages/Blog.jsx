@@ -75,7 +75,7 @@ const Blog = () => {
   ];
 
   // Simulated popular posts (could be based on views or likes)
-  const popularPosts = posts.slice(0, 3); // For simplicity, using first three posts
+  const popularPosts = posts.slice(0, 3); 
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6 md:px-20 lg:px-40 font-sans">
