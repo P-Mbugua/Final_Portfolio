@@ -14,7 +14,7 @@ export default function Home() {
   const typingSpeed = 150;
   const pauseTime = 1500;
   const fadeDuration = 3000;
-  const [fade, setFade] = useState(false);
+  const [fade, setFade] = useState(false);    
 
   useEffect(() => {
     let typingInterval;
