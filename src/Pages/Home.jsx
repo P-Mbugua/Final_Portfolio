@@ -75,7 +75,7 @@ export default function Home() {
           </h2>
 
           <div className="flex flex-col lg:flex-row lg:space-x-4 mt-6 space-y-2 lg:space-y-0">
-            <Link to="/contactform" className="w-full lg:w-auto">
+            <Link to="/contact" className="w-full lg:w-auto">
               <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-600 hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
                 WORK WITH ME
               </button>
