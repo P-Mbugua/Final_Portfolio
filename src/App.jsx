@@ -11,7 +11,7 @@ import ToggleButton from './Components/ToggleButton';
 import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
 import Footer from './Components/Footer';
-import ContactForm from './Components/ContactForm';
+
 import Loader from './Components/Loader';
 
 import { analytics, db } from './firebase'; 
@@ -69,7 +69,6 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/biography" element={<Biography />} />
-        <Route path="/contactform" element={<ContactForm />} />
         <Route path="/blog" element={<Blog />} />
       </Routes>
 
