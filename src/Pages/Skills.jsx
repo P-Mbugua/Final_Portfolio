@@ -9,7 +9,7 @@ export default function Skills() {
     { skill: 'JavaScript', level: 55, description: 'A versatile programming language for web development.' },
     { skill: 'Python', level: 50, description: 'A powerful language for backend development and data analysis.' },
     { skill: 'Git | GitHub | Figma | Sketch', level: 85, description: 'Tools for version control and design.' },
-    { skill: 'SQLite3', level: 85, description: 'A lightweight database engine for small-scale applications.' },
+    { skill: 'SQLite3', level: 65, description: 'A lightweight database engine for small-scale applications.' },
     { skill: 'Node.js', level: 70, description: 'JavaScript runtime for building server-side applications.' },
     { skill: 'Express.js', level: 70, description: 'A web application framework for Node.js.' },
     { skill: 'MongoDB', level: 70, description: 'A NoSQL database for flexible data storage.' },
