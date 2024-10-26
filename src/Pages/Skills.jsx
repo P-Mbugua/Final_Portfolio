@@ -6,7 +6,7 @@ export default function Skills() {
   const technicalSkills = [
     { skill: 'ReactJS', level: 75, description: 'A JavaScript library for building user interfaces.' },
     { skill: 'HTML & CSS', level: 95, description: 'Fundamental technologies for web development.' },
-    { skill: 'JavaScript', level: 90, description: 'A versatile programming language for web development.' },
+    { skill: 'JavaScript', level: 55, description: 'A versatile programming language for web development.' },
     { skill: 'Python', level: 90, description: 'A powerful language for backend development and data analysis.' },
     { skill: 'Git | GitHub | Figma | Sketch', level: 85, description: 'Tools for version control and design.' },
     { skill: 'SQLite3', level: 85, description: 'A lightweight database engine for small-scale applications.' },
