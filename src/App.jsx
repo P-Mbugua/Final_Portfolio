@@ -5,7 +5,6 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Skills from './Pages/Skills';
 import Portfolio from './Pages/Portfolio';
-import Biography from './Pages/Biography';
 import Blog from './Pages/Blog';
 import ToggleButton from './Components/ToggleButton';
 import MobileHeader from './Components/MobileHeader';
@@ -68,7 +67,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/biography" element={<Biography />} />
         <Route path="/blog" element={<Blog />} />
       </Routes>
 
