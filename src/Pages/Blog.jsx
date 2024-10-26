@@ -24,7 +24,6 @@ const Blog = () => {
     {
       id: 2,
       date: 'Oct 20, 2024',
-      category: 'Web Development',
       title: 'The Future of Web 3.0',
       summary: 'A deep dive into how Web 3.0 and blockchain are reshaping the internet, and what it means for developers.',
       fullContent: 'Web 3.0 introduces decentralized technologies like blockchain. This post discusses how smart contracts, cryptocurrencies, and decentralized apps will reshape the future...',
