@@ -18,7 +18,7 @@ const Blog = () => {
       title: 'Understanding React Hooks',
       summary: 'Learn about the intricacies of React Hooks and how they can simplify your functional components.',
       fullContent: 'React Hooks allow you to use state and lifecycle features in functional components. This post explains the most common hooks like useState, useEffect, and custom hooks...',
-      image: 'https://marps.co.ke/quantum-computing.avif',
+      image: 'https://imgs.search.brave.com/Mf5IXU48fGTdlOksKZfRAHcwzbst8ZuKqP7ZzsO4MJc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTk3/OTI4OTE0Ny9waG90/by9kYXRhLWFuYWx5/c2lzLXNjaWVuY2Ut/YW5kLWJpZy1kYXRh/LXdpdGgtYWktdGVj/aG5vbG9neS1hbmFs/eXN0LW9yLXNjaWVu/dGlzdC11c2VzLWEt/Y29tcHV0ZXIud2Vi/cD9hPTEmYj0xJnM9/NjEyeDYxMiZ3PTAm/az0yMCZjPUlJWmFW/c1FsNm1NY09QZ3lQ/clZtOFpsQ1NCd0tk/d1dqdTRUVG5NN0JN/NFE9',
       tags: ['React', 'Hooks', 'JavaScript'],
     },
     {
