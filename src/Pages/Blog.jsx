@@ -42,7 +42,6 @@ const Blog = () => {
     {
       id: 4,
       date: 'Jun 18, 2024',
-      category: 'M-Pesa Payment Integration',
       title: 'Integrating M-Pesa STK Push for Seamless Payments',
       summary: 'A comprehensive guide on implementing M-Pesa STK Push in your applications for efficient mobile payments.',
       fullContent: `
