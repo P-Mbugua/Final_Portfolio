@@ -80,16 +80,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white p-6 md:px-20 lg:px-40 font-sans">
      
-      <section className="mb-16">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Explore Categories</h2>
-        <div className="flex flex-wrap gap-4 justify-center">
-          {['Web Development', 'AI', 'Mobile Development', 'Cloud Computing', 'Cybersecurity'].map((category) => (
-            <span key={category} className="bg-gray-700 text-gray-300 px-6 py-3 rounded-lg shadow-lg transition-all duration-300 hover:bg-gray-600 hover:scale-105">
-              {category}
-            </span>
-          ))}
-        </div>
-      </section>
+     
 
       {/* Featured Post Section */}
       <section className="mb-16">
