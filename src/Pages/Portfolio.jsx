@@ -222,7 +222,6 @@ const MyWork = () => {
                 )}
               </div>
 
-              {/* Reviewer Name */}
               <h4 className="text-lg font-semibold text-gray-800 mb-1">{review.name}</h4> {/* Added this line for the name */}
 
               {/* Stars and Date Layout */}
