@@ -33,7 +33,6 @@ const Blog = () => {
     {
       id: 3,
       date: 'Oct 18, 2024',
-      category: 'Artificial Intelligence',
       title: 'AI in Software Development',
       summary: 'How AI tools are transforming the way software is built and maintained, from coding assistants to full automation.',
       fullContent: 'Artificial intelligence is rapidly changing the software development process, from AI-driven code suggestions to automated testing and deployment pipelines...',
