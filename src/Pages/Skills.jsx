@@ -11,7 +11,7 @@ export default function Skills() {
     { skill: 'Git | GitHub | Figma | Sketch', level: 85, description: 'Tools for version control and design.' },
     { skill: 'SQLite3', level: 65, description: 'A lightweight database engine for small-scale applications.' },
     { skill: 'Node.js', level: 30, description: 'JavaScript runtime for building server-side applications.' },
-    { skill: 'Express.js', level: 70, description: 'A web application framework for Node.js.' },
+    { skill: 'Express.js', level: 20, description: 'A web application framework for Node.js.' },
     { skill: 'MongoDB', level: 70, description: 'A NoSQL database for flexible data storage.' },
   ];
 
