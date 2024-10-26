@@ -61,7 +61,7 @@ export default function Skills() {
     <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 lg:px-16 py-8 lg:py-16">
       {/* Header Section */}
       <div className="text-center mb-8">
-        <h1 className="lg:text-5xl text-3xl font-bold text-green-400 mt-10 lg:mt-20">
+        <h1 className="lg:text-5xl text-3xl font-bold text-green-400 mt-10 lg:mt-10">
          MY SKILLS
         </h1>
         <h2 className="text-lg text-gray-300 mt-2 font-medium">
