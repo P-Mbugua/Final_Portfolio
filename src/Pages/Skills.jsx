@@ -12,7 +12,7 @@ export default function Skills() {
     { skill: 'SQLite3', level: 65, description: 'A lightweight database engine for small-scale applications.' },
     { skill: 'Node.js', level: 30, description: 'JavaScript runtime for building server-side applications.' },
     { skill: 'Express.js', level: 20, description: 'A web application framework for Node.js.' },
-    { skill: 'MongoDB', level: 45, description: 'A NoSQL database for flexible data storage.' },
+    { skill: 'MongoDB', level: 40, description: 'A NoSQL database for flexible data storage.' },
   ];
 
   const softSkills = [
