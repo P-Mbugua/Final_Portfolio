@@ -79,15 +79,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-white p-6 md:px-20 lg:px-40 font-sans">
-      {/* Introduction */}
-      <section className="text-center my-12">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-500"> MY BLOG</h2>
-        <p className="text-base md:text-lg lg:text-xl text-gray-400 mt-4 max-w-3xl mx-auto leading-relaxed">
-          Join me on my journey as a Fullstack Developer, diving deep into the ever-evolving landscape of technology. Together, we’ll explore the latest trends in web development, mobile applications, artificial intelligence, and groundbreaking innovations shaping our digital future.
-        </p>
-      </section>
-
-      {/* Categories Section */}
+     
       <section className="mb-16">
         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-green-500">Explore Categories</h2>
         <div className="flex flex-wrap gap-4 justify-center">
