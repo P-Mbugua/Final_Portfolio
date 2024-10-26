@@ -15,7 +15,6 @@ const Blog = () => {
     {
       id: 1,
       date: 'Oct 21, 2024',
-      category: 'Developer Policy',
       title: 'Understanding React Hooks',
       summary: 'Learn about the intricacies of React Hooks and how they can simplify your functional components.',
       fullContent: 'React Hooks allow you to use state and lifecycle features in functional components. This post explains the most common hooks like useState, useEffect, and custom hooks...',
