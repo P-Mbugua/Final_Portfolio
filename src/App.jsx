@@ -10,44 +10,70 @@ import ToggleButton from './Components/ToggleButton';
 import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
 import Footer from './Components/Footer';
-
 import Loader from './Components/Loader';
 
+// Import Firebase Firestore and Analytics
 import { analytics, db } from './firebase'; 
 import { logEvent } from 'firebase/analytics'; 
 import { collection, addDoc } from 'firebase/firestore';
+
+// Import EmailJS
+import emailjs from 'emailjs-com';
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
 
+  // Simulate a loading screen for 3 seconds
   useEffect(() => {
-    // Simulate a loading screen for 3 seconds
     const timer = setTimeout(() => setLoading(false), 3000); 
     return () => clearTimeout(timer);
   }, []);
 
+  // Track page visit and send email only once on page load (not on re-renders)
   useEffect(() => {
-    // Log page views to Firebase Analytics
-    logEvent(analytics, 'page_view', { page_path: location.pathname });
+    if (location.pathname === '/home' || location.pathname === '/about' || location.pathname === '/contact' || location.pathname === '/skills' || location.pathname === '/portfolio' || location.pathname === '/blog') {
+      // Log page view to Firebase Analytics
+      logEvent(analytics, 'page_view', { page_path: location.pathname });
 
-    // Log page visit to Firestore
-    const logPageVisit = async () => {
-      try {
-        await addDoc(collection(db, 'pageVisits'), {
-          page: location.pathname,
-          timestamp: new Date(),
-        });
-      } catch (error) {
-        console.error('Error logging page visit: ', error);
-      }
+      const logPageVisit = async () => {
+        try {
+          // Log page visit to Firestore
+          await addDoc(collection(db, 'pageVisits'), {
+            page: location.pathname,
+            timestamp: new Date(),
+          });
+
+          // Send an email after logging the page visit
+          sendEmailNotification(location.pathname);
+        } catch (error) {
+          console.error('Error logging page visit: ', error);
+        }
+      };
+
+      logPageVisit();
+    }
+  }, [location.pathname]);  // Run only when the page path changes (not on re-renders)
+
+  // Function to send email notification via EmailJS
+  const sendEmailNotification = (page) => {
+    const emailParams = {
+      to_email: 'your-email@example.com',  // Recipient's email
+      page_visited: page,  // The visited page
     };
 
-    logPageVisit();
-  }, [location]);
+    emailjs.send('service_whl0hbs', 'template_rir7r5n', emailParams, 'Jq-7l7xQJz6_eAtCO')
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+      });
+  };
 
+  // Show loading screen while content is being loaded
   if (loading) {
-    return <Loader />; 
+    return <Loader />;
   }
 
   return (
