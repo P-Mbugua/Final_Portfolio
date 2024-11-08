@@ -61,18 +61,32 @@ function App() {
   // Function to send email notification via EmailJS
   const sendEmailNotification = async (page) => {
     try {
-      // Capture the machine details (User Agent, Platform, IP address, and Timestamp)
+      // Capture the machine details (User Agent, Platform, Timestamp)
       const machineDetails = {
         userAgent: navigator.userAgent,
         platform: navigator.platform,
         timestamp: new Date().toISOString(),
       };
 
-      // Fetch the IP address of the user (using ipify API)
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      // Fetch the IP address and detailed location using ipstack API
+      const ipResponse = await fetch('https://api.ipstack.com/check?access_key=YOUR_IPSTACK_API_KEY');
       const ipData = await ipResponse.json();
 
-      // Include IP and additional details
+      // Extract detailed location information from ipstack
+      const locationDetails = {
+        country: ipData.country_name,      // Country (e.g., Kenya)
+        region: ipData.region_name,        // Region (e.g., Nairobi County)
+        city: ipData.city,                 // City (e.g., Nairobi)
+        zip: ipData.zip,                   // Zip code, if available
+        latitude: ipData.latitude,         // Latitude
+        longitude: ipData.longitude,       // Longitude
+      };
+
+      // If available, you can get more specific location info
+      // (Note: ipstack's free API may not give detailed sub-county data, so you'd need a more advanced plan or another API for that)
+      const detailedLocation = `${locationDetails.city}, ${locationDetails.region}, ${locationDetails.country}`;
+
+      // Prepare email params with location data
       const emailParams = {
         to_email: 'your-email@example.com',  // Recipient's email
         page_visited: page,  // The visited page
@@ -80,6 +94,7 @@ function App() {
         userAgent: machineDetails.userAgent,  // User agent
         platform: machineDetails.platform,  // User platform
         visitTime: machineDetails.timestamp,  // Timestamp of visit
+        location: detailedLocation,  // Detailed location
       };
 
       // Send the email
