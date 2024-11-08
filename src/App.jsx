@@ -33,42 +33,64 @@ function App() {
   // Track page visit and send email only once on page load (not on re-renders)
   useEffect(() => {
     if (location.pathname === '/home' || location.pathname === '/about' || location.pathname === '/contact' || location.pathname === '/skills' || location.pathname === '/portfolio' || location.pathname === '/blog') {
-      // Log page view to Firebase Analytics
-      logEvent(analytics, 'page_view', { page_path: location.pathname });
+      // Check if the email was already sent in this session
+      if (!sessionStorage.getItem('emailSent')) {
+        // Log page view to Firebase Analytics
+        logEvent(analytics, 'page_view', { page_path: location.pathname });
 
-      const logPageVisit = async () => {
-        try {
-          // Log page visit to Firestore
-          await addDoc(collection(db, 'pageVisits'), {
-            page: location.pathname,
-            timestamp: new Date(),
-          });
+        const logPageVisit = async () => {
+          try {
+            // Log page visit to Firestore with timestamp
+            await addDoc(collection(db, 'pageVisits'), {
+              page: location.pathname,
+              timestamp: new Date(),
+            });
 
-          // Send an email after logging the page visit
-          sendEmailNotification(location.pathname);
-        } catch (error) {
-          console.error('Error logging page visit: ', error);
-        }
-      };
+            // Send an email after logging the page visit
+            sendEmailNotification(location.pathname);
+          } catch (error) {
+            console.error('Error logging page visit: ', error);
+          }
+        };
 
-      logPageVisit();
+        logPageVisit();
+      }
     }
   }, [location.pathname]);  // Run only when the page path changes (not on re-renders)
 
   // Function to send email notification via EmailJS
-  const sendEmailNotification = (page) => {
-    const emailParams = {
-      to_email: 'your-email@example.com',  // Recipient's email
-      page_visited: page,  // The visited page
-    };
+  const sendEmailNotification = async (page) => {
+    try {
+      // Capture the machine details (User Agent, Platform, IP address, and Timestamp)
+      const machineDetails = {
+        userAgent: navigator.userAgent,
+        platform: navigator.platform,
+        timestamp: new Date().toISOString(),
+      };
 
-    emailjs.send('service_whl0hbs', 'template_rir7r5n', emailParams, 'Jq-7l7xQJz6_eAtCO')
-      .then((response) => {
-        console.log('Email sent successfully:', response);
-      })
-      .catch((error) => {
-        console.error('Error sending email:', error);
-      });
+      // Fetch the IP address of the user (using ipify API)
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+
+      // Include IP and additional details
+      const emailParams = {
+        to_email: 'your-email@example.com',  // Recipient's email
+        page_visited: page,  // The visited page
+        ip_address: ipData.ip,  // User's IP address
+        userAgent: machineDetails.userAgent,  // User agent
+        platform: machineDetails.platform,  // User platform
+        visitTime: machineDetails.timestamp,  // Timestamp of visit
+      };
+
+      // Send the email
+      await emailjs.send('service_whl0hbs', 'template_rir7r5n', emailParams, 'Jq-7l7xQJz6_eAtCO');
+      
+      // Mark the email as sent in the session
+      sessionStorage.setItem('emailSent', 'true');
+      console.log('Email sent successfully!');
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
 
   // Show loading screen while content is being loaded
