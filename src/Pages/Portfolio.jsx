@@ -22,26 +22,30 @@ const MyWork = () => {
     const projectsData = [
       {
         title: 'HOTEL MANAGEMENT SYSTEM',
-        description: 'A project designed to help you manage your time and well-being.',
+        description: 'A project designed to help a group of hotels and also restaurants manage their daily tasks from the clients, workers, rooms and also their hotels.',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png',
+        role: 'Client Based',
         link: 'https://stay-manager-mg.netlify.app/',
       },
       {
         title: 'DELIVERY MANAGEMENT SYSTEM',
-        description: 'Read stories that inspire and motivate you.',
+        description: 'A system designed to resolve a cohesion and daily challeges of a company dealing with deliveries to their clients.',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png',
+        role: 'Client Based',
         link: 'https://parcelpoa.netlify.app/',
       },
       {
         title: 'REACHROY DESIGNS HUB',
-        description: 'Guides and tips on taking time off to relax and recharge.',
+        description: 'A system designed to assist a Printing company to market themselves and at the same time manage their daily tasks, it also built on basis of where clients can communicate to the company direct or even make orders',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Reach_Roy.png',
+        role: 'Client Based',
         link: 'https://reachroy.netlify.app/',
       },
       {
         title: 'TEACHNEST',
-        description: 'Watch curated videos to inspire and educate.',
+        description: 'A small ecommerce website used to sell product.',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
+        role: 'Personal Brand',
         link: 'https://e-commerce-shop-ruddy.vercel.app/',
       },
     ];
@@ -115,6 +119,8 @@ const MyWork = () => {
               <h3 className="font-bold text-green-500 text-lg sm:text-xl mb-1 font-montserrat">
                 {project.title}
               </h3>
+
+             
               <p className="text-gray-700 mb-4 text-sm sm:text-base font-roboto">
                 {project.description}
               </p>
@@ -126,6 +132,13 @@ const MyWork = () => {
               >
                 Visit Site
               </a>
+
+
+              <h4 className="bg-gray-900 text-white px-4 py-2 font-semi-bold mt-10 rounded-full transition-colors duration-300 hover:bg-gray-400 hover:text-gray-900 ">
+                {project.role}
+              </h4>
+
+              
             </div>
           </div>
         ))}
