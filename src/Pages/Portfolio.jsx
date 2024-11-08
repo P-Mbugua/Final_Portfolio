@@ -144,7 +144,7 @@ const MyWork = () => {
         ))}
       </div>
 
-      {/* Reviews Section */}
+    
       <div className="mt-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-montserrat">Reviews ({reviews.length})</h2>
 
