@@ -106,6 +106,11 @@ export default function AboutAndServices() {
                   tasks: ['Data Analyst', 'Day-to-day office duties', 'Lead product implementation', 'Provide feedback to students'],
                 },
                 {
+                  date: 'APRIL 2023 - Present',
+                  role: 'Office Executive Assistant – Save A Soul Organization',
+                  tasks: ['Data Analyst', 'Day-to-day office duties', 'Lead product implementation', 'Provide feedback to students'],
+                },
+                {
                   date: 'SEPT 2024 - Present',
                   role: 'Fullstack Developer Attachment – Marps Africa Solutions',
                   tasks: ['UX/UI Designer', 'Participate in software projects', 'Frontend Developer', 'Perform code reviews'],
