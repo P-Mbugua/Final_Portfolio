@@ -4,15 +4,12 @@ import 'aos/dist/aos.css';
 
 export default function Skills() {
   const technicalSkills = [
-    { skill: 'ReactJS | React Native', level: 75, description: 'A JavaScript library for building user interfaces.' },
+    { skill: 'ReactJS ', level: 75, description: 'A JavaScript library for building user interfaces.' },
     { skill: 'HTML & CSS', level: 95, description: 'Fundamental technologies for web development.' },
     { skill: 'JavaScript ', level: 55, description: 'A versatile programming language for web development.' },
     { skill: 'Python', level: 50, description: 'A powerful language for backend development and data analysis.' },
     { skill: 'Git | GitHub | Figma | Sketch | Expo Go', level: 85, description: 'Tools for version control and design.' },
     { skill: 'SQLite3', level: 65, description: 'A lightweight database engine for small-scale applications.' },
-    { skill: 'Node.js', level: 30, description: 'JavaScript runtime for building server-side applications.' },
-    { skill: 'Express.js', level: 20, description: 'A web application framework for Node.js.' },
-    { skill: 'MongoDB', level: 40, description: 'A NoSQL database for flexible data storage.' },
   ];
 
   const softSkills = [
