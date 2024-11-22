@@ -39,7 +39,7 @@ const MyWork = () => {
         description: 'A system designed to assist a Printing company to market themselves and at the same time manage their daily tasks, it also built on basis of where clients can communicate to the company direct or even make orders',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Reach_Roy.png',
         role: 'Client Based',
-        link: 'https://reachroy.netlify.app/',
+
       },
       {
         title: 'TEACHNEST',
