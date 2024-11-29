@@ -33,7 +33,7 @@ export default function Contact() {
       message: formData.message,
     };
 
-    emailjs.send('service_13ygtrs', 'template_6n8ui2t', templateParams, 'L2_7PSPdo8vlmJqDm')
+    emailjs.send('service_whl0hbs', 'template_zvkf047', templateParams, 'Jq-7l7xQJz6_eAtCO')
       .then((result) => {
         console.log('Message sent successfully:', result.text);
         toast.success("Your message has been successfully sent. Expect feedback soon. Thank you!");
