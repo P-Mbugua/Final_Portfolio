@@ -58,7 +58,7 @@ export default function Contact() {
         <p className="text-center text-base md:text-lg mt-4">
          I'M ALWAYS OPEN TO DISCUSSING{" "}
           <span className="font-bold text-white">
-            DEVELOPER RELATIONS / TRAINER / SOFTWARE DEV WORK OR PARTNERSHIPS 
+            DEVELOPER RELATIONS / COLLABORATION / SOFTWARE DEV WORK OR PARTNERSHIPS 
           </span>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">

@@ -17,6 +17,12 @@ const MyWork = () => {
   const [isFormVisible, setIsFormVisible] = useState(false); 
   const [isLoading, setIsLoading] = useState(false); 
 
+  // const review [{
+
+  // }]
+
+
+
   // Sample projects data
   useEffect(() => {
     const projectsData = [
@@ -43,6 +49,20 @@ const MyWork = () => {
       },
       {
         title: 'TEACHNEST',
+        description: 'A small ecommerce website used to sell product.',
+        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
+        role: 'Personal Brand',
+        link: 'https://e-commerce-shop-ruddy.vercel.app/',
+      },
+      {
+        title: 'SCHOOL MANAGEMENT SYSTEM',
+        description: 'A small ecommerce website used to sell product.',
+        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
+        role: 'Personal Brand',
+        link: 'https://e-commerce-shop-ruddy.vercel.app/',
+      },
+      {
+        title: 'MUSIC ',
         description: 'A small ecommerce website used to sell product.',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
         role: 'Personal Brand',
@@ -145,8 +165,46 @@ const MyWork = () => {
       </div>
 
     
+    
       <div className="mt-16">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6 font-montserrat">Reviews ({reviews.length})</h2>
+               
+
+        <h3 className="text-4xl sm:text-4xl font-bold text-yellow-500 mb-3 font-poppins">REVIEWS ({reviews.length})</h3>
+        <h4 className='text-green-500 mb-3'> – Here is what people say about my work –</h4>
+
+                          {/* Display Reviews */}
+                          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                          {reviews.map((review) => (
+                                            <div key={review.id} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
+                                              <div className="flex justify-center mb-4">
+                                                {review.photo ? (
+                                                  <img src={review.photo} alt="Review" className="h-24 w-24 object-cover rounded-full" />
+                                                ) : (
+                                                  <div className="h-24 w-24 flex items-center justify-center bg-gray-200 rounded-full">
+                                                    <span className="text-4xl font-bold text-gray-600">{review.name.charAt(0).toUpperCase()}</span>
+                                                  </div>
+                                                )}
+                                              </div>
+
+                                              <h4 className="text-lg font-semibold text-gray-800 mb-1">{review.name}</h4> 
+
+                                              {/* Stars and Date Layout */}
+                                              <div className="flex justify-between items-center mb-3">
+                                                <div className="flex items-center space-x-1">
+                                                  {[1, 2, 3, 4, 5].map((star) => (
+                                                    <span key={star} className={`text-lg ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}>
+                                                      ★
+                                                    </span>
+                                                  ))}
+                                                </div>
+                                                <p className="text-sm text-black">{review.date}</p>
+                                              </div>
+
+                                              <p className="text-green-500">{review.message}</p>
+                                            </div>
+                                          ))}
+                                        </div>
+
 
         {/* Button Container for Leave a Review */}
         <div className="flex justify-end mb-4">
@@ -219,40 +277,7 @@ const MyWork = () => {
               </form>
             </div>
           </div>
-        )}
-
-        {/* Display Reviews */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reviews.map((review) => (
-            <div key={review.id} className="bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105">
-              <div className="flex justify-center mb-4">
-                {review.photo ? (
-                  <img src={review.photo} alt="Review" className="h-24 w-24 object-cover rounded-full" />
-                ) : (
-                  <div className="h-24 w-24 flex items-center justify-center bg-gray-200 rounded-full">
-                    <span className="text-4xl font-bold text-gray-600">{review.name.charAt(0).toUpperCase()}</span>
-                  </div>
-                )}
-              </div>
-
-              <h4 className="text-lg font-semibold text-gray-800 mb-1">{review.name}</h4> 
-
-              {/* Stars and Date Layout */}
-              <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <span key={star} className={`text-lg ${review.stars >= star ? 'text-yellow-500' : 'text-gray-400'}`}>
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-sm text-black">{review.date}</p>
-              </div>
-
-              <p className="text-green-500">{review.message}</p>
-            </div>
-          ))}
-        </div>
+        )}   
       </div>
       <ToastContainer />
     </div>

@@ -19,7 +19,7 @@ export default function AboutAndServices() {
         <h1 className="lg:text-5xl text-3xl font-bold text-green-400 mt-10 lg:mt-20">
           ABOUT <span className="text-white">ME</span>
         </h1>
-        <p className="text-lg text-gray-300 mt-2">– I LOVE CREATING MOBILE SOLUTIONS – </p>
+        <p className="text-lg text-gray-300 mt-2">– I LOVE CREATING TECH SOLUTIONS – </p>
       </div>
 
       {/* Personal Info Section */}
@@ -39,7 +39,7 @@ export default function AboutAndServices() {
               { label: 'Last Name:', value: 'Mbugua' },
               { label: 'Birthdate:', value: '8 March 2003' },
               { label: 'Nationality:', value: 'Kenyan' },
-              { label: 'Experience:', value: '1 years' },
+              { label: 'Experience:', value: '2 years' },
               { label: 'Address:', value: 'Nairobi' },
               { label: 'Freelance:', value: 'Available' },
               { label: 'Languages:', value: 'English, Swahili' },
@@ -142,7 +142,7 @@ export default function AboutAndServices() {
               {[ 
                 {
                   date: 'FEB 2024 - SEPT 2024',
-                  institution: 'Postgraduate, Full Stack Development – Moringa School',
+                  institution: 'Certification in Full Stack Development – Moringa School',
                   studies: ['Frontend Development', 'Backend Development', 'UI/UX Design'],
                 },
                 {
@@ -207,12 +207,7 @@ export default function AboutAndServices() {
               title: 'Web Development',
               description: 'Full stack web development using modern technologies like React, Node.js, and MongoDB.',
               icon: '🌐',
-            },
-            {
-              title: 'Mobile App Development',
-              description: 'Building responsive and efficient mobile applications using Flutter and React Native.',
-              icon: '📱',
-            },
+            },  
             {
               title: 'UI/UX Design',
               description: 'Designing user-friendly interfaces with a focus on accessibility and great user experiences.',
@@ -229,11 +224,6 @@ export default function AboutAndServices() {
               icon: '💼',
             },
             {
-              title: 'Data Analysis',
-              description: 'Analyzing data trends to help businesses make informed decisions using tools like Excel and Python.',
-              icon: '📊',
-            },
-            {
               title: 'Tech Support',
               description: 'Providing tech support for hardware and software issues, troubleshooting, and system optimization.',
               icon: '🛠️',
@@ -242,11 +232,6 @@ export default function AboutAndServices() {
               title: 'API Integration and Development',
               description: 'Develop and integrate APIs to ensure seamless communication between different software systems and platforms.',
               icon: '🔗',
-            },
-            {
-              title: 'Cloud Solutions',
-              description: 'Providing cloud computing services, including setting up and managing cloud infrastructures using platforms like AWS, Google Cloud, and Azure.',
-              icon: '☁️',
             },
           ].map((service, index) => (
             <div

@@ -6,7 +6,6 @@ export default function Home() {
   const roles = [
     "Full Stack Developer",
     "Graphics Designer",
-    "Cloud Solutions Architect"
   ];
 
   const [currentRole, setCurrentRole] = useState("");
