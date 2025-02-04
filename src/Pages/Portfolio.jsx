@@ -38,7 +38,7 @@ const MyWork = () => {
         description: 'A system designed to resolve a cohesion and daily challeges of a company dealing with deliveries to their clients.',
         imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png',
         role: 'Client Based',
-        link: 'https://parcelpoa.netlify.app/',
+        link: 'https://parcelpoa.marps.co.ke/',
       },
       {
         title: 'REACHROY DESIGNS HUB',
