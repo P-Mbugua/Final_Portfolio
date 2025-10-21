@@ -51,72 +51,57 @@ export default function Home() {
     <div className="relative h-screen bg-black text-white overflow-hidden font-inter">
       <ThreeScene className="absolute top-0 left-0 w-full h-full z-0" />
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-10 md:ml-20">
-        {/* <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
-          <img
-            src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
-            alt="Peter"
-            className="w-48 md:w-72 lg:w-80 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
-            onContextMenu={(e) => e.preventDefault()}
-          />
-        </div> */}
-
-        {/* <div className="order-1 md:order-2 flex justify-center md:justify-end w-full md:w-1/2 mb-4 md:mb-0">
-  <img
-    src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
-    alt="Peter"
-    className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
-    onContextMenu={(e) => e.preventDefault()}
-  />
-</div> */}
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-10 md:ml-20">
 
 
+                {/* Profile Photo */}
+                <div className="order-1 md:order-2 flex justify-center md:justify-end w-full md:w-1/2 mt-20 mb-0 md:mb-0">
+                              <img
+                                src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
+                                alt="Peter"
+                                className="w-82 sm:w-82 md:w-96 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
+                                onContextMenu={(e) => e.preventDefault()}
+                              />
+                              {/* COMMENT: 
+                                  - 'w-56' → image width on very small screens
+                                  - 'sm:w-64' → image width on small screens
+                                  - 'md:w-72' → image width on medium screens
+                                  - 'lg:w-96' → image width on large screens 
+                                  Adjust these numbers to make the image larger or smaller on each screen size */}
+                </div>
 
 
-<div className="order-1 md:order-2 flex justify-center md:justify-end w-full md:w-1/2 mt-20 mb-0 md:mb-0">
-  <img
-    src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
-    alt="Peter"
-    className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
-    onContextMenu={(e) => e.preventDefault()}
-  />
-</div>
+                {/* Texts and Buttons */}
+                <div className="flex flex-col lg:mb-0 mb-24 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10 text-center md:text-left items-center md:items-start">
+
+                                <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
+                                      HELLO THERE!!
+                                </h1>
+                                
+                                <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight">
+                                  I'm <span className="text-yellow-500"> Mbugua Peter,</span>
+                                </h1>
+                                <h2 className="text-lg md:text-3xl mb-4">
+                                  A <span className={`font-bold text-green-500 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{currentRole}.</span>
+                                </h2>
 
 
-        <div className="flex flex-col lg:mb-0 mb-24 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10">
-        <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
-              HELLO THERE!!
-        </h1>
+                                {/* Buttons */}
+                                <div className="flex flex-col lg:flex-row lg:space-x-4 mt-6 space-y-2 lg:space-y-0">
+                                        <Link to="/contact" className="w-full lg:w-auto">
+                                          <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-600 hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                                            GET INTOUCH
+                                          </button>
+                                        </Link>
 
-
-          <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight">
-            I'm <span className="text-yellow-500"> Mbugua Peter,</span>
-          </h1>
-          <h2 className="text-lg md:text-3xl mb-4">
-            A <span className={`font-bold text-green-500 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{currentRole}.</span>
-          </h2>
-
-          <div className="flex flex-col lg:flex-row lg:space-x-4 mt-6 space-y-2 lg:space-y-0">
-            <Link to="/contact" className="w-full lg:w-auto">
-              <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-yellow-500 text-black font-bold rounded-full hover:bg-yellow-600 hover:text-white hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
-                WORK WITH ME
-              </button>
-            </Link>
-
-            <Link to="/portfolio" className="w-full lg:w-auto">
-            <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-transparent border-2 border-white text-white rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 ease-in-out transform hover:scale-105">
-               MY WORKS
-              </button>
-            </Link>
-
-            {/* <a href="/portfolio"   className="w-full lg:w-auto">
-              <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-transparent border-2 border-white text-white rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 ease-in-out transform hover:scale-105">
-                MY WORKS
-              </button>
-            </a> */}
-          </div>
+                                        <Link to="/portfolio" className="w-full lg:w-auto">
+                                        <button className="w-full lg:w-auto px-8 py-3 text-lg lg:text-xl bg-transparent border-2 border-white text-white rounded-full hover:bg-green-500 hover:text-black transition-all duration-150 ease-in-out transform hover:scale-105">
+                                          MY WORKS
+                                          </button>
+                                        </Link>
+                                </div>
+                  </div>
         </div>
-      </div>
     </div>
   );
 }
