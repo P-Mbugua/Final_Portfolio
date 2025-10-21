@@ -54,7 +54,7 @@ export default function Home() {
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-10 md:ml-20">
         <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
           <img
-            src="https://p-mbugua.github.io/Official-_Portfolio/peter.png"
+            src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
             alt="Peter"
             className="w-48 md:w-72 lg:w-80 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
             onContextMenu={(e) => e.preventDefault()}
@@ -68,7 +68,7 @@ export default function Home() {
 
 
           <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight">
-            I'm <span className="text-yellow-500">Peter Mbugua,</span>
+            I'm <span className="text-yellow-500"> Mbugua Peter,</span>
           </h1>
           <h2 className="text-lg md:text-3xl mb-4">
             A <span className={`font-bold text-green-500 transition-opacity duration-500 ${fade ? 'opacity-0' : 'opacity-100'}`}>{currentRole}.</span>

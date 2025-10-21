@@ -26,8 +26,8 @@ export default function AboutAndServices() {
       <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl space-y-6 lg:space-y-0">
         <div className="flex justify-center lg:w-1/2">
           <img
-            src="https://p-mbugua.github.io/Official-_Portfolio/peter.png"
-            alt="Your Image"
+            src="https://p-mbugua.github.io/Official-_Portfolio/6.png"
+            alt="Mbugua"
             className="w-40 h-auto object-cover border-4 border-green-500 rounded-md lg:w-60 shadow-lg"
             onContextMenu={(e) => e.preventDefault()} 
           />
@@ -103,7 +103,7 @@ export default function AboutAndServices() {
                 {
                   date: 'APRIL 2023 - Present',
                   role: 'Office Executive Assistant – Save A Soul Organization',
-                  tasks: ['Data Analyst', 'Day-to-day office duties', 'Lead product implementation', 'Provide feedback to students'],
+                  tasks: ['Reports and document preparations', 'Office administration', 'Managerial Support', 'Communication & Co-ordiation', 'Accounts Assistance'],
                 },
             
                 {
@@ -143,17 +143,17 @@ export default function AboutAndServices() {
                 {
                   date: 'FEB 2024 - SEPT 2024',
                   institution: 'Certification in Full Stack Development – Moringa School',
-                  studies: ['Frontend Development', 'Backend Development', 'UI/UX Design'],
+                  studies: ['Frontend Development', 'Backend Development', 'UI/UX Design','Problem solving', 'Project implementation'],
                 },
                 {
                   date: 'MAY 2023 - SEPT 2023',
                   institution: 'Certification in Website Development – Moringa School',
-                  studies: ['Computer Repair & Maintenance', 'Programming', 'Software Development'],
+                  studies: ['Introduction in to programming', 'Web Design Fundamentals', 'Website Hosting'],
                 },
                 {
                   date: 'SEPT 2022 - DEC 2022',
                   institution: 'Certificate in Graphic Design – Pettans Institute',
-                  studies: ['Graphic Solutions', 'Visual arts & media'],
+                  studies: ['Design Principles', 'Digital Tools ', 'Branding | Visual Communication'],
                 },
               ].map((edu, index) => (
                 <li key={index} className="relative pl-12 group" data-aos="fade-up">
@@ -198,53 +198,61 @@ export default function AboutAndServices() {
         <h2 className="text-2xl font-bold text-green-400 mb-4 text-center" data-aos="fade-up">
           MY SERVICES
         </h2>
-        <p className="text-yellow-500 text-center mb-8" data-aos="fade-up">
+        <p className="text-white text-center mb-8" data-aos="fade-up">
           I offer a variety of services to help you achieve your business goals.
         </p>
+
+
+
         <div className="grid lg:grid-cols-3 gap-8">
-          {[
-            {
-              title: 'Web Development',
-              description: 'Full stack web development using modern technologies like React, Node.js, and MongoDB.',
-              icon: '🌐',
-            },  
-            {
-              title: 'UI/UX Design',
-              description: 'Designing user-friendly interfaces with a focus on accessibility and great user experiences.',
-              icon: '🎨',
-            },
-            {
-              title: 'Graphics Design',
-              description: 'Creating stunning visuals, logos, and marketing materials for brands and businesses.',
-              icon: '🖼️',
-            },
-            {
-              title: 'Office Assistant',
-              description: 'Offering administrative support, data entry, scheduling, and office management services.',
-              icon: '💼',
-            },
-            {
-              title: 'Tech Support',
-              description: 'Providing tech support for hardware and software issues, troubleshooting, and system optimization.',
-              icon: '🛠️',
-            },
-            {
-              title: 'API Integration and Development',
-              description: 'Develop and integrate APIs to ensure seamless communication between different software systems and platforms.',
-              icon: '🔗',
-            },
-          ].map((service, index) => (
-            <div
-              key={index}
-              className="p-6 bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
-              data-aos="fade-up"
-            >
-              <div className="text-4xl mb-4 text-yellow-500">{service.icon}</div>
-              <h3 className="text-xl font-bold text-green-400 mb-2">{service.title}</h3>
-              <p className="text-gray-300">{service.description}</p>
-            </div>
-          ))}
+                            {[
+                              {
+                                title: 'Web Development',
+                                description: 'Full stack web development using modern technologies like React.',
+                                icon: '🌐',
+                              },
+                              {
+                                title: 'UI/UX Design',
+                                description: 'Designing user-friendly interfaces with a focus on accessibility and great user experiences.',
+                                icon: '🎨',
+                              },
+                              {
+                                title: 'Graphics Design',
+                                description: 'Creating stunning visuals, logos, and marketing materials for brands and businesses.',
+                                icon: '🖼️',
+                              },
+                              {
+                                title: 'Office Assistant',
+                                description: 'Offering administrative support, data entry, scheduling, and office management services.',
+                                icon: '💼',
+                              },
+                              {
+                                title: 'Tech Support',
+                                description: 'Providing tech support for hardware and software issues, troubleshooting, and system optimization.',
+                                icon: '🛠️',
+                              },
+                              {
+                                title: 'API Integration and Development',
+                                description: 'Develop and integrate APIs to ensure seamless communication between different software systems and platforms.',
+                                icon: '🔗',
+                              },
+                            ].map((service, index) => (
+                              <div
+                                key={index}
+                                className="p-6 bg-gray-900 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out"
+                                data-aos="fade-up"
+                              >
+                                <div className="flex items-center gap-3 mb-3">
+                                  <div className="text-4xl text-yellow-500">{service.icon}</div>
+                                  <h3 className="text-xl font-bold text-yellow-400">{service.title}</h3>
+                                </div>
+
+                                {/* Justified text */}
+                                <p className="text-gray-300 text-justify">{service.description}</p>
+                              </div>
+                        ))}
         </div>
+
       </div>
     </div>
   );

@@ -33,41 +33,7 @@ const MyWork = () => {
         role: 'Client Based',
         link: 'https://stay-manager-mg.netlify.app/',
       },
-      {
-        title: 'DELIVERY MANAGEMENT SYSTEM',
-        description: 'A system designed to resolve a cohesion and daily challeges of a company dealing with deliveries to their clients.',
-        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png',
-        role: 'Client Based',
-        link: 'https://parcelpoa.marps.co.ke/',
-      },
-      {
-        title: 'REACHROY DESIGNS HUB',
-        description: 'A system designed to assist a Printing company to market themselves and at the same time manage their daily tasks, it also built on basis of where clients can communicate to the company direct or even make orders',
-        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Reach_Roy.png',
-        role: 'Client Based',
 
-      },
-      {
-        title: 'TEACHNEST',
-        description: 'A small ecommerce website used to sell product.',
-        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-        role: 'Personal Brand',
-        link: 'https://e-commerce-shop-ruddy.vercel.app/',
-      },
-      {
-        title: 'SCHOOL MANAGEMENT SYSTEM',
-        description: 'A small ecommerce website used to sell product.',
-        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-        role: 'Personal Brand',
-        link: 'https://e-commerce-shop-ruddy.vercel.app/',
-      },
-      {
-        title: 'MUSIC ',
-        description: 'A small ecommerce website used to sell product.',
-        imgSrc: 'https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/TechNest_Online_Shop.png',
-        role: 'Personal Brand',
-        link: 'https://e-commerce-shop-ruddy.vercel.app/',
-      },
     ];
     setProjects(projectsData);
   }, []);

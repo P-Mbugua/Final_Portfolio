@@ -73,7 +73,7 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="space-y-4">
             <p className="text-base md:text-lg">
-              If you have any suggestion, project, or even want to say hello, please fill out the form below and I will reply shortly.
+              For inquiries, collaborations, or professional connections, please reach out using the form below. I’ll be glad to respond promptly.
             </p>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <InputField
