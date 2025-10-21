@@ -52,14 +52,36 @@ export default function Home() {
       <ThreeScene className="absolute top-0 left-0 w-full h-full z-0" />
 
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-4 md:px-10 md:ml-20">
-        <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
+        {/* <div className="order-1 md:order-2 mb-0 flex justify-center md:justify-end w-full md:w-1/2">
           <img
             src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
             alt="Peter"
             className="w-48 md:w-72 lg:w-80 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
             onContextMenu={(e) => e.preventDefault()}
           />
-        </div>
+        </div> */}
+
+        {/* <div className="order-1 md:order-2 flex justify-center md:justify-end w-full md:w-1/2 mb-4 md:mb-0">
+  <img
+    src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
+    alt="Peter"
+    className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
+    onContextMenu={(e) => e.preventDefault()}
+  />
+</div> */}
+
+
+
+
+<div className="order-1 md:order-2 flex justify-center md:justify-end w-full md:w-1/2 mt-20 mb-0 md:mb-0">
+  <img
+    src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
+    alt="Peter"
+    className="w-64 sm:w-72 md:w-80 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
+    onContextMenu={(e) => e.preventDefault()}
+  />
+</div>
+
 
         <div className="flex flex-col lg:mb-0 mb-24 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10">
         <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
