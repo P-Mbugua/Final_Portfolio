@@ -59,7 +59,7 @@ export default function Home() {
                               <img
                                 src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
                                 alt="Peter"
-                                className="w-82 sm:w-82 md:w-96 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
+                                className="w-72 sm:w-82 md:w-96 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
                                 onContextMenu={(e) => e.preventDefault()}
                               />
                               {/* COMMENT: 
@@ -72,7 +72,7 @@ export default function Home() {
 
 
                 {/* Texts and Buttons */}
-                <div className="flex flex-col lg:mb-0 mb-24 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10 text-center md:text-left items-center md:items-start">
+                <div className="flex flex-col lg:mb-0 mb-56 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10 text-center md:text-left items-center md:items-start">
 
                                 <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
                                       HELLO THERE!!
