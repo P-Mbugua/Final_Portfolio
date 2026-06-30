@@ -114,8 +114,9 @@ function App() {
   }
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
       {location.pathname === '/home' && <ParticlesBackground />}
+      
       <div className="hidden md:block">
         <ToggleButton />
       </div>
@@ -123,18 +124,26 @@ function App() {
         <MobileHeader />
       </div>
 
-      <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path='/home' element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/blog" element={<Blog />} />
-      </Routes>
+      {/* Wrapped Routes in main to handle spacing */}
+      <main className="flex-grow w-full ">
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path='/home' element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </main>
 
-      {location.pathname !== '/home' && <Footer />}
-    </div>
+      {
+        <div className="fixed bottom-0 left-0 w-full z-50 pointer-events-auto">
+          <Footer />
+        </div>
+      }
+      
+    </div> 
   );
 }
 
@@ -144,4 +153,4 @@ export default function WrappedApp() {
       <App />
     </Router>
   );
-}
+}   
