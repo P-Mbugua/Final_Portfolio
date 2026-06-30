@@ -88,7 +88,7 @@ function App() {
 
       // Prepare email params with location data
       const emailParams = {
-        to_email: 'your-email@example.com',  // Recipient's email
+        to_email: 'petermbuguangumi@gmail.com',  // Recipient's email
         page_visited: page,  // The visited page
         ip_address: ipData.ip,  // User's IP address
         userAgent: machineDetails.userAgent,  // User agent
