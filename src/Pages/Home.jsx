@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ThreeScene from '../Components/ThreeScene';
+
+import profile from '../assets/Photos/mbugua.png'
 // Added some more codes.
 
 export default function Home() {
   const roles = [
-    "Full Stack Developer",
-    "Graphics Designer",
+    "Frontend Developer",
   ];
 
   const [currentRole, setCurrentRole] = useState("");
@@ -57,17 +58,12 @@ export default function Home() {
                 {/* Profile Photo */}
                 <div className="order-1 md:order-2 flex justify-center md:justify-end w-full md:w-1/2 mt-20 mb-0 md:mb-0">
                               <img
-                                src="https://p-mbugua.github.io/Official-_Portfolio/2.png"
+                                src={profile}
                                 alt="Peter"
-                                className="w-72 sm:w-82 md:w-96 lg:w-96 h-auto object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-105"
+                                // className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-101" 
+                                className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 object-cover rounded-full border-2 border-yellow-500 transition-transform duration-300 ease-in-out hover:scale-[1.01] cursor-pointer"
                                 onContextMenu={(e) => e.preventDefault()}
-                              />
-                              {/* COMMENT: 
-                                  - 'w-56' → image width on very small screens
-                                  - 'sm:w-64' → image width on small screens
-                                  - 'md:w-72' → image width on medium screens
-                                  - 'lg:w-96' → image width on large screens 
-                                  Adjust these numbers to make the image larger or smaller on each screen size */}
+                              />          
                 </div>
 
 
