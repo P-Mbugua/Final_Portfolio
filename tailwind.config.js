@@ -42,6 +42,7 @@ module.exports = {
       fontFamily: {
         heading: ['Montserrat', 'sans-serif'],
         sans: ['Roboto', 'Arial', 'sans-serif'],
+        
       },
     },
   },

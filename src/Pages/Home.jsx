@@ -49,6 +49,8 @@ export default function Home() {
   }, [roleIndex, currentRole]);
 
   return (
+  
+
     <div className="relative h-screen overflow-hidden overscroll-none bg-black text-white overflow-hidden font-inter">
       <ThreeScene className="absolute top-0 left-0 w-full h-full z-0" />
 
