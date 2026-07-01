@@ -195,7 +195,7 @@ const MobileHeader = () => {
         flex justify-between items-center 
         shadow-xl rounded-2xl
         transition-all duration-300 ease-in-out
-        h-16 px-4
+        h-10 px-1
         font-sans tracking-tight
         ${scrollDirection === 'down' ? '-translate-y-24 opacity-0' : 'translate-y-0 opacity-100'}
         ${scrollDirection === 'up' ? 'top-4' : 'top-[-100px]'}
