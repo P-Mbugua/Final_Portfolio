@@ -118,32 +118,156 @@
 
 
 
-import React, { useState, useRef, useEffect } from 'react';
+// import React, { useState, useRef, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {faBars, faTimes, faHome, faUser, faEnvelope, faSuitcase, faCog, faBlog } from '@fortawesome/free-solid-svg-icons';
+
+// // const MobileHeader = () => {
+// //   const [isOpen, setIsOpen] = useState(false);
+// //   const [scrollDirection, setScrollDirection] = useState('up');
+// //   const [lastScrollY, setLastScrollY] = useState(0);
+// //   const menuRef = useRef(null);
+
+//   // Handle Scroll Detection
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const currentScrollY = window.pageYOffset;
+      
+//       // Prevent hiding when overscrolling at top
+//       if (currentScrollY < 10) {
+//         setScrollDirection('up');
+//         return;
+//       }
+
+//       if (currentScrollY > lastScrollY) {
+//         setScrollDirection('down');
+//         setIsOpen(false); // Close menu on scroll down
+//       } else {
+//         setScrollDirection('up');
+//       }
+//       setLastScrollY(currentScrollY);
+//     };
+
+//     window.addEventListener('scroll', handleScroll, { passive: true });
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, [lastScrollY]);
+
+//   // Close menu when clicking outside
+//   // useEffect(() => {
+//   //   const handleClickOutside = (event) => {
+//   //     if (menuRef.current && !menuRef.current.contains(event.target)) {
+//   //       setIsOpen(false);
+//   //     }
+//   //   };
+
+//   //   if (isOpen) {
+//   //     document.addEventListener('mousedown', handleClickOutside);
+//   //   }
+//   //   return () => document.removeEventListener('mousedown', handleClickOutside);
+//   // }, [isOpen]);
+
+//   // const toggleMenu = () => setIsOpen(!isOpen);
+
+//   const navLinks = [
+//     { to: "/home", icon: faHome, label: "Home" },
+//     { to: "/about", icon: faUser, label: "About" },
+//     { to: "/portfolio", icon: faSuitcase, label: "Portfolio" },
+//     { to: "/skills", icon: faCog, label: "Skills" },
+//     { to: "/blog", icon: faBlog, label: "Blog" },
+//     { to: "/contact", icon: faEnvelope, label: "Contact" },
+//   ];
+
+//   return (
+//     <header
+//       className={`
+//         fixed z-50 w-[92%] left-[4%] 
+//         bg-gray-800 backdrop-blur-md text-gray-200
+//         flex justify-between items-center 
+//         shadow-xl rounded-2xl
+//         transition-all duration-300 ease-in-out
+//         h-10 px-1
+//         font-sans tracking-tight
+//         ${scrollDirection === 'down' ? '-translate-y-24 opacity-0' : 'translate-y-0 opacity-100'}
+//         ${scrollDirection === 'up' ? 'top-4' : 'top-[-100px]'}
+//       `}
+//     >
+//       {/* Logo Section */}
+//       <Link 
+//         to="/home" 
+//         className="flex items-center gap-2 text-yellow-500 font-bold text-lg hover:opacity-80 transition-opacity"
+//         onClick={() => setIsOpen(false)}
+//       >
+//         {/* <img 
+//           src="https://p-mbugua.github.io/peshmarkTwo/Photos/Logo-removebg-preview.png" 
+//           alt="Logo" 
+//           className="w-8 h-8 object-contain" 
+//         />
+//         <span className="hidden xs:inline">Peshmark</span>
+//       </Link> */}
+
+//       {/* Toggle Button */}
+//       {/* <button
+//         onClick={toggleMenu}
+//         className="text-yellow-500 p-2 rounded-lg hover:bg-zinc-800 transition-colors focus:outline-none"
+//         aria-label={isOpen ? 'Close menu' : 'Open menu'}
+//       >
+//         <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="lg" />
+//       </button> */}
+
+//       {/* Dropdown Menu */}
+//       <div 
+//         ref={menuRef}
+//         className={`
+//           absolute top-full left-0 w-full 
+//           bg-zinc-800/95 backdrop-blur-xl 
+//           rounded-2xl shadow-2xl border border-zinc-700/50
+//           overflow-hidden transition-all duration-300 ease-in-out origin-top
+//           ${isOpen ? 'opacity-100 scale-100 mt-3 py-4' : 'opacity-0 scale-95 h-0 mt-0 py-0 pointer-events-none'}
+//         `}
+//       >
+//         <nav className="flex flex-col px-2">
+//           {navLinks.map((link) => (
+//             <Link
+//               key={link.label}
+//               to={link.to}
+//               className="flex items-center px-4 py-3.5 my-1 
+//                 text-gray-300 font-medium rounded-xl
+//                 hover:bg-yellow-500 hover:text-black 
+//                 hover:shadow-md hover:scale-[1.02]
+//                 active:scale-95
+//                 transition-all duration-200"
+//               onClick={() => setIsOpen(false)}
+//             >
+//               <FontAwesomeIcon icon={link.icon} className="w-5 h-5 mr-3 text-yellow-500 group-hover:text-black" />
+//               {link.label}
+//             </Link>
+//           ))}
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default MobileHeader;   
+
+
+
+
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faBars, 
-  faTimes, 
-  faHome, 
-  faUser, 
-  faEnvelope, 
-  faSuitcase, 
-  faCog, 
-  faBlog 
-} from '@fortawesome/free-solid-svg-icons';
+// import { faHome, faUser, faEnvelope, faSuitcase, faCog, faBlog } from '@fortawesome/free-solid-svg-icons';
 
 const MobileHeader = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up');
   const [lastScrollY, setLastScrollY] = useState(0);
-  const menuRef = useRef(null);
 
   // Handle Scroll Detection
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
       
-      // Prevent hiding when overscrolling at top
       if (currentScrollY < 10) {
         setScrollDirection('up');
         return;
@@ -151,7 +275,6 @@ const MobileHeader = () => {
 
       if (currentScrollY > lastScrollY) {
         setScrollDirection('down');
-        setIsOpen(false); // Close menu on scroll down
       } else {
         setScrollDirection('up');
       }
@@ -162,98 +285,43 @@ const MobileHeader = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   const navLinks = [
-    { to: "/home", icon: faHome, label: "Home" },
-    { to: "/about", icon: faUser, label: "About" },
-    { to: "/portfolio", icon: faSuitcase, label: "Portfolio" },
-    { to: "/skills", icon: faCog, label: "Skills" },
-    { to: "/blog", icon: faBlog, label: "Blog" },
-    { to: "/contact", icon: faEnvelope, label: "Contact" },
+    { to: "/home", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/portfolio", label: "Portfolio" },
+    { to: "/skills", label: "Skills" },
+    // { to: "/blog",  label: "Blog" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
     <header
       className={`
         fixed z-50 w-[92%] left-[4%] 
-        bg-gray-800 backdrop-blur-md text-gray-200
-        flex justify-between items-center 
-        shadow-xl rounded-2xl
+        bg-gray-800/90 backdrop-blur-md text-gray-200
+        shadow-xl rounded-3xl border border-zinc-700/50
         transition-all duration-300 ease-in-out
-        h-10 px-1
-        font-sans tracking-tight
+        px-1 py-1
         ${scrollDirection === 'down' ? '-translate-y-24 opacity-0' : 'translate-y-0 opacity-100'}
         ${scrollDirection === 'up' ? 'top-4' : 'top-[-100px]'}
       `}
     >
-      {/* Logo Section */}
-      <Link 
-        to="/home" 
-        className="flex items-center gap-2 text-yellow-500 font-bold text-lg hover:opacity-80 transition-opacity"
-        onClick={() => setIsOpen(false)}
-      >
-        <img 
-          src="https://p-mbugua.github.io/peshmarkTwo/Photos/Logo-removebg-preview.png" 
-          alt="Logo" 
-          className="w-8 h-8 object-contain" 
-        />
-        <span className="hidden xs:inline">Peshmark</span>
-      </Link>
-
-      {/* Toggle Button */}
-      <button
-        onClick={toggleMenu}
-        className="text-yellow-500 p-2 rounded-lg hover:bg-zinc-800 transition-colors focus:outline-none"
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
-      >
-        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="lg" />
-      </button>
-
-      {/* Dropdown Menu */}
-      <div 
-        ref={menuRef}
-        className={`
-          absolute top-full left-0 w-full 
-          bg-zinc-800/95 backdrop-blur-xl 
-          rounded-2xl shadow-2xl border border-zinc-700/50
-          overflow-hidden transition-all duration-300 ease-in-out origin-top
-          ${isOpen ? 'opacity-100 scale-100 mt-3 py-4' : 'opacity-0 scale-95 h-0 mt-0 py-0 pointer-events-none'}
-        `}
-      >
-        <nav className="flex flex-col px-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.to}
-              className="flex items-center px-4 py-3.5 my-1 
-                text-gray-300 font-medium rounded-xl
-                hover:bg-yellow-500 hover:text-black 
-                hover:shadow-md hover:scale-[1.02]
-                active:scale-95
-                transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
-              <FontAwesomeIcon icon={link.icon} className="w-5 h-5 mr-3 text-yellow-500 group-hover:text-black" />
+      {/* Navigation Container */}
+      <nav className="w-full flex justify-between items-center">
+        {navLinks.map((link) => (
+          <Link
+            key={link.label}
+            to={link.to}
+            className="group relative flex flex-col items-center justify-center p-2"
+            aria-label={link.label}
+          >
+            <span className="text-sm font-medium text-gray-300 group-hover:text-yellow-500 transition-colors duration-200 whitespace-nowrap">
               {link.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
+            </span>
+       
+          </Link>
+        ))}
+      </nav>
     </header>
   );
 };
