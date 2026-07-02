@@ -39,13 +39,13 @@ const MobileHeader = () => {
   return (
     <header
       className={`
-        fixed z-50 w-[92%] left-[4%] 
+        fixed z-50 w-[80%] left-[12%] 
         bg-gray-800/90 backdrop-blur-md text-gray-900
-        shadow-xl rounded-3xl border border-zinc-700/50
+        shadow-xl rounded-full border border-zinc-700/50
         transition-all duration-100 ease-in-out
-        px-1 py-1
+        px-0 py-0
         ${scrollDirection === 'down' ? '-translate-y-24 opacity-0' : 'translate-y-0 opacity-100'}
-        ${scrollDirection === 'up' ? 'top-4' : 'top-[-100px]'}
+        ${scrollDirection === 'up' ? 'top-2' : 'top-[-100px]'}
       `}
     >
       {/* Navigation Container */}
@@ -57,7 +57,7 @@ const MobileHeader = () => {
             className="group relative flex flex-col items-center justify-center p-2"
             aria-label={link.label}
           >
-            <span className="text-sm font-small text-white group-hover:text-yellow-500 transition-colors duration-200 whitespace-nowrap">
+            <span className="text-[12px] font-small text-white group-hover:text-yellow-500 transition-colors duration-200 whitespace-nowrap">
               {link.label}
             </span>
        
