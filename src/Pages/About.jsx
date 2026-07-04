@@ -48,20 +48,31 @@ export default function AboutAndServices() {
             <p className="sm:text-[16px] lg:text-1xl font-semibold text-yellow-400 font-medium mb-0">
               Frontend Developer & Web Designer
             </p>
-            <p className="text-gray-300 lg:leading-normal leading-tight text-justify lg:text-[14px] sm:text-[20px] leading-relaxed mb-1 max-w-2xl mx-auto lg:mx-0">
-              Based in <strong className="text-white">Nairobi</strong>, I sit at
-              the intersection of{" "}
-              <span className="text-green-500">clean code</span> and{" "}
-              <span className="text-gray-300">stunning design</span>. With{" "}
-              <strong className="text-white">2 years of experience</strong>, I
-              specialize in building responsive, pixel-perfect user interfaces
-              that not only function flawlessly but look incredible. I help
-              startups and businesses transform complex ideas into elegant,
-              user-centric digital experiences.
-            </p>
+            {/* <p className="text-gray-300 lg:leading-normal leading-tight text-justify lg:text-[14px] sm:text-[20px] leading-relaxed mb-1 max-w-2xl mx-auto lg:mx-0">
+               Based in <strong className="text-white">Nairobi</strong>, I am <strong className="text-white">Peter</strong>, 
+               a Frontend Developer and Web Designer who bridges the gap between <span className="text-green-500">pixel-perfect
+                 aesthetics</span> and <span className="text-green-500">robust functionality</span>. 
+                 With <strong className="text-white">2 years of experience</strong>, 
+                 I specialize in crafting responsive, user-centric interfaces that drive engagement. 
+                 Uniquely, I also bring <strong className="text-white">accounting expertise</strong> 
+                 to the table, allowing me to build precise, data-driven financial dashboards and 
+                 business tools that speak both the language of design and the language of finance. 
+                 I help startups transform complex requirements into elegant, high-performance digital 
+                 experiences.
+            </p>    */}
+
+
+            {/* <p className="text-gray-300 text-justify text-left lg:leading-normal leading-tight mb-1 max-w-2xl mx-auto lg:mx-0 lg:text-[14px] sm:text-[20px]">
+  Based in <strong className="text-white">Nairobi</strong>, I am <strong className="text-white">Peter</strong>, a Frontend Developer and Web Designer operating at the convergence of <span className="text-green-500">pixel-perfect engineering</span> and <span className="text-green-500">financial precision</span>. With <strong className="text-white">2 years of experience</strong> crafting responsive, high-performance interfaces, I offer a distinct advantage: a professional foundation in <strong className="text-white">accounting</strong>. This unique duality allows me to translate complex fiscal requirements into intuitive financial dashboards and business tools that are not only visually stunning but logically rigorous. I partner with startups to transform intricate data into elegant, user-centric digital realities that drive trust and engagement.
+</p>    */}
+
+
+            <p className="text-gray-300 text-left text-justify hyphens-auto leading-tight mb-1 max-w-2xl mx-auto lg:mx-0 lg:text-[14px] sm:text-[20px] [word-spacing:-0.05em]">
+              Based in <strong className="text-white">Nairobi</strong>, I am <strong className="text-white">Peter</strong>, a Frontend Developer and Web Designer operating at the convergence of <span className="text-green-500">pixel-perfect engineering</span> and <span className="text-green-500">financial precision</span>. With <strong className="text-white">2 years of experience</strong> crafting responsive, high-performance interfaces, I offer a distinct advantage: a professional foundation in <strong className="text-white">accounting</strong>. This unique duality allows me to translate complex fiscal requirements into intuitive financial dashboards and business tools that are not only visually stunning but logically rigorous. I partner with startups to transform intricate data into elegant, user-centric digital realities that drive trust and engagement.
+            </p>   
 
             {/* 3. "Live Stats" Row (Smaller) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 cursor-pointer">
+            <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 cursor-pointer">
               {/* Stat Item 1 */}
               <div className="p-1 bg-gray-900 rounded-lg border border-gray-800 hover:border-green-500 transition duration-300 flex flex-col items-center justify-center">
                 <p className="text-gray-500 text-[10px] uppercase tracking-wider text-center">
@@ -75,7 +86,7 @@ export default function AboutAndServices() {
                 <p className="text-gray-500 text-[10px] uppercase tracking-wider text-center">
                   Projects
                 </p>
-                <p className="text-[12px] font-bold text-white">15+</p>
+                <p className="text-[12px] font-bold text-white">6+</p>
               </div>
 
               {/* Stat Item 3 */}
