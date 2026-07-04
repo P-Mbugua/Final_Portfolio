@@ -45,7 +45,7 @@ export default function AboutAndServices() {
             <h2 className="text-1xl lg:text-2xl font-semibold text-white mb-1">
               Hello, I'm <span className="text-green-500">Peter Mbugua</span>
             </h2>
-            <p className="sm:text-[16px] lg:text-1xl font-semibold text-gray-400 font-medium mb-0">
+            <p className="sm:text-[16px] lg:text-1xl font-semibold text-yellow-400 font-medium mb-0">
               Frontend Developer & Web Designer
             </p>
             <p className="text-gray-300 text-justify lg:text-[14px] sm:text-[20px] leading-relaxed mb-1 max-w-2xl mx-auto lg:mx-0">
