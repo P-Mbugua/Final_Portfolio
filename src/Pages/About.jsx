@@ -27,7 +27,7 @@ export default function AboutAndServices() {
       {/* Personal Info Section */}
       <div className="bg-black flex flex-col items-center justify-center px-4 lg:px-16 py-8 lg:py-1">
         {/* FIX: Changed 'items-start' to 'items-center lg:items-start' */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 w-full max-w-6xl">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 w-full max-w-6xl">
           {/* 1. Image with Green Glow */}
           <div className="relative group flex-shrink-0">
             {/* Green Glow Only */}
@@ -48,22 +48,6 @@ export default function AboutAndServices() {
             <p className="sm:text-[16px] lg:text-1xl font-semibold text-yellow-400 font-medium mb-0">
               Frontend Developer & Web Designer
             </p>
-            {/* <p className="text-gray-300 lg:leading-normal leading-tight text-justify lg:text-[14px] sm:text-[20px] leading-relaxed mb-1 max-w-2xl mx-auto lg:mx-0">
-               Based in <strong className="text-white">Nairobi</strong>, I am <strong className="text-white">Peter</strong>, 
-               a Frontend Developer and Web Designer who bridges the gap between <span className="text-green-500">pixel-perfect
-                 aesthetics</span> and <span className="text-green-500">robust functionality</span>. 
-                 With <strong className="text-white">2 years of experience</strong>, 
-                 I specialize in crafting responsive, user-centric interfaces that drive engagement. 
-                 Uniquely, I also bring <strong className="text-white">accounting expertise</strong> 
-                 to the table, allowing me to build precise, data-driven financial dashboards and 
-                 business tools that speak both the language of design and the language of finance. 
-                 I help startups transform complex requirements into elegant, high-performance digital 
-                 experiences.
-            </p>    */}
-
-            {/* <p className="text-gray-300 text-justify text-left lg:leading-normal leading-tight mb-1 max-w-2xl mx-auto lg:mx-0 lg:text-[14px] sm:text-[20px]">
-  Based in <strong className="text-white">Nairobi</strong>, I am <strong className="text-white">Peter</strong>, a Frontend Developer and Web Designer operating at the convergence of <span className="text-green-500">pixel-perfect engineering</span> and <span className="text-green-500">financial precision</span>. With <strong className="text-white">2 years of experience</strong> crafting responsive, high-performance interfaces, I offer a distinct advantage: a professional foundation in <strong className="text-white">accounting</strong>. This unique duality allows me to translate complex fiscal requirements into intuitive financial dashboards and business tools that are not only visually stunning but logically rigorous. I partner with startups to transform intricate data into elegant, user-centric digital realities that drive trust and engagement.
-</p>    */}
 
             <p className="text-gray-300 text-left text-justify hyphens-auto leading-tight mb-1 max-w-2xl lg:mx-0 lg:text-[16px] sm:text-[12px] [word-spacing:-0.03em]">
               Based in <strong className="text-white">Nairobi</strong>, I am{" "}
