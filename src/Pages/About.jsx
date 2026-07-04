@@ -48,7 +48,7 @@ export default function AboutAndServices() {
             <p className="sm:text-[16px] lg:text-1xl font-semibold text-yellow-400 font-medium mb-0">
               Frontend Developer & Web Designer
             </p>
-            <p className="text-gray-300 text-justify lg:text-[14px] sm:text-[20px] leading-relaxed mb-1 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-gray-300 lg:leading-normal leading-tight text-justify lg:text-[14px] sm:text-[20px] leading-relaxed mb-1 max-w-2xl mx-auto lg:mx-0">
               Based in <strong className="text-white">Nairobi</strong>, I sit at
               the intersection of{" "}
               <span className="text-green-500">clean code</span> and{" "}
