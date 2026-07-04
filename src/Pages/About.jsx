@@ -27,7 +27,7 @@ export default function AboutAndServices() {
       {/* Personal Info Section */}
       <div className="bg-black flex flex-col items-center justify-center px-4 lg:px-16 py-8 lg:py-1">
         {/* FIX: Changed 'items-start' to 'items-center lg:items-start' */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 w-full max-w-6xl">
+       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6 lg:gap-14 w-full max-w-6xl">  
           {/* 1. Image with Green Glow */}
           <div className="relative group flex-shrink-0">
             {/* Green Glow Only */}
@@ -35,7 +35,7 @@ export default function AboutAndServices() {
             <img
               src="https://p-mbugua.github.io/Official-_Portfolio/6.png"
               alt="Peter Mbugua"
-              className="relative w-64 h-64 object-cover rounded-lg border-1 border-gray-800 cursor-pointer shadow-2xl group-hover:scale-[1.02] transition-transform duration-300"
+              className="relative w-80 h-80 object-cover rounded-lg border-1 border-gray-800 cursor-pointer shadow-2xl group-hover:scale-[1.02] transition-transform duration-300"
               onContextMenu={(e) => e.preventDefault()}
             />
           </div>
