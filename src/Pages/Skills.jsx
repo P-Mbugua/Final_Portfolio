@@ -105,6 +105,146 @@ export default function Skills() {
           ))}
         </div>
       </div>
+
+
+
+
+
+
+
+{/* ================= START: HOW I WORK SECTION ================= */}
+<div className="w-full bg-black py-20 relative overflow-hidden">
+  {/* Subtle Background Accent */}
+  <div className="absolute top-0 right-0 w-1/3 h-full bg-green-900/5 blur-[100px] pointer-events-none" />
+
+  <div className="relative z-10 max-w-5xl mx-auto px-4">
+    
+    {/* Header */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-5xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 mb-4">
+        MY PROCESS
+      </h2>
+      <p className="text-gray-400 text-sm md:text-base font-sans max-w-2xl mx-auto font-light">
+        From initial concept to final pixel-perfect deployment. A structured approach to building digital products that perform.
+      </p>
+    </div>
+
+    {/* Timeline Container */}
+    <div className="relative">
+      {/* Vertical Line */}
+      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500/50 via-green-500/20 to-transparent" />
+
+      {/* Steps */}
+      <div className="space-y-12">
+        
+        {/* Step 1: Discovery */}
+        <div className="relative flex flex-col md:flex-row items-center gap-8 group">
+          <div className="flex-1 w-full md:text-right order-2 md:order-1">
+            <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-green-400 transition-colors">01. Discovery & Research</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              I start by understanding the <span className="text-gray-200">core problem</span> and your business goals. Through stakeholder interviews and market analysis, I gather requirements to ensure the foundation is solid before writing a single line of code.
+            </p>
+          </div>
+          
+          {/* Icon Node */}
+          <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-black border-2 border-green-500 rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(34,197,94,0.5)] group-hover:scale-125 transition-transform duration-300 order-1 md:order-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full" />
+          </div>
+
+          <div className="flex-1 w-full order-3 md:order-3 hidden md:block">
+            <div className="text-gray-500 text-xs font-mono uppercase tracking-widest">Requirement Analysis</div>
+          </div>
+        </div>
+
+        {/* Step 2: Strategy & UI Design */}
+        <div className="relative flex flex-col md:flex-row items-center gap-8 group">
+          <div className="flex-1 w-full hidden md:block order-1">
+            <div className="text-gray-500 text-xs font-mono uppercase tracking-widest text-right">Wireframing & Prototyping</div>
+          </div>
+
+          {/* Icon Node */}
+          <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-black border-2 border-green-500 rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(34,197,94,0.5)] group-hover:scale-125 transition-transform duration-300 order-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full" />
+          </div>
+
+          <div className="flex-1 w-full order-3">
+            <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-green-400 transition-colors">02. Strategy & UI Design</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              I translate insights into <span className="text-gray-200">visual structures</span>. Creating low-fidelity wireframes to map user flows, then evolving them into high-fidelity, interactive prototypes that define the look, feel, and accessibility standards.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 3: Development (Your Strong Suit) */}
+        <div className="relative flex flex-col md:flex-row items-center gap-8 group">
+          <div className="flex-1 w-full md:text-right order-2 md:order-1">
+            <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-green-400 transition-colors">03. Frontend Development</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              This is where the magic happens. I build <span className="text-gray-200">responsive, pixel-perfect interfaces</span> using React and modern CSS. I focus on clean architecture, smooth animations, and performance optimization to ensure the site feels as good as it looks.
+            </p>
+          </div>
+
+          {/* Icon Node - Highlighted */}
+          <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 bg-green-900/20 border-2 border-green-400 rounded-full flex items-center justify-center z-10 shadow-[0_0_20px_rgba(34,197,94,0.6)] group-hover:scale-125 transition-transform duration-300 order-1 md:order-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+
+          <div className="flex-1 w-full order-3 md:order-3 hidden md:block">
+            <div className="text-gray-500 text-xs font-mono uppercase tracking-widest">React & Tailwind</div>
+          </div>
+        </div>
+
+        {/* Step 4: Testing & Refinement */}
+        <div className="relative flex flex-col md:flex-row items-center gap-8 group">
+          <div className="flex-1 w-full hidden md:block order-1">
+            <div className="text-gray-500 text-xs font-mono uppercase tracking-widest text-right">QA & Optimization</div>
+          </div>
+
+          {/* Icon Node */}
+          <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-black border-2 border-green-500 rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(34,197,94,0.5)] group-hover:scale-125 transition-transform duration-300 order-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full" />
+          </div>
+
+          <div className="flex-1 w-full order-3">
+            <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-green-400 transition-colors">04. Testing & Refinement</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Rigorous testing across devices and browsers ensures <span className="text-gray-200">flawless performance</span>. I optimize load speeds, fix bugs, and refine interactions based on feedback, ensuring the final product is robust and user-friendly.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 5: Deployment & Support */}
+        <div className="relative flex flex-col md:flex-row items-center gap-8 group">
+          <div className="flex-1 w-full md:text-right order-2 md:order-1">
+            <h3 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-green-400 transition-colors">05. Deployment & Launch</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              The final beat. I handle secure deployment to production servers, configure domains, and set up analytics. Post-launch, I provide support to ensure scalability and assist with any future iterations or content updates.
+            </p>
+          </div>
+
+          {/* Icon Node */}
+          <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-black border-2 border-green-500 rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(34,197,94,0.5)] group-hover:scale-125 transition-transform duration-300 order-1 md:order-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full" />
+          </div>
+
+          <div className="flex-1 w-full order-3 md:order-3 hidden md:block">
+            <div className="text-gray-500 text-xs font-mono uppercase tracking-widest">Go Live</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{/* ================= END: HOW I WORK SECTION ================= */}   
+
+
+
+
+
+
+
+
     </div>
   );
 }
