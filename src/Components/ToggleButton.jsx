@@ -77,14 +77,6 @@ const ToggleButton = () => {
           </button>
 
           <button 
-            onClick={() => handleLinkClick('/blog')} 
-            className="text-white font-bold flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
-          >
-            <FaBlog size={24} className="mr-2" />
-            <span>Blog</span>
-          </button>
-
-          <button 
             onClick={() => handleLinkClick('/contact')} 
             className="text-white font-bold flex items-center mb-2 w-full py-2 border-b border-green-500 hover:text-green-400"
           >
