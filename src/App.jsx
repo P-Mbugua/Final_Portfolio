@@ -5,7 +5,6 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Skills from './Pages/Skills';
 import Portfolio from './Pages/Portfolio';
-import Blog from './Pages/Blog';
 import ToggleButton from './Components/ToggleButton';
 import MobileHeader from './Components/MobileHeader';
 import ParticlesBackground from './Components/ParticlesBackground';
@@ -56,7 +55,7 @@ function App() {
         logPageVisit();
       }
     }
-  }, [location.pathname]);  // Run only when the page path changes (not on re-renders)
+  }, [location.pathname]);  
 
   // Function to send email notification via EmailJS
   const sendEmailNotification = async (page) => {
@@ -133,7 +132,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/blog" element={<Blog />} />
         </Routes>
       </main>
 
