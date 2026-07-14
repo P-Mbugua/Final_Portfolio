@@ -288,41 +288,74 @@ const MyWork = () => {
     setReviews(reviewsList);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const convertToBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
 
-    if (newReview.stars === 0) {
-      toast.error(
-        "Please select a number of stars before submitting your review.",
-      );
-      return;
+    reader.readAsDataURL(file);
+
+    reader.onload = () => resolve(reader.result);
+
+    reader.onerror = (error) => reject(error);
+  });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (newReview.stars === 0) {
+    toast.error("Please select a number of stars before submitting your review.");
+    return;
+  }
+
+  setIsLoading(true);
+
+  try {
+    let photo = null;
+
+    if (newReview.photo) {
+      photo = await convertToBase64(newReview.photo);
     }
 
-    setIsLoading(true);
+    const reviewData = {
+      ...newReview,
+      photo,
+    };
 
-    try {
-      const reviewData = {
-        ...newReview,
-        photo: newReview.photo ? URL.createObjectURL(newReview.photo) : null,
-      };
-      await addDoc(collection(db, "reviews"), reviewData);
-      toast.success("Review submitted successfully!");
-      setNewReview({
-        name: "",
-        date: new Date().toLocaleDateString(),
-        stars: 0,
-        message: "",
-        photo: null,
-      });
-      fetchReviews();
-      setIsFormVisible(false);
-    } catch (error) {
-      console.error("Error adding review: ", error);
-      toast.error("Error submitting review. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    await addDoc(collection(db, "reviews"), reviewData);
+
+    toast.success("Review submitted successfully!");
+
+    setNewReview({
+      name: "",
+      date: new Date().toLocaleDateString(),
+      stars: 0,
+      message: "",
+      photo: null,
+    });
+
+    fetchReviews();
+    setIsFormVisible(false);
+  } catch (error) {
+    console.error(error);
+    toast.error("Error submitting review.");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   useEffect(() => {
     fetchReviews();
