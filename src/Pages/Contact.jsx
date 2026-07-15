@@ -43,12 +43,12 @@ export default function Contact() {
 
   return (
     // FIX 1: Full screen width/height, removed outer px padding to eliminate gaps
-    <div className="bg-black text-white w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <div className="pb-16 bg-black text-white w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
       <ToastContainer />
       
       {/* Container takes full width now */}
       <div className="w-full max-w-screen-lg px-4 md:px-8 lg:px-16 h-full flex flex-col justify-center">
-        <h1 className="text-[14px] mt-10 md:text-[16px] lg:text-2xl font-bold text-center text-white">
+        <h1 className="text-[14px] mt-16  md:mt-16 lg:mt-10 md:text-[16px] lg:text-2xl font-bold text-center text-white">
           GET <span className="text-green-500">IN TOUCH</span>
         </h1>
         <p className="text-center text-[10px] md:text-[13px] mt-2">
