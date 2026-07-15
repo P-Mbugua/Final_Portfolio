@@ -370,7 +370,7 @@ const convertToBase64 = (file) => {
         – Here are a few of the projects I have been working on –
       </p>
 
-      <section id="projects" className="py-1 bg-gray-50 dark:bg-gray-900">
+      <section id="projects" className="py-1  ">
         <div className="max-w-6xl  px-0 sm:px-1 lg:px-8">
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
