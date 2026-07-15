@@ -744,7 +744,7 @@ const convertToBase64 = (file) => {
                   </div>
                 </div>
 
-                {/* Review Textarea with Character Count Logic (Optional visual cue) */}
+                {/* Review Textarea with Character Count Logic  */}
                 <div className="group">
                   <label className="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 ml-1">
                     Review

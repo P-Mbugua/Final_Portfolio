@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "export REACT_APP_BUILD_DATE=$(date) && react-scripts build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "build:css": "postcss src/styles.css -o dist/styles.css"
