@@ -362,7 +362,7 @@ const convertToBase64 = (file) => {
   }, []);
 
   return (
-    <div className="bg-gray-900 py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
+    <div className="bg-black py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
       <h2 className="text-[14px] sm:text-[18px] mt-6 font-extrabold text-white mb-2 font-montserrat">
         MY <span className="text-yellow-500">WORKS</span>
       </h2>

@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[#1a1a1a] text-white py-12 px-4 md:px-8 lg:px-16">
+    <div className="bg-black text-white py-12 px-4 md:px-8 lg:px-16">
       <ToastContainer />
       <div className="container mx-auto max-w-screen-lg">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-white">
