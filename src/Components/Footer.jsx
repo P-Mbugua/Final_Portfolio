@@ -14,7 +14,7 @@ export default function Footer() {
   });
 
   return (
-    <footer className="bg-gray-900 text-white py-1 w-full font-sans border-t border-gray-700">
+    <footer className="bg-gray-900 mt-5 text-white py-1 w-full font-sans border-t border-gray-700">
       <div className="container mx-auto px-6">
         
         {/* Responsive Container: Stacks on mobile, Row on desktop */}
