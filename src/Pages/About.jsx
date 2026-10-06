@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
+//Photos Imports
 import about from '../assets/Photos/about.jpg'
 import bio from '../assets/Files/Peter-Mbugua.pdf'
 
@@ -137,10 +139,10 @@ export default function AboutAndServices() {
                     
                     \{/* ABOUT ME Section */}
                     <div className="text-center sm:mb-10 mb-0">
-                      <h1 className="lg:text-4xl text-1xl font-extrabold text-green-400 mt-10 lg:mt-20">
+                      <h1 className="lg:text-2xl text-1xl font-extrabold text-green-400 mt-10 lg:mt-6">
                         ABOUT <span className="text-white">ME</span>
                       </h1>
-                      <p className="lg:text-[18px] font-medium text-[12px] text-gray-300 mt-2">
+                      <p className="lg:text-[14px] font-medium text-[12px] text-gray-300 mt-2">
                         – I LOVE CREATING TECH SOLUTIONS –{" "}
                       </p>
                     </div>
@@ -149,11 +151,8 @@ export default function AboutAndServices() {
 
                     {/* Personal Info Section */}
                     <div className="bg-black flex flex-col items-center justify-center px-4 lg:px-16 py-8 lg:py-1">
-                      {/* FIX: Changed 'items-start' to 'items-center lg:items-start' */}
                     <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6 lg:gap-14 w-full max-w-6xl">  
-                        {/* 1. Image with Green Glow */}
                         <div className="relative group flex-shrink-0">
-                          {/* Green Glow Only */}
                           <div className="absolute -inset-0.5 bg-green-500 rounded-lg blur opacity-15 group-hover:opacity-20 transition duration-200 group-hover:duration-200"></div>
                           <img
                             src={about}
@@ -178,7 +177,7 @@ export default function AboutAndServices() {
                             Developer and Web Designer operating at the convergence of</strong>, {" "}
                             <span className="text-green-500">pixel-perfect engineering</span>{" "}
                             and <span className="text-green-500">financial precision</span>.
-                            With <strong className="text-white">2 years of experience</strong>{" "}
+                            With <strong className="text-white">3 years of experience</strong>{" "}
                             crafting responsive, high-performance interfaces, I offer a
                             distinct advantage: a professional foundation in{" "}
                             <strong className="text-white">accounting</strong>. This unique
@@ -189,7 +188,7 @@ export default function AboutAndServices() {
                             digital realities that drive trust and engagement.
                           </p>
 
-                          {/* 3. "Live Stats" Row (Smaller) */}
+
                           <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 mb-3 cursor-pointer">
                             {/* Stat Item 1 */}
                             <div className="p-1 bg-gray-900 rounded-lg border border-gray-800 hover:border-green-500 transition duration-300 flex flex-col items-center justify-center">
@@ -231,12 +230,12 @@ export default function AboutAndServices() {
                               href="https://flowcv.com/resume/f62ua50tfk"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="group relative px-3 py-2 bg-yellow-500 text-black text-sm font-small rounded-full overflow-hidden shadow-lg hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-0.5 hover:bg-yellow-400"
+                              className="group relative px-3 py-2 bg-yellow-500 text-black text-sm font-small rounded-full overflow-hidden shadow-lg hover:shadow-yellow-500/10 transition-all duration-300 transform hover:-translate-y-1 hover:bg-yellow-400"
                             >
                               <span className="relative z-10 text-[12px] flex items-center justify-center gap-1.5">
                                 Download CV
                                 <svg
-                                  className="w-4 h-4 group-hover:translate-y-1 transition-transform"
+                                  className="w-4 h-4 group-hover:scale-110 transition-transform"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"

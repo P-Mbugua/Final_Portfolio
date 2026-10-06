@@ -5,6 +5,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
+import about from '../assets/Photos/Projects_Photos/Jibuy.png'   
+import roy from '../assets/Photos/Projects_Photos/Reach_Roy.png'   
+
+
+
 const MyWork = () => {
   const [projects, setProjects] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -23,36 +28,26 @@ const MyWork = () => {
     const projectsData = [
       {
         id: 1,
-        title: "HOTEL MANAGEMENT SYSTEM",
-        subtitle: "Enterprise Hospitality Platform",
+        title: "E-COMMERCE",
+        subtitle: "Marketplace Platform",
         description:
-          "Full-stack hotel & restaurant management solution featuring AI-driven dynamic pricing, real-time analytics, contactless check-in/out, multi-property dashboard, and integrated POS. Streamlines operations across 15+ modules including housekeeping, room service, billing, and guest feedback.",
+          "A multi-vendor e-commerce marketplace where users can browse, search, and purchase products from multiple sellers. Features include a seller dashboard, secure checkout, and order tracking — designed for a seamless shopping experience on both desktop and mobile.",
         imgSrc:
-          "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png",
-        role: "Full-Stack Development",
-        status: "Production Ready",
+          about,
+        role: "Collaboration",
+        status: "In Development",
         link: "https://stay-manager-mg.netlify.app/",
         repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
         techStack: [
           "React 19",
-          "TypeScript",
           "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "PostgreSQL",
-          "Prisma",
-          "Redis",
           "Socket.io",
           "JWT",
-          "Stripe API",
-          "Chart.js",
         ],
         features: [
-          "AI Dynamic Pricing Engine",
           "Real-Time Occupancy Analytics",
           "Contactless Check-In/Out",
           "Multi-Property Dashboard",
-          "Integrated POS & Billing",
           "Automated PDF Reports",
         ],
         metrics: {
@@ -65,14 +60,14 @@ const MyWork = () => {
       },
       {
         id: 2,
-        title: "HOTEL MANAGEMENT SYSTEM",
-        subtitle: "Enterprise Hospitality Platform",
+        title: "REACHROY DESIGNS HUB",
+        subtitle: "Print & Design Services Platform",
         description:
-          "Full-stack hotel & restaurant management solution featuring AI-driven dynamic pricing, real-time analytics, contactless check-in/out, multi-property dashboard, and integrated POS. Streamlines operations across 15+ modules including housekeeping, room service, billing, and guest feedback.",
+          "ReachRoy Designs Hub is an online platform for a print and design services company. It allows customers to browse a catalog of print products, customize designs with a live preview, and place orders through a streamlined checkout. The site emphasizes a clean, visual-first experience that makes professional printing accessible and simple.",
         imgSrc:
-          "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png",
-        role: "Full-Stack Development",
-        status: "Production Ready",
+          roy,
+        role: "Client",
+        status: "In Development",
         link: "https://stay-manager-mg.netlify.app/",
         repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
         techStack: [
@@ -147,132 +142,7 @@ const MyWork = () => {
         },
         year: "2026",
       },
-      {
-        id: 4,
-        title: "HOTEL MANAGEMENT SYSTEM",
-        subtitle: "Enterprise Hospitality Platform",
-        description:
-          "Full-stack hotel & restaurant management solution featuring AI-driven dynamic pricing, real-time analytics, contactless check-in/out, multi-property dashboard, and integrated POS. Streamlines operations across 15+ modules including housekeeping, room service, billing, and guest feedback.",
-        imgSrc:
-          "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png",
-        role: "Full-Stack Development",
-        status: "Production Ready",
-        link: "https://stay-manager-mg.netlify.app/",
-        repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
-        techStack: [
-          "React 19",
-          "TypeScript",
-          "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "PostgreSQL",
-          "Prisma",
-          "Redis",
-          "Socket.io",
-          "JWT",
-          "Stripe API",
-          "Chart.js",
-        ],
-        features: [
-          "AI Dynamic Pricing Engine",
-          "Real-Time Occupancy Analytics",
-          "Contactless Check-In/Out",
-          "Multi-Property Dashboard",
-          "Integrated POS & Billing",
-          "Automated PDF Reports",
-        ],
-        metrics: {
-          performance: "98/100",
-          uptime: "99.9%",
-          users: "500+",
-          properties: "12",
-        },
-        year: "2026",
-      },
-      {
-        id: 5,
-        title: "HOTEL MANAGEMENT SYSTEM",
-        subtitle: "Enterprise Hospitality Platform",
-        description:
-          "Full-stack hotel & restaurant management solution featuring AI-driven dynamic pricing, real-time analytics, contactless check-in/out, multi-property dashboard, and integrated POS. Streamlines operations across 15+ modules including housekeeping, room service, billing, and guest feedback.",
-        imgSrc:
-          "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png",
-        role: "Full-Stack Development",
-        status: "Production Ready",
-        link: "https://stay-manager-mg.netlify.app/",
-        repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
-        techStack: [
-          "React 19",
-          "TypeScript",
-          "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "PostgreSQL",
-          "Prisma",
-          "Redis",
-          "Socket.io",
-          "JWT",
-          "Stripe API",
-          "Chart.js",
-        ],
-        features: [
-          "AI Dynamic Pricing Engine",
-          "Real-Time Occupancy Analytics",
-          "Contactless Check-In/Out",
-          "Multi-Property Dashboard",
-          "Integrated POS & Billing",
-          "Automated PDF Reports",
-        ],
-        metrics: {
-          performance: "98/100",
-          uptime: "99.9%",
-          users: "500+",
-          properties: "12",
-        },
-        year: "2026",
-      },
-      {
-        id: 6,
-        title: "HOTEL MANAGEMENT SYSTEM",
-        subtitle: "Enterprise Hospitality Platform",
-        description:
-          "Full-stack hotel & restaurant management solution featuring AI-driven dynamic pricing, real-time analytics, contactless check-in/out, multi-property dashboard, and integrated POS. Streamlines operations across 15+ modules including housekeeping, room service, billing, and guest feedback.",
-        imgSrc:
-          "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png",
-        role: "Full-Stack Development",
-        status: "Production Ready",
-        link: "https://stay-manager-mg.netlify.app/",
-        repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
-        techStack: [
-          "React 19",
-          "TypeScript",
-          "Tailwind CSS",
-          "Node.js",
-          "Express.js",
-          "PostgreSQL",
-          "Prisma",
-          "Redis",
-          "Socket.io",
-          "JWT",
-          "Stripe API",
-          "Chart.js",
-        ],
-        features: [
-          "AI Dynamic Pricing Engine",
-          "Real-Time Occupancy Analytics",
-          "Contactless Check-In/Out",
-          "Multi-Property Dashboard",
-          "Integrated POS & Billing",
-          "Automated PDF Reports",
-        ],
-        metrics: {
-          performance: "98/100",
-          uptime: "99.9%",
-          users: "500+",
-          properties: "12",
-        },
-        year: "2026",
-      },
+
     ];
     setProjects(projectsData);
   }, []);
@@ -362,7 +232,7 @@ const convertToBase64 = (file) => {
   }, []);
 
   return (
-    <div className="bg-black py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
+    <div className="bg-black py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-6 lg:px-32 text-center">
       <h2 className="text-[14px] sm:text-[20px] mt-6 font-extrabold text-white mb-2 font-montserrat">
         MY <span className="text-green-500">WORKS</span>
       </h2>
@@ -380,18 +250,21 @@ const convertToBase64 = (file) => {
                 className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full "
               >
                 {/* Image Section (Compact Height) */}
-                <div className="relative h-30 overflow-hidden">
-                  <img
-                    src={project.imgSrc}
-                    alt={project.title}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                  />
+                <div className="relative h-full ">
+                  <div className="relative w-full h-full overflow-hidden">
+  <img
+    src={project.imgSrc}
+    alt={project.title}
+    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+</div>   
                   {/* Status Badge (14px) */}
-                  <span className="absolute top-2 left-2 bg-green-500 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm">
+                  <span className="absolute top-2 left-2 bg-green-500 backdrop-blur-sm text-white text-[12px] font-bold px-2.5 py-1 rounded-full shadow-sm">
                     {project.status}
                   </span>
                   {/* Role Badge (14px) */}
-                  <span className="absolute top-2 right-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm text-gray-900 dark:text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
+                  <span className="absolute top-2 right-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm text-gray-900 dark:text-white text-[12px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
                     {project.role}
                   </span>
                 </div>
@@ -435,7 +308,7 @@ const convertToBase64 = (file) => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center flex-1 bg-gradient-to-r from-yellow-500 to-green-500 hover:from-yellow-600 hover:to-green-600 text-white font-semibold text-sm px-4 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-1"
+                        className="inline-flex items-center justify-center flex-1 bg-gradient-to-r from-yellow-500 to-green-500 hover:from-yellow-600 hover:to-green-600 text-white font-semibold text-sm px-4 py-1 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-1"
                       >
                         View Project
                         <svg
@@ -458,10 +331,10 @@ const convertToBase64 = (file) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center flex-1 bg-white border-2 border-gray-300 hover:border-gray-900 hover:bg-gray-50 text-gray-800 font-medium text-sm px-4 py-2.5 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-1 hover:cursor-pointer"
+                        className="inline-flex items-center justify-center flex-1 bg-white border-2 border-gray-300 hover:border-gray-900 hover:bg-gray-50 text-gray-800 font-medium text-sm px-1 py-1 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-1 hover:cursor-pointer"
                       >
                         <svg
-                          className="w-4 h-4 mr-2"
+                          className="w-3 h-3 mr-2"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >

@@ -56,7 +56,7 @@ export default function Contact() {
           <span className="font-bold text-yellow-500"> DEVELOPER RELATIONS / COLLABORATION / SOFTWARE DEV WORK OR PARTNERSHIPS </span>
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-14 w-full">
           {/* Contact Info Section */}
           <div className="space-y-4 text-base md:text-lg flex flex-col justify-center">
             <ContactInfo icon={faWhatsapp} label="Phone" value="+254 701 571 745" />
@@ -67,7 +67,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form Section */}
-          <div className="space-y-4 mb-10 flex flex-col justify-center">
+          <div className="space-y-4  flex flex-col justify-center">
             <p className="text-[12px] md:text-[14px]">
               For inquiries, collaborations, or professional connections, please reach out using the form below. I’ll be glad to respond promptly.
             </p>

@@ -71,11 +71,11 @@ export default function Home() {
                 {/* Texts and Buttons */}
                 <div className="flex flex-col lg:mb-0 mb-56 justify-center text-left md:ml-20 space-y-6 max-w-lg order-2 md:order-1 md:space-y-8 pr-0 md:pr-10 text-center md:text-left items-center md:items-start">
 
-                                <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
+                                <h1 className="text-[20px] sm:text-5xl md:text-5xl font-extrabold text-yellow-500 mb-0 text-center md:text-left">
                                       HELLO THERE!!
                                 </h1>
                                 
-                                <h1 className="text-3xl md:text-5xl font-bold mb-2 leading-tight">
+                                <h1 className="text-[16px] md:text-5xl font-bold mb-2 leading-tight">
                                   I'm <span className="text-yellow-500"> Mbugua Peter,</span>
                                 </h1>
                                 <h2 className="text-lg md:text-3xl mb-4">
