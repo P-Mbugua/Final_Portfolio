@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import ThreeScene from '../Components/ThreeScene';
 
 import profile from '../assets/Photos/mbugua.png'
-// Added some more codes.
 
 export default function Home() {
   const roles = [

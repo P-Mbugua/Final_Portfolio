@@ -3,7 +3,7 @@ import { db } from "../firebase";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { motion } from "framer-motion";
+
 
 const MyWork = () => {
   const [projects, setProjects] = useState([]);
@@ -363,10 +363,10 @@ const convertToBase64 = (file) => {
 
   return (
     <div className="bg-black py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-24 lg:px-32 text-center">
-      <h2 className="text-[14px] sm:text-[18px] mt-6 font-extrabold text-white mb-2 font-montserrat">
-        MY <span className="text-yellow-500">WORKS</span>
+      <h2 className="text-[14px] sm:text-[20px] mt-6 font-extrabold text-white mb-2 font-montserrat">
+        MY <span className="text-green-500">WORKS</span>
       </h2>
-      <p className="text-green-500 mb-4 text-[12px] sm:text-[14px] font-roboto">
+      <p className="text-white mb-6 text-[12px] sm:text-[14px] font-roboto">
         – Here are a few of the projects I have been working on –
       </p>
 
@@ -507,8 +507,6 @@ const convertToBase64 = (file) => {
                     {[...reviews, ...reviews].map((review, idx) => (
                       <div
                         key={`${review.id}-${idx}`}
-                        // Updated: Increased height to h-24 (96px) to fit 2 lines of text comfortably
-                        // Updated: Changed items-center to items-start for better multi-line alignment
                         className="flex items-start gap-3 bg-white border border-gray-100 shadow-sm hover:shadow-lg hover:border-green-200 transition-all duration-300 rounded-full pl-2 pr-5 py-3 h-24 flex-shrink-0 min-w-[260px] sm:min-w-[320px] w-[85vw] sm:w-[320px] group cursor-default snap-start"
                       >
                         {/* Left: Avatar */}
@@ -558,8 +556,6 @@ const convertToBase64 = (file) => {
                             ))}
                           </div>
 
-                          {/* RESOLVED: Replaced 'truncate' with 'line-clamp-2' */}
-                          {/* This shows 2 lines of text before adding an ellipsis (...) */}
                           <p className="text-[11px] text-black leading-snug line-clamp-2 font-medium opacity-90 group-hover:opacity-100 transition-opacity">
                             "{review.message}"
                           </p>
@@ -688,7 +684,7 @@ const convertToBase64 = (file) => {
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Alex Morgan"
+                    placeholder="e.g. Mbugua Peter"
                     value={newReview.name}
                     onChange={(e) =>
                       setNewReview({ ...newReview, name: e.target.value })
