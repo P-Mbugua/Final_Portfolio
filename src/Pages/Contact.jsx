@@ -42,8 +42,7 @@ export default function Contact() {
   };
 
   return (
-    // FIX 1: Full screen width/height, removed outer px padding to eliminate gaps
-    <div className="pb-16 bg-black text-white w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <div className="pb-20 bg-black text-white w-full min-h-screen flex flex-col justify-center items-center overflow-hidden">
       <ToastContainer />
       
       {/* Container takes full width now */}

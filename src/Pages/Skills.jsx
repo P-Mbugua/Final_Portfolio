@@ -1,14 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-  useSpring,
-  useMotionValue,
-  useInView,
-  animate,
-} from "motion/react";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionValue, useInView, animate, } from "motion/react";
 
 const FONT_SERIF = "'Fraunces', serif";
 const FONT_SANS = "'Inter', sans-serif";
@@ -291,15 +282,15 @@ export default function Skills() {
 
   return (
     <div
-      ref={containerRef}
-      className="min-h-screen text-white relative overflow-hidden"
-      style={{
-        fontFamily: FONT_SANS,
-        background: "#07090a",
-        backgroundImage: "radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)",
-        backgroundSize: "26px 26px",
-        padding: "clamp(1.25rem, 5vw, 4rem) clamp(1rem, 6vw, 5rem)",
-      }}
+ref={containerRef}
+className="min-h-screen text-white relative overflow-hidden"
+style={{
+  fontFamily: FONT_SANS,
+  background: "black",
+  backgroundImage: "radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)",
+  backgroundSize: "26px 26px",
+  padding: "4rem clamp(1rem, 12vw, 20rem)",
+}}   
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -307,10 +298,6 @@ export default function Skills() {
       `}</style>
 
       {/* Scroll progress */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 origin-left z-50"
-        style={{ scaleX, height: 2, background: "linear-gradient(90deg, #4ADE80, #38BDF8)" }}
-      />
 
       <div className="relative z-10 mx-auto" style={{ maxWidth: "min(1500px, 96vw)" }}>
         {/* Header */}

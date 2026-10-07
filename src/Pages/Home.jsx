@@ -5,9 +5,9 @@ import profile from "../assets/Photos/mbugua.png";
 
 export default function Home() {
   const roles = [
-    "Junior Frontend Developer",
-    "React Enthusiast",
-    "UI Craftsman",
+    "Junior Frontend Developer.",
+    "React Enthusiast.",
+    "UI Craftsman.",
   ];
   const [currentRole, setCurrentRole] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
@@ -112,7 +112,7 @@ export default function Home() {
 
         {/* Tagline */}
         <p className="text-gray-400 text-xs sm:text-sm max-w-xs leading-relaxed text-center">
-          Building clean, responsive web experiences.
+          Building clean & responsive web experiences.
         </p>
 
         
@@ -198,7 +198,7 @@ export default function Home() {
 
           {/* Tagline */}
           <p className="text-gray-400 text-base max-w-md leading-relaxed">
-            Building clean, responsive web.
+            Building clean & responsive web.
           </p>
 
           {/* Divider */}

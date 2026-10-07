@@ -232,7 +232,7 @@ const convertToBase64 = (file) => {
   }, []);
 
   return (
-    <div className="bg-black py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-6 lg:px-32 text-center">
+    <div className="bg-black pb-20 py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-6 lg:px-32 text-center">
       <h2 className="text-[14px] sm:text-[20px] mt-6 font-extrabold text-white mb-2 font-montserrat">
         MY <span className="text-green-500">WORKS</span>
       </h2>
@@ -252,13 +252,13 @@ const convertToBase64 = (file) => {
                 {/* Image Section (Compact Height) */}
                 <div className="relative h-full ">
                   <div className="relative w-full h-full overflow-hidden">
-  <img
-    src={project.imgSrc}
-    alt={project.title}
-    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-</div>   
+                  <img
+                    src={project.imgSrc}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>   
                   {/* Status Badge (14px) */}
                   <span className="absolute top-2 left-2 bg-green-500 backdrop-blur-sm text-white text-[12px] font-bold px-2.5 py-1 rounded-full shadow-sm">
                     {project.status}
