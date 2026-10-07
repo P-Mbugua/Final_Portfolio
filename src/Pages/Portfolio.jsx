@@ -308,7 +308,7 @@ const convertToBase64 = (file) => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center flex-1 bg-gradient-to-r from-yellow-500 to-green-500 hover:from-yellow-600 hover:to-green-600 text-white font-semibold text-sm px-4 py-1 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-1"
+                        className="inline-flex items-center justify-center flex-1 bg-gray-200 hover:bg-gray-100 text-black font-semibold text-sm px-4 py-1 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-1"
                       >
                         View Project
                         <svg
