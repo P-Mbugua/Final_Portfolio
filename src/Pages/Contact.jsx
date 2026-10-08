@@ -58,12 +58,67 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-14 w-full">
           {/* Contact Info Section */}
           <div className="space-y-4 text-base md:text-lg flex flex-col justify-center">
-            <ContactInfo icon={faWhatsapp} label="Phone" value="+254 701 571 745" />
-            <ContactInfo icon={faEnvelope} label="Email" value="petermbuguangumi@gmail.com" />
-            <ContactInfo icon={faTwitter} label="Twitter" value="@mbugua276" />
-            <ContactInfo icon={faGithub} label="Github" value="P-Mbugua" />
-            <ContactInfo icon={faMapMarkerAlt} label="Location" value="Limuru, Kiambu, Kenya" />
-          </div>
+                <ContactInfo
+                  icon={faWhatsapp}
+                  label="Phone"
+                  value={
+                    <a href="tel:+254701571745" className="text-gray-400 hover:underline">
+                      +254 701 571 745
+                    </a>
+                  }
+                />
+                <ContactInfo
+                  icon={faEnvelope}
+                  label="Email"
+                  value={
+                    <a href="mailto:petermbuguangumi@gmail.com" className="text-gray-400 hover:underline">
+                      petermbuguangumi@gmail.com
+                    </a>
+                  }
+                />
+                <ContactInfo
+                  icon={faTwitter}
+                  label="Twitter"
+                  value={
+                    <a
+                      href="https://twitter.com/mbugua276"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:underline"
+                    >
+                      @mbugua276
+                    </a>
+                  }
+                />
+                <ContactInfo
+                  icon={faGithub}
+                  label="Github"
+                  value={
+                    <a
+                      href="https://github.com/P-Mbugua"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:underline"
+                    >
+                      P-Mbugua
+                    </a>
+                  }
+                />
+                <ContactInfo
+                  icon={faMapMarkerAlt}
+                  label="Location"
+                  value={
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Limuru,+Kiambu,+Kenya"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:underline"
+                    >
+                      Limuru, Kiambu, Kenya
+                    </a>
+                  }
+                />
+              </div>   
 
           {/* Contact Form Section */}
           <div className="space-y-4  flex flex-col justify-center">

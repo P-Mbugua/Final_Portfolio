@@ -6,7 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 import about from '../assets/Photos/Projects_Photos/Jibuy.png'   
-import roy from '../assets/Photos/Projects_Photos/Reach_Roy.png'   
+import roy from '../assets/Photos/Projects_Photos/Reach_Roy.png'  
+ import sme from '../assets/Photos/Projects_Photos/SME_System.png'  
 
 
 
@@ -34,10 +35,10 @@ const MyWork = () => {
           "A multi-vendor e-commerce marketplace where users can browse, search, and purchase products from multiple sellers. Features include a seller dashboard, secure checkout, and order tracking — designed for a seamless shopping experience on both desktop and mobile.",
         imgSrc:
           about,
-        role: "Collaboration",
+        role: "Personal",
         status: "In Development",
-        link: "https://stay-manager-mg.netlify.app/",
-        repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
+        link: "https://jibuy.netlify.app/",
+        repoLink: "https://github.com/P-Mbugua/Fintech.git", 
         techStack: [
           "React 19",
           "Tailwind CSS",
@@ -68,8 +69,8 @@ const MyWork = () => {
           roy,
         role: "Client",
         status: "In Development",
-        link: "https://stay-manager-mg.netlify.app/",
-        repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
+        link: "https://reachroy.netlify.app/",
+        repoLink: "https://github.com/P-Mbugua/ReachRoy_Cyber.git", // Optional
         techStack: [
           "React 19",
           "TypeScript",
@@ -108,7 +109,7 @@ const MyWork = () => {
           "Full-stack hotel & restaurant management solution featuring AI-driven dynamic pricing, real-time analytics, contactless check-in/out, multi-property dashboard, and integrated POS. Streamlines operations across 15+ modules including housekeeping, room service, billing, and guest feedback.",
         imgSrc:
           "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/Hetelogix_System.png",
-        role: "Full-Stack Development",
+        role: "Collaboration",
         status: "Production Ready",
         link: "https://stay-manager-mg.netlify.app/",
         repoLink: "https://github.com/p-mbugua/hotel-management", // Optional
@@ -142,6 +143,94 @@ const MyWork = () => {
         },
         year: "2026",
       },
+      {
+  id: 4,
+  title: "SME SCHOOL MANAGEMENT SYSTEM",
+  subtitle: "Cloud-Based School Management Platform",
+  description:
+    "Fully online school management platform designed for modern educational institutions. Centralizes student enrollment, fee management, academic records, attendance, staff administration, communication, reporting, and school operations in a secure cloud-based environment accessible from anywhere.",
+  imgSrc:
+    sme,
+  role: "Collaboration",
+  status: "Production Ready",
+  link: "https://sms.marps.co.ke/",
+  repoLink: "https://github.com/Marps-Africa/School-System-Website.git",
+  techStack: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Prisma",
+    "JWT",
+    "REST API",
+    "Chart.js",
+  ],
+  features: [
+    "Student & Parent Management",
+    "Online Fee Management",
+    "Academic Records & Grading",
+    "Attendance Management",
+    "Teacher & Staff Management",
+    "Class & Subject Management",
+    "Automated Reports",
+    "School-Wide Dashboard",
+    "Online Communication",
+    "Role-Based Access Control",
+  ],
+  metrics: {
+    modules: "15+",
+    users: "Multi-Role",
+    access: "100% Online",
+    reports: "Automated",
+  },
+  year: "2026",
+},
+{
+  id: 5,
+  title: "PARCELPOA",
+  subtitle: "Smart Delivery & Parcel Management System",
+  description:
+    "End-to-end delivery management platform built to simplify parcel collection, tracking, dispatch, and delivery operations. ParcelPoa connects customers, delivery agents, and administrators through a centralized platform with real-time parcel tracking, delivery status management, route coordination, and operational analytics.",
+  imgSrc:
+    "https://p-mbugua.github.io/peshmarkTwo/Photos/Projects/ParcelPoa.png",
+  role: "Collaboration",
+  status: "Production Ready",
+  link: "https://parcelpoa.marps.co.ke/",
+  repoLink: "https://github.com/P-Mbugua/ParcelPoa.git",
+  techStack: [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Prisma",
+    "JWT",
+    "REST API",
+    "Chart.js",
+  ],
+  features: [
+    "Parcel Registration & Management",
+    "Real-Time Delivery Tracking",
+    "Delivery Agent Management",
+    "Dispatch & Assignment",
+    "Customer Management",
+    "Delivery Status Updates",
+    "Route & Location Coordination",
+    "Proof of Delivery",
+    "Delivery Analytics",
+    "Administrative Dashboard",
+  ],
+  metrics: {
+    tracking: "Real-Time",
+    users: "Multi-Role",
+    delivery: "End-to-End",
+    analytics: "Live",
+  },
+  year: "2026",
+},
 
     ];
     setProjects(projectsData);
@@ -233,127 +322,461 @@ const convertToBase64 = (file) => {
 
   return (
     <div className="bg-black pb-20 py-8 px-6 sm:px-8 md:py-16 md:px-12 lg:py-6 lg:px-32 text-center">
+      
+
+     {/*================= SECTION HEADER =================*/}
       <h2 className="text-[14px] sm:text-[20px] mt-6 font-extrabold text-white mb-2 font-montserrat">
         MY <span className="text-green-500">WORKS</span>
       </h2>
-      <p className="text-white mb-6 text-[12px] sm:text-[14px] font-roboto">
+
+      <p className="text-white text-[12px] sm:text-[14px] font-roboto">
         – Here are a few of the projects I have been working on –
       </p>
 
-      <section id="projects" className="py-1  ">
-        <div className="max-w-6xl  px-0 sm:px-1 lg:px-8">
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {projects.map((project) => (
-              <article
-                key={project.id}
-                className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 flex flex-col h-full "
-              >
-                {/* Image Section (Compact Height) */}
-                <div className="relative h-full ">
-                  <div className="relative w-full h-full overflow-hidden">
-                  <img
-                    src={project.imgSrc}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>   
-                  {/* Status Badge (14px) */}
-                  <span className="absolute top-2 left-2 bg-green-500 backdrop-blur-sm text-white text-[12px] font-bold px-2.5 py-1 rounded-full shadow-sm">
-                    {project.status}
-                  </span>
-                  {/* Role Badge (14px) */}
-                  <span className="absolute top-2 right-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm text-gray-900 dark:text-white text-[12px] font-bold px-2.5 py-1 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
-                    {project.role}
-                  </span>
-                </div>
+      <span className="text-[10px] uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500 font-semibold">
+              Design • Development
+      </span>
 
-                {/* Content Section */}
-                <div className="p-1 flex flex-col flex-grow">
-                  {/* Title & Subtitle (14px) */}
-                  <div className="mb-1">
-                    <h3 className="font-bold text-yellow-500  text-[14px] mb-1 font-montserrat line-clamp-1 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-green-600  dark:text-green-400 text-[10px] font-semibold uppercase tracking-wide">
-                      {project.subtitle}
-                    </p>
-                  </div>
 
-                  {/* Description (14px) */}
-                  <p className="text-gray-600 dark:text-gray-300 text-justify mb-4 text-[12px] leading-snug font-roboto ">
-                    {project.description}
-                  </p>
 
-                  {/* Tech Stack (14px) */}
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-1">
-                      {project.techStack.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-[10px] px-1 py-1 rounded-md font-medium border border-gray-100 dark:border-gray-500"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* Action Button (14px) */}
-                  <div className="mt-auto">
-                    {/* Flex Container for Buttons */}
-                    <div className="flex flex-row sm:flex-row gap-3 w-full">
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center flex-1 bg-gray-200 hover:bg-gray-100 text-black font-semibold text-sm px-4 py-1 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-1"
-                      >
-                        View Project
-                        <svg
-                          className="w-4 h-4 ml-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </a>
+      
 
-                      {/* Secondary: Source Code - Refined Gray/Black */}
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center flex-1 bg-white border-2 border-gray-300 hover:border-gray-900 hover:bg-gray-50 text-gray-800 font-medium text-sm px-1 py-1 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-1 hover:cursor-pointer"
-                      >
-                        <svg
-                          className="w-3 h-3 mr-2"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        View Code
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+                      ```jsx
+                      <section id="projects" className="py-10">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+
+
+                          {/* ================= PROJECT GRID ================= */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10">
+
+                            {projects.map((project, index) => (
+
+                              <article
+                                key={project.id}
+                                className="
+                                  group
+                                  relative
+                                  flex flex-col
+                                  bg-white
+                                  dark:bg-gray-900
+                                  border
+                                  border-gray-200
+                                  dark:border-gray-800
+                                  rounded-xl
+                                  p-2.5
+                                  shadow-sm
+                                  hover:border-gray-300
+                                  dark:hover:border-gray-700
+                                "
+                              >
+
+                                {/* ================= TOP ACCENT ================= */}
+                                <div
+                                  className="
+                                    absolute
+                                    top-0
+                                    left-8
+                                    right-8
+                                    h-[2px]
+                                    bg-gradient-to-r
+                                    from-transparent
+                                    via-yellow-500
+                                    to-transparent
+                                    opacity-60
+                                  "
+                                />
+
+                                <div className="relative">
+
+                                  <div
+                                    className="
+                                      relative
+                                      w-full
+                                      bg-gray-50
+                                      dark:bg-gray-950
+                                      border
+                                      border-gray-200
+                                      dark:border-gray-800
+                                      rounded-lg
+                                      p-1
+                                    "
+                                  >
+
+                                    <img
+                                      src={project.imgSrc}
+                                      alt={`${project.title} project preview`}
+                                      loading={index < 3 ? "eager" : "lazy"}
+                                      className="
+                                        block
+                                        w-full
+                                        h-auto
+                                        rounded-md
+                                        object-contain
+                                        select-none
+                                      "
+                                    />
+
+                                  </div>
+
+
+                                  {/* ================= STATUS ================= */}
+                                  <div
+                                    className="
+                                      absolute
+                                      top-3
+                                      left-3
+                                      inline-flex
+                                      items-center
+                                      gap-1.5
+                                      bg-white/95
+                                      dark:bg-gray-950/95
+                                      backdrop-blur-sm
+                                      px-2.5
+                                      py-1
+                                      rounded-full
+                                      border
+                                      border-gray-200
+                                      dark:border-gray-700
+                                      shadow-md
+                                    "
+                                  >
+
+                                    <span className="relative flex h-1.5 w-1.5">
+                                      <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+
+                                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                                    </span>
+
+                                    <span className="text-[9px] font-bold text-gray-700 dark:text-gray-300">
+                                      {project.status}
+                                    </span>
+
+                                  </div>
+
+                                </div>
+
+
+                                {/* ================= PROJECT INFORMATION ================= */}
+                                <div className="px-1 pt-4 flex flex-col flex-grow">
+
+                                  {/* ================= TITLE ================= */}
+                                  <div className="flex items-start justify-between gap-3">
+
+                                    <div className="min-w-0 flex-1">
+
+                                      <h3
+                                        className="
+                                          text-base
+                                          font-bold
+                                          font-montserrat
+                                          text-gray-900
+                                          dark:text-white
+                                        "
+                                      >
+                                        {project.title}
+                                      </h3>
+
+                                      <p
+                                        className="
+                                          mt-1
+                                          text-[9px]
+                                          font-bold
+                                          uppercase
+                                          tracking-[0.16em]
+                                          text-yellow-500
+                                        "
+                                      >
+                                        {project.subtitle}
+                                      </p>
+
+                                    </div>
+
+
+                                    {/* ================= PROJECT NUMBER ================= */}
+                                    <span
+                                      className="
+                                        shrink-0
+                                        text-[10px]
+                                        font-mono
+                                        font-bold
+                                        text-gray-300
+                                        dark:text-gray-700
+                                      "
+                                    >
+                                      {String(index + 1).padStart(2, "0")}
+                                    </span>
+
+                                  </div>
+
+
+                                  {/* ================= FULL DESCRIPTION ================= */}
+                                  <p
+                                    className="
+                                      mt-3
+                                      text-[11px]
+                                      leading-5
+                                      text-gray-500
+                                      dark:text-gray-400
+                                    "
+                                  >
+                                    {project.description}
+                                  </p>
+
+
+                                  {/* ================= FULL TECHNOLOGY STACK ================= */}
+                                  <div className="mt-4">
+
+                                    <p
+                                      className="
+                                        mb-2
+                                        text-[8px]
+                                        uppercase
+                                        tracking-[0.15em]
+                                        font-bold
+                                        text-gray-400
+                                        dark:text-gray-500
+                                      "
+                                    >
+                                      Technologies
+                                    </p>
+
+                                    <div className="flex flex-wrap gap-1.5">
+
+                                      {project.techStack.map((tech, techIndex) => (
+
+                                        <span
+                                          key={`${project.id}-tech-${techIndex}`}
+                                          className="
+                                            inline-flex
+                                            items-center
+                                            text-[9px]
+                                            font-medium
+                                            text-gray-600
+                                            dark:text-gray-300
+                                            bg-gray-50
+                                            dark:bg-gray-800
+                                            border
+                                            border-gray-200
+                                            dark:border-gray-700
+                                            px-2
+                                            py-1
+                                            rounded
+                                          "
+                                        >
+                                          {tech}
+                                        </span>
+
+                                      ))}
+
+                                    </div>
+
+                                  </div>
+
+
+                                  {/* ================= PROJECT FOOTER ================= */}
+                                  <div
+                                    className="
+                                      mt-5
+                                      pt-3
+                                      border-t
+                                      border-gray-100
+                                      dark:border-gray-800
+                                      flex
+                                      items-center
+                                      justify-between
+                                      gap-3
+                                    "
+                                  >
+
+                                    {/* ================= ROLE ================= */}
+                                    <div className="min-w-0">
+
+                                      <p
+                                        className="
+                                          text-[8px]
+                                          uppercase
+                                          tracking-[0.14em]
+                                          font-semibold
+                                          text-gray-400
+                                          dark:text-gray-500
+                                        "
+                                      >
+                                        My Role
+                                      </p>
+
+                                      <p
+                                        className="
+                                          mt-0.5
+                                          text-[9px]
+                                          font-semibold
+                                          text-gray-600
+                                          dark:text-gray-300
+                                        "
+                                      >
+                                        {project.role}
+                                      </p>
+
+                                    </div>
+
+
+                                    {/* ================= ACTIONS ================= */}
+                                    <div className="flex items-center gap-2 shrink-0">
+                                      <a
+                                        href={project.repoLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`View ${project.title} source code on GitHub`}
+                                        title={`View ${project.title} on GitHub`}
+                                        className="
+                                          inline-flex
+                                          items-center
+                                          gap-1.5
+                                          h-8
+                                          px-2.5
+                                          rounded-md
+                                          border
+                                          border-gray-200
+                                          dark:border-gray-700
+                                          bg-white
+                                          dark:bg-gray-900
+                                          text-gray-600
+                                          dark:text-gray-300
+                                          hover:text-gray-900
+                                          dark:hover:text-white
+                                          hover:border-gray-400
+                                          dark:hover:border-gray-500
+                                          hover:bg-gray-50
+                                          dark:hover:bg-gray-800
+                                          transition-all
+                                          duration-200
+                                          cursor-pointer
+                                        "
+                                      >
+
+                                        {/* GitHub Icon */}
+                                        <svg
+                                          className="w-4 h-4 shrink-0"
+                                          fill="currentColor"
+                                          viewBox="0 0 24 24"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            fillRule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483-.001-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7.202 2.398.1 2.651.64.7 1.595 1.028 2.688 1.028 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                            clipRule="evenodd"
+                                          />
+                                        </svg>
+
+                                        <span className="text-[9px] font-bold">
+                                          GitHub
+                                        </span>
+
+                                        {/* External link indicator */}
+                                        <svg
+                                          className="w-3 h-3 opacity-50"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M14 4h6m0 0v6m0-6L10 14"
+                                          />
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M18 13v5a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h5"
+                                          />
+                                        </svg>
+
+                                      </a>
+
+
+                                      {/* ==================================================
+                                          LIVE PROJECT LINK
+                                        ================================================== */}
+
+                                      <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Open ${project.title} live project`}
+                                        title={`Open ${project.title} live project`}
+                                        className="
+                                          inline-flex
+                                          items-center
+                                          gap-1.5
+                                          h-8
+                                          px-3
+                                          rounded-md
+                                          bg-gray-900
+                                          dark:bg-white
+                                          text-white
+                                          dark:text-gray-900
+                                          text-[9px]
+                                          font-bold
+                                          hover:bg-yellow-500
+                                          dark:hover:bg-yellow-500
+                                          hover:text-gray-950
+                                          transition-all
+                                          duration-200
+                                          shadow-sm
+                                          hover:shadow-md
+                                          cursor-pointer
+                                        "
+                                      >
+
+                                        <span>
+                                          Live Project
+                                        </span>
+
+                                        <svg
+                                          className="w-3.5 h-3.5"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                          aria-hidden="true"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M13.5 6H19m0 0v5.5M19 6l-8 8"
+                                          />
+
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M17 13v4a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h4"
+                                          />
+                                        </svg>
+
+                                      </a>
+
+                                    </div>
+
+                                  </div>
+
+                                </div>
+
+                              </article>
+
+                            ))}
+
+                          </div>
+
+                        </div>
+                      </section>
+                      ```
+
 
 
 
