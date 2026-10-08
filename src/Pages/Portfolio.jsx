@@ -334,7 +334,7 @@ const convertToBase64 = (file) => {
       </p>
 
       <span className="text-[10px] uppercase tracking-[0.15em] text-gray-400 dark:text-gray-500 font-semibold">
-              Design • Development
+              Design • Development • Launch
       </span>
 
 
