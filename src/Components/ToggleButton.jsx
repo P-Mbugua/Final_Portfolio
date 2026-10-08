@@ -1,15 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import {
-  FaBars,
-  FaTimes,
-  FaHome,
-  FaUser,
-  FaSuitcase,
-  FaEnvelope,
-  FaCog,
-  FaGithub,
-} from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaUser, FaSuitcase, FaEnvelope, FaCog, FaGithub, } from 'react-icons/fa';
 
 const ToggleButton = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -139,7 +130,7 @@ const ToggleButton = () => {
               Mbugua Peter
             </p>
             <p className="text-[10px] text-gray-500">
-              Software Developer
+              Front-End Developer
             </p>
           </div>
         </div>
